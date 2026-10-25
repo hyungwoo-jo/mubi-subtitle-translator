@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "CueBraid",
+  "description": "__MSG_extensionDescription__",
+  "version": "0.1.9",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "nativeMessaging"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CueBraid",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyBYERqOz4rKmfRnRnhSl/tgrPMbwNPoL8XUnNxHXMLqYWiRt76F2nmsPQDyIORnIAw+TpmNOOhiRixa34aLKLk8td2JEKt5KBiSMADAdhQzRGjNWJbkTzVpZ1N1cIUEmlgT+VsX5OclMNLfCPLKCXs+QwlsE0cPYJPxj/XyB4Nx5+TIW14tgz+VOwiotFDZdk+W30s4u20AJ4jfniZWk1Esl8fq/frsN2tq6tGqhZo/SL4SxYGmvx7rM5UY5zqfBO7xFiwtxkpUojCPgFUHJm4ur7LiMh/fQdM7wSwPHow4gnG5BX8mEgUDsCWYbcnJyMwAQgZ9wLdnhzz2j8y3ApQIDAQAB",
+  "short_name": "CueBraid",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "default_locale": "en"
+}

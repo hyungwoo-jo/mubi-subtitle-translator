@@ -1,0 +1,13 @@
+tmp/
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+data/
+.agent-claim
+out/
+native/launch.sh
+native/launch.cmd
+native/com.hw.subtitle_translator.json
