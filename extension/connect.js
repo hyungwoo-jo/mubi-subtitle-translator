@@ -165,7 +165,7 @@
   $('test').onclick=async()=>{
     $('test').disabled=true;$('sample').textContent=t('sampleRunning');
     try{
-      const result=await chrome.runtime.sendMessage({type:'translate',texts:['Hello, the film is about to begin.'],context:'',scope:'cuebraid:connection-test'});
+      const result=await chrome.runtime.sendMessage({type:'translate',texts:['Hello, the film is about to begin.'],context:'',scope:'connection-test'});
       if(!result?.ok)throw new Error(result?.error||'The test did not complete.');
       $('sample').textContent=result.texts.join('\n')+(result.cached?' ('+t('sampleCached')+')':'');
     }catch(error){$('sample').textContent=error.message;}

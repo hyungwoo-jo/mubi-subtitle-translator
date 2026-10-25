@@ -79,6 +79,19 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         worker.evaluate("chrome.storage.local.set({settings:{language:'日本語',model:'gpt-6-luna',provider:'codex'}})")
         page.wait_for_timeout(900)
         assert worker.evaluate('translationCalls') == 2
+        # A duplicate cue is dropped by normalization; the track must not be re-added on every poll.
+        rebuilds = page.evaluate("""async () => {
+            document.querySelector('video').textTracks[0].addCue(new VTTCue(0,3,'Hello world'));
+            await new Promise(resolve=>setTimeout(resolve,400));
+            const select=document.getElementById('hw-subtitle-overlay').shadowRoot.querySelector('select');
+            let count=0;
+            const observer=new MutationObserver(()=>count++);
+            observer.observe(select,{childList:true});
+            await new Promise(resolve=>setTimeout(resolve,1000));
+            observer.disconnect();
+            return count;
+        }""")
+        assert rebuilds == 0, rebuilds
         # Real DOMParser verifies TTML namespaces, ticks, line breaks and timing.
         tab_id = worker.evaluate("async()=> (await chrome.tabs.query({url:'http://127.0.0.1/*'}))[0].id")
         parsed = worker.evaluate("""async (tabId)=> {
@@ -321,7 +334,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         popup.set_viewport_size({'width':420,'height':760})
         popup.evaluate("""()=>{
             chrome.tabs.query=async()=>[{id:1,url:'https://mubi.com/en/films/demo/player'}];
-            chrome.tabs.sendMessage=async()=>({video:true,active:true,mode:'시간표',bufferSeconds:84,cues:1200,translated:80});
+            chrome.tabs.sendMessage=async()=>({video:true,active:true,mode:'timed',bufferSeconds:84,cues:1200,translated:80});
             refreshPlayback();
         }""")
         popup.wait_for_function("document.querySelector('#playback').textContent.includes('84')")

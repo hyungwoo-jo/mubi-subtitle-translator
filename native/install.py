@@ -19,13 +19,13 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--reuse", action="store_true", help="Reuse only an identical existing registration")
     parser.add_argument("--provider", choices=["codex", "ollama"], default="codex")
-    parser.add_argument("--codex", help="Codex 실행 파일의 절대 경로")
+    parser.add_argument("--codex", help="Absolute path to the Codex executable")
     args = parser.parse_args()
     if not re.fullmatch(r"[a-p]{32}", args.extension_id):
         parser.error("Enter the 32-letter extension ID.")
     base = Path(__file__).resolve().parent
     host = base / ("launch.cmd" if os.name == "nt" else "launch.sh")
-    manifest = {"name": NAME, "description": "CueBraid translation bridge", "path": str(host),
+    manifest = {"name": NAME, "description": "Subtitle Translator for MUBI translation bridge", "path": str(host),
                 "type": "stdio", "allowed_origins": [f"chrome-extension://{args.extension_id}/"]}
     if os.name == "nt":
         destination = base / f"{NAME}.json"
@@ -67,7 +67,7 @@ def main():
         with winreg.CreateKey(winreg.HKEY_CURRENT_USER, key) as registry:
             winreg.SetValueEx(registry, "", 0, winreg.REG_SZ, str(destination))
     print(f"Registered: {destination}")
-    print("Reopen the browser and choose Check helper connection in CueBraid settings.")
+    print("Reopen the browser and choose Check helper connection in Subtitle Translator for MUBI settings.")
 
 
 if __name__ == "__main__":

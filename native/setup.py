@@ -10,12 +10,12 @@ import sys
 
 
 def main():
-    parser = argparse.ArgumentParser(description='CueBraid local helper setup')
+    parser = argparse.ArgumentParser(description='Subtitle Translator for MUBI local helper setup')
     parser.add_argument('--browser', choices=['chrome', 'edge', 'chromium', 'brave'], default='chrome')
     parser.add_argument('--extension-id')
     parser.add_argument('--login', action='store_true', help='Launch the official Codex sign-in flow')
     args = parser.parse_args()
-    print('CueBraid setup\nPython: OK (' + sys.version.split()[0] + ')')
+    print('Subtitle Translator for MUBI setup\nPython: OK (' + sys.version.split()[0] + ')')
     codex = shutil.which('codex')
     print('Codex CLI: ' + ('found' if codex else 'not found'))
     if not codex:
@@ -41,7 +41,7 @@ def main():
         return result.returncode
     if args.login:
         return subprocess.run([codex, 'login']).returncode
-    print('Next: run codex login, then use Check helper connection in CueBraid settings.')
+    print('Next: run codex login, then use Check helper connection in Subtitle Translator for MUBI settings.')
     return 0
 
 

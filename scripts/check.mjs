@@ -8,6 +8,13 @@ for(const folder of ['extension','scripts','tests']){
     assert.equal(result.status,0,file);
   }
 }
+// User-facing text belongs in _locales; the generated i18n.js is the only catalog.
+for(const [folder,pattern] of [['extension',/\.js$/],['native',/\.py$/]]){
+  for(const file of await readdir(folder)){
+    if(!pattern.test(file)||file==='i18n.js') continue;
+    assert(!/[가-힣]/.test(await readFile(`${folder}/${file}`,'utf8')),`${folder}/${file} contains hardcoded Korean text`);
+  }
+}
 assert.equal(spawnSync('python3',['scripts/build_locales.py','--check'],{stdio:'inherit'}).status,0);
 const manifest=JSON.parse(await readFile('extension/manifest.json','utf8'));
 assert.equal(manifest.manifest_version,3);

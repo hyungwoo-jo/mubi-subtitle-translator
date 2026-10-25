@@ -60,9 +60,9 @@ async function refreshPlayback(){
     const {tab}=await current();
     const result=await chrome.tabs.sendMessage(tab.id,{type:'status'});
     const ready=result?.video&&result.active;
-    document.querySelector('#playback').textContent=!ready?t('waiting'):result.mode==='시간표'?t('ready',{seconds:result.bufferSeconds}):t('domMode');
-    document.querySelector('#timeline').textContent=!ready?t('clickStart'):result.mode==='시간표'?t('counts',{cues:result.cues,translated:result.translated}):t('domHint');
-    document.querySelector('#buffer-note').textContent=!ready?'':result.mode==='시간표'?t('window'): '이 방식은 번역 응답만큼 지연될 수 있습니다.';
+    document.querySelector('#playback').textContent=!ready?t('waiting'):result.mode==='timed'?t('ready',{seconds:result.bufferSeconds}):t('domMode');
+    document.querySelector('#timeline').textContent=!ready?t('clickStart'):result.mode==='timed'?t('counts',{cues:result.cues,translated:result.translated}):t('domHint');
+    document.querySelector('#buffer-note').textContent=!ready?'':result.mode==='timed'?t('window'):t('domDelay');
   }catch{
     document.querySelector('#playback').textContent=t('waiting');
     document.querySelector('#timeline').textContent=t('clickStart');

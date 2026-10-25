@@ -90,16 +90,16 @@
     return cues.filter(c=>c.end>position && c.start<position+300).slice(0,limit);
   }
   function validateTranslations(rows, expected) {
-    if (!Array.isArray(rows) || rows.length !== expected.length) throw new Error('번역 줄 수가 원문과 다릅니다.');
+    if (!Array.isArray(rows) || rows.length !== expected.length) throw new Error('The translation count did not match the subtitles.');
     const byId = new Map();
     for (const row of rows) {
       if (!Number.isInteger(row.id) || byId.has(row.id) || typeof row.text!=='string' || !row.text.trim() || row.text.length>8000) {
-        throw new Error('번역 응답 형식이 잘못되었습니다.');
+        throw new Error('The translation response format was invalid.');
       }
       byId.set(row.id,row.text.trim());
     }
     return expected.map((_,id)=> {
-      if (!byId.has(id)) throw new Error('번역된 자막 번호가 누락되었습니다.');
+      if (!byId.has(id)) throw new Error('A translated subtitle ID was missing.');
       return byId.get(id);
     });
   }

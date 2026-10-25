@@ -126,11 +126,11 @@
     if(!manualTrack && previous==='dom' && tracks.size) selected=tracks.keys().next().value;
     select.value=selected;
   }
-  function addTrack(id,cues,label,merge=false){
+  function addTrack(id,cues,label,merge=false,rawCount=0){
     if(!cues.length) return;
     const old=tracks.get(id);
     const next=merge&&old?C.normalize([...old.cues,...cues]):cues;
-    tracks.set(id,{cues:next,label});
+    tracks.set(id,{cues:next,label,rawCount});
     if(tracks.size>20) tracks.delete(tracks.keys().next().value);
     refreshChoices();
   }
@@ -165,9 +165,10 @@
       if(!['subtitles','captions'].includes(track.kind)) return;
       if(track.mode==='disabled') track.mode='hidden';
       const id='native:'+index;
-      if(track.cues?.length && track.cues.length!==tracks.get(id)?.cues.length) {
+      // Normalization drops empty or duplicate cues, so compare against the raw count.
+      if(track.cues?.length && track.cues.length!==tracks.get(id)?.rawCount) {
         const cues=C.normalize([...track.cues].map(c=>({start:c.startTime,end:c.endTime,text:c.text})));
-        addTrack(id,cues,track.label || track.language || t('nativeTrack',{number:index+1}));
+        addTrack(id,cues,track.label || track.language || t('nativeTrack',{number:index+1}),false,track.cues.length);
       }
       if(!manualTrack && track.mode==='showing' && tracks.has(id)){selected=id;select.value=id;}
     });
@@ -290,7 +291,7 @@
   });
   chrome.runtime.onMessage.addListener((message,_sender,respond)=> {
     if(document.getElementById(host.id)!==host)return;
-    if(message.type==='status') respond({tracks:tracks.size,active:enabled,video:!!video,mode:selected==='dom'?'화면 자막':'시간표',bufferSeconds:bufferSeconds(),busy,detail:status.textContent,cues:currentCues().length,translated:translations.size});
+    if(message.type==='status') respond({tracks:tracks.size,active:enabled,video:!!video,mode:selected==='dom'?'dom':'timed',bufferSeconds:bufferSeconds(),busy,detail:status.textContent,cues:currentCues().length,translated:translations.size});
     if(message.type==='controls'){controlsOpen=message.open!==false;render();if(message.pick)pick.click();respond({ok:true});}
     if(message.type==='toggle') {
       enabled=message.enabled;epoch++;host.hidden=!enabled;retryAt=0;
