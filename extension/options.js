@@ -22,7 +22,12 @@ document.querySelector('#form').onsubmit=async event=> {
 document.querySelector('#test').onclick=async()=> {
   status.textContent=t('testing');
   try {
-    const result=await chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{action:'health',provider:document.querySelector('#provider').value});
+    const provider=document.querySelector('#provider').value;
+    if(provider==='chatgpt'){
+      const result=await chrome.runtime.sendMessage({type:'chatgpt.status'}).catch(()=>null);
+      status.textContent=result?.connected?'ChatGPT connected · '+result.account:'Open Continue with ChatGPT to connect. Keep the connection tab open.';return;
+    }
+    const result=await chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{action:'health',provider});
     status.textContent=result.ok?t('helperOk',{version:result.version||''}):t('helperMissing');
   } catch(error) {status.textContent=HWConnection.explain(error);}
 };
@@ -41,3 +46,5 @@ document.querySelector('#provider').onchange=()=>{
   else if(document.querySelector('#provider').value==='codex'&&!model.value)model.value='gpt-6-luna';
 };
 CueI18N.ready.then(()=>CueI18N.apply());
+
+document.querySelector('#connect').onclick=()=>CueConnection.open();

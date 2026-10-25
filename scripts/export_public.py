@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     version = json.loads((ROOT / 'package.json').read_text())['version']
-    prefix = f'cuebraid-source-{version}'
+    prefix = f'mubi-subtitle-translator-source-{version}'
     destination = ROOT / 'out' / f'{prefix}.zip'
     destination.parent.mkdir(exist_ok=True)
     files = {Path('README.md'): ROOT / 'docs/README.public.md'}
@@ -19,8 +19,8 @@ def main():
                 files[source.relative_to(ROOT)] = source
     for name in ('LICENSE', '.gitignore', 'package.json', 'native/host.py', 'native/install.py', 'native/setup.py',
                  'scripts/check.mjs', 'scripts/build.mjs', 'scripts/export_public.py',
-                 'docs/README.public.md', 'docs/README.ko.md', 'docs/README.ja.md', 'docs/PRIVACY.md', 'docs/STORE.md', 'docs/assets/popup-en.png', 'tests/browser_check.py', 'tests/native_test.py',
-                 'tests/core.test.mjs', 'tests/connection.test.mjs'):
+                 'docs/README.public.md', 'docs/README.ko.md', 'docs/README.ja.md', 'docs/PRIVACY.md', 'docs/STORE.md', 'docs/assets/popup-en.png', 'tests/browser_check.py', 'tests/browser_oauth_check.py', 'tests/native_test.py',
+                 'tests/core.test.mjs', 'tests/connection.test.mjs', 'tests/oauth.test.mjs'):
         files[Path(name)] = ROOT / name
     with zipfile.ZipFile(destination, 'w', zipfile.ZIP_DEFLATED) as archive:
         for name, source in sorted(files.items()):

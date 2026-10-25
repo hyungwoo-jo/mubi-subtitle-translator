@@ -19,8 +19,8 @@ const sha256=createHash('sha256').update(await readFile(`${dest}.zip`)).digest('
 await writeFile('out/latest.json',JSON.stringify({version,filename,sha256},null,2)+'\n');
 console.log(`${dest}.zip`);
 
-const store=spawnSync('python3',['-c','import pathlib,zipfile; p=pathlib.Path("extension"); z=zipfile.ZipFile("out/cuebraid-webstore-'+version+'.zip","w",zipfile.ZIP_DEFLATED); [z.write(f,f.relative_to(p)) for f in sorted(p.rglob("*")) if f.is_file() and f.suffix in (".js",".json",".html",".css",".svg",".png")]; z.close()'],{stdio:'inherit'});
+const store=spawnSync('python3',['-c','import pathlib,zipfile; p=pathlib.Path("extension"); z=zipfile.ZipFile("out/mubi-subtitle-translator-webstore-'+version+'.zip","w",zipfile.ZIP_DEFLATED); [z.write(f,f.relative_to(p)) for f in sorted(p.rglob("*")) if f.is_file() and f.suffix in (".js",".json",".html",".css",".svg",".png")]; z.close()'],{stdio:'inherit'});
 assert.equal(store.status,0);
 
-const complete=spawnSync('python3',['-c','import pathlib,sys,zipfile; p=pathlib.Path(sys.argv[1]); z=zipfile.ZipFile("out/cuebraid-'+version+'.zip","w",zipfile.ZIP_DEFLATED); [z.write(f,pathlib.Path("cuebraid-'+version+'")/f.relative_to(p)) for f in sorted(p.rglob("*")) if f.is_file()]; z.close()',dest],{stdio:'inherit'});
+const complete=spawnSync('python3',['-c','import pathlib,sys,zipfile; p=pathlib.Path(sys.argv[1]); z=zipfile.ZipFile("out/mubi-subtitle-translator-'+version+'.zip","w",zipfile.ZIP_DEFLATED); [z.write(f,pathlib.Path("mubi-subtitle-translator-'+version+'")/f.relative_to(p)) for f in sorted(p.rglob("*")) if f.is_file()]; z.close()',dest],{stdio:'inherit'});
 assert.equal(complete.status,0);

@@ -1,5 +1,8 @@
 {
   "extensionDescription": {
     "message": "Translate subtitles ahead and watch in sync. Tested with MUBI."
+  },
+  "extensionName": {
+    "message": "Subtitle Translator for MUBI"
   }
 }

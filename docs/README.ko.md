@@ -1,4 +1,4 @@
-# CueBraid
+# Subtitle Translator for MUBI
 
 [English](../README.md) · 한국어 · [日本語](README.ja.md)
 
@@ -6,18 +6,19 @@
 **실제 검증 대상은 Windows Chrome의 MUBI**입니다. MUBI 공식 제품·제휴 제품은 아닙니다.
 다른 사이트와 Edge는 실험적 대상으로, 작동을 보장하지 않습니다.
 
-## 처음 설치
+## 브라우저 전용 설치 (0.2.1 미리보기)
 
-1. GitHub Release의 전체 배포 ZIP(`cuebraid-VERSION.zip`)을 고정 폴더에 풉니다.
-2. `chrome://extensions` 또는 `edge://extensions`에서 개발자 모드를 켜고 `extension/`을 로드합니다.
-3. 같은 PC에 Python 3.10 이상과 [Codex CLI](https://learn.chatgpt.com/docs/codex/cli)를 설치합니다.
-4. 압축을 푼 폴더에서 `python native/setup.py --browser chrome --login`을 실행합니다.
-   확장 관리 화면에 표시된 ID를 붙여넣고 공식 Codex 화면에서 ChatGPT 계정으로 로그인합니다.
-5. CueBraid 설정에서 목표 언어와 계정에서 사용할 수 있는 모델을 선택하고 도우미 연결을 확인합니다.
-6. MUBI 원문 자막을 켜고 확장 팝업에서 자막 처리에 동의한 뒤 사이트 사용을 시작합니다. 페이지를 새로고침합니다.
+Python이나 Codex CLI 설치 없이 확장에서 공식 OAuth로 연결할 수 있습니다.
 
-기본 앱 언어는 영어입니다. Settings → App language에서 한국어·일본어를 선택할 수 있습니다.
-앱 표시 언어와 번역 결과 언어는 별개입니다. 확장만 설치하면 번역이 되지는 않으며 로컬 도우미가 필요합니다.
+1. 배포 ZIP을 고정 폴더에 풀고 확장 관리 화면의 개발자 모드에서 `extension/`을 로드합니다.
+2. 팝업 → 연결 탭에서 **Continue with ChatGPT**를 눌러 공식 로그인과 구독 사용 허용을 진행합니다.
+3. 사용할 모델을 선택하고 확인합니다. 설정에서 번역 목표 언어를 정합니다.
+4. MUBI 원문 자막을 켜고 자막 처리에 동의한 뒤 사이트에서 시작합니다. 영상 페이지를 새로고침합니다.
+5. **연결 탭은 열어 두어야 합니다.** 토큰은 이 탭 메모리에만 보관하며 닫으면 다시 로그인해야 합니다.
+
+실제 계정 로그인·모델 조회·시험 번역과 MUBI 재생/싱크를 사용자와 함께 확인했습니다.
+긴 세션 갱신, 다른 OS와 Edge 재생은 아직 추가 검증 대상입니다.
+앱 언어는 기본 영어이며 Settings → App language에서 한국어·일본어를 선택합니다.
 
 ## GPT 외의 모델
 

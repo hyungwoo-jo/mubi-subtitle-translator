@@ -6,13 +6,13 @@ GitHub distribution does not require that registration. Do not describe this as 
 
 ## Listing
 
-Name: CueBraid — Subtitle Translator
+Name: Subtitle Translator for MUBI — Subtitle Translator
 
 Summary: Translate subtitles ahead and watch in sync. Independent extension tested with MUBI.
 
 Description:
 
-CueBraid translates existing subtitles before they appear, caches the results, and displays them at the original cue times.
+Subtitle Translator for MUBI translates existing subtitles before they appear, caches the results, and displays them at the original cue times.
 Tested with MUBI on Windows Chrome. This is an independent project, not affiliated with or endorsed by MUBI.
 Other streaming sites are experimental. English, Korean and Japanese app interfaces are included.
 
@@ -23,10 +23,10 @@ Use only where service terms and content rights permit automated access and tran
 
 ## Files and declarations
 
-Upload `out/cuebraid-webstore-VERSION.zip` only; the extension manifest must be at the ZIP root.
+Upload `out/mubi-subtitle-translator-webstore-VERSION.zip` only; the extension manifest must be at the ZIP root.
 Native helper files are installed separately from the complete GitHub release ZIP.
-Privacy URL: https://github.com/hyungwoo-jo/cuebraid/blob/main/docs/PRIVACY.md
-Support URL: https://github.com/hyungwoo-jo/cuebraid/issues
+Privacy URL: https://github.com/hyungwoo-jo/mubi-subtitle-translator/blob/main/docs/PRIVACY.md
+Support URL: https://github.com/hyungwoo-jo/mubi-subtitle-translator/issues
 
 Single purpose: translate existing video subtitles and display them in sync with playback.
 Permissions: storage for preferences/cache; scripting and activeTab for enabled pages; nativeMessaging for the local helper.
@@ -45,3 +45,9 @@ Sources checked 25 October 2026:
 - https://developer.chrome.com/docs/webstore/program-policies/policies
 - https://developer.chrome.com/docs/webstore/program-policies/user-data-faq
 - https://mubi.com/en/terms_of_service
+
+
+The 0.2.0 development branch adds experimental browser-only ChatGPT OAuth. Before any new store submission,
+recheck the live sign-in/callback behavior, update disclosures for basic account metadata and in-memory OAuth tokens,
+and explain the webNavigation permission: its listener is filtered to the expected 127.0.0.1 OAuth callback and validates the auth tab and state.
+OpenAI host permissions are requested when the user starts sign-in. Do not advertise live OAuth success before testing it.

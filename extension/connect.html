@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title>Subtitle Translator for MUBI · ChatGPT connection</title>
+<main><header class="brand"><img src="icons/logo.svg" width="44" height="44" alt=""><div><h1>Subtitle Translator for MUBI connection</h1><span class="muted">Browser-only OAuth experiment</span></div></header>
+<p>Connect your ChatGPT plan without Python, Codex CLI, or a local helper.</p>
+<section class="playback-card"><strong id="connection">Not connected</strong><p id="progress" role="status">Keep this tab open while watching. Credentials stay in this page's memory and are never written to browser storage.</p></section>
+<label>ChatGPT account<select id="accounts"><option value="">Add a ChatGPT account</option></select></label>
+<button class="primary" id="signin">Continue with ChatGPT</button><button id="signout">Sign out</button>
+<label>Available model<select id="models"><option value="">Sign in to load available models</option></select></label>
+<section id="welcome" hidden><h2>You’re using your ChatGPT plan</h2><p>Eligible requests use your ChatGPT plan or credits. You can manage this app’s allowance in ChatGPT settings.</p><button class="primary" id="confirm">Got it · Use this model</button></section>
+<button id="test" disabled>Translate a test sentence</button><p id="sample" role="status"></p>
+<p><a href="https://chatgpt.com/#settings/Usage" target="_blank" rel="noreferrer">Manage ChatGPT usage</a> · <a href="privacy.html" target="_blank">Privacy policy</a></p>
+<p class="muted">Experimental: this page listens only for the sign-in window’s expected loopback callback. Official sign-in, model lookup and inference have been verified with one real account. Long-session renewal and other browsers need wider testing. Closing this tab drops the local credentials; use Sign out to request remote revocation first.</p></main><script src="core.js"></script><script src="oauth-core.js"></script><script src="connect.js"></script></html>

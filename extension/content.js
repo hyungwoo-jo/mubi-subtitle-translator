@@ -10,7 +10,7 @@
   let settings={language:'English',showOriginal:false,fontSize:24,offset:0};
   let domText='', domStart=0, pickedSelector='', manualTrack=false, domSource='none';
   let domChangedAt=0;
-  let diagnosticSent=false, ticks=0, controlsOpen=false;
+  let diagnosticSent=false, ticks=0, controlsOpen=false, pollTimer=null;
   let timedDiagnosticSent=false;
   let captureState={};
   function diagnosticSnapshot(){
@@ -38,7 +38,7 @@
       walk(parent,0);
     }
     return {hostname:location.hostname,version:chrome.runtime.getManifest().version,
-      state:{enabled,mode:selected.split(':')[0],domSource,pickedSelector,timedTracks:tracks.size,domTextLength:domText.length,translatedTexts:translations.size,busy,controlsOpen,bufferSeconds:bufferSeconds(),selectedCues:currentCues().length},
+      state:{enabled,mode:selected.split(':')[0],domSource,pickedSelector,timedTracks:tracks.size,domTextLength:domText.length,translatedTexts:translations.size,busy,controlsOpen,bufferSeconds:bufferSeconds(),selectedCues:currentCues().length,overlayInstances:document.querySelectorAll('[id="hw-subtitle-overlay"]').length,activeCues:video?C.active(currentCues(),video.currentTime-Number(settings.offset||0)).length:0,uniqueActiveTranslations:video?new Set(C.active(currentCues(),video.currentTime-Number(settings.offset||0)).map(c=>translations.get(c.text)).filter(Boolean)).size:0},
       capture:captureState,
       videos:videos.slice(0,5).map(v=>({rect:rect(v),paused:v.paused,currentTime:v.currentTime,
         textTracks:[...v.textTracks].map(t=>({kind:t.kind,language:t.language,mode:t.mode,cues:t.cues?.length||0,activeCues:t.activeCues?.length||0}))})),
@@ -46,7 +46,10 @@
   }
   globalThis.__hwSubsDiagnostics=diagnosticSnapshot;
   const host=document.createElement('div');
-  host.id='hw-subtitle-overlay';
+  host.id='hw-subtitle-overlay';host.hidden=true;
+  // Extension reloads can leave an orphan overlay in the live page.
+  for(const previous of document.querySelectorAll('[id="hw-subtitle-overlay"]'))previous.remove();
+  document.documentElement?.append(host);
   const shadow=host.attachShadow({mode:'open'});
   const style=document.createElement('style');
   style.textContent=`:host{all:initial;position:fixed;z-index:2147483647;left:8%;right:8%;bottom:18%;pointer-events:none;text-align:center;font-family:Arial,sans-serif;color:white}:host([hidden]){display:none!important}
@@ -104,9 +107,12 @@
     setTimeout(()=>{document.addEventListener('click',choose,true);document.addEventListener('keydown',cancel,true);},0);
   };
   function mount(){
+    const owner=document.getElementById(host.id);
+    if(owner&&owner!==host){enabled=false;if(pollTimer)clearInterval(pollTimer);return false;}
     const parent=document.fullscreenElement || document.documentElement;
     if(parent && host.parentNode!==parent) parent.append(host);
     host.style.fontSize=`${settings.fontSize||24}px`;
+    return true;
   }
   function refreshChoices(){
     const previous=selected;
@@ -257,16 +263,18 @@
     host.style.left=Math.max(0,v.left+v.width*.05)+'px';
     host.style.right=Math.max(0,innerWidth-v.right+v.width*.05)+'px';
   }
+  const displayKey=text=>String(text||'').normalize('NFKC').replace(/\s+/g,' ').trim();
   function render(){
     if(!enabled) return;
-    mount();
+    if(!mount())return;
     if(!video){host.hidden=true;return;}
     const position=video.currentTime-Number(settings.offset||0);
     const cues=currentCues();
     const now=C.active(cues,position);
     const nativeVisible=!!domText;
-    original.textContent=settings.showOriginal&&!nativeVisible?now.map(c=>c.text).join('\n'):'';
-    translation.textContent=now.map(c=>translations.get(c.text)||'').filter(Boolean).join('\n');
+    original.textContent=settings.showOriginal&&!nativeVisible?[...new Set(now.map(c=>c.text))].join('\n'):'';
+    translation.textContent=[...new Set(now.map(c=>translations.get(c.text)||'').filter(Boolean))].join('\n');
+    if(nativeVisible&&displayKey(translation.textContent)===displayKey(domText))translation.textContent='';
     // Results for a departed DOM cue are cached, never displayed over the next line.
     tools.hidden=!controlsOpen;status.hidden=!controlsOpen;
     host.hidden=!controlsOpen&&!translation.textContent;
@@ -281,6 +289,7 @@
     if(changes.settings){settings={...settings,...changes.settings.newValue};translations.clear();epoch++;retryAt=0;}
   });
   chrome.runtime.onMessage.addListener((message,_sender,respond)=> {
+    if(document.getElementById(host.id)!==host)return;
     if(message.type==='status') respond({tracks:tracks.size,active:enabled,video:!!video,mode:selected==='dom'?'화면 자막':'시간표',bufferSeconds:bufferSeconds(),busy,detail:status.textContent,cues:currentCues().length,translated:translations.size});
     if(message.type==='controls'){controlsOpen=message.open!==false;render();if(message.pick)pick.click();respond({ok:true});}
     if(message.type==='toggle') {
@@ -293,7 +302,7 @@
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&controlsOpen){controlsOpen=false;render();}});
   detectVideo();refreshChoices();
   CueI18N.ready.then(()=>{close.textContent=t('hide');pick.textContent=t('pick');select.setAttribute('aria-label',t('track'));refreshChoices();});
-  setInterval(()=> {
+  pollTimer=setInterval(()=> {
     if(!enabled) return;
     if(lastPage!==location.href){lastPage=location.href;tracks.clear();selected='';domText='';manualTrack=false;epoch++;refreshChoices();}
     detectVideo();scanTracks();readDom();render();

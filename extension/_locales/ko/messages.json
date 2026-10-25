@@ -1,5 +1,8 @@
 {
   "extensionDescription": {
     "message": "자막을 미리 번역하고 영상에 맞춰 표시합니다. MUBI에서 테스트했습니다."
+  },
+  "extensionName": {
+    "message": "MUBI 자막 번역"
   }
 }

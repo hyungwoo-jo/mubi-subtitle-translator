@@ -1,11 +1,12 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title>CueBraid</title>
-<main><header class="brand"><img src="icons/logo.svg" width="42" height="42" alt=""><div><h1>CueBraid</h1><span id="version" class="muted"></span></div></header>
+<!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title>Subtitle Translator for MUBI</title>
+<main><header class="brand"><img src="icons/logo.svg" width="42" height="42" alt=""><div><h1 data-i18n="appName">Subtitle Translator for MUBI</h1><span id="version" class="muted"></span></div></header>
 <p data-i18n="tagline">Translate ahead. Watch in sync.</p>
 <p class="scope-note" data-i18n="scopeNote">Independent subtitle translator · Tested with MUBI</p>
 <section class="playback-card" aria-label="Subtitle preparation"><strong id="playback" role="status">Checking video…</strong><p id="timeline" class="muted"></p><p id="buffer-note" class="muted"></p></section>
 <label id="consent-row" class="consent"><input type="checkbox" id="consent"><span data-i18n="consent">I agree to send subtitle text and context to my selected translation provider.</span></label>
+<button id="connect">Continue with ChatGPT</button>
 <button class="primary" id="enable" data-i18n="start">Start on this site</button><button id="stop" data-i18n="stop">Disable on this site</button>
 <button id="settings" data-i18n="settings">Language & translation</button><button id="controls" data-i18n="controls">Adjust subtitles</button>
 <p id="status" role="status"></p>
 <details><summary data-i18n="advanced">Usage & troubleshooting</summary><p id="usage" class="muted"></p><button id="pick" data-i18n="pick">Pick subtitle area</button><button id="diagnostic" data-i18n="diagnostic">Save diagnostics</button><p class="muted" data-i18n="diagnosticHint">Diagnostics stay on this PC and exclude dialogue text.</p></details>
-<p class="muted" data-i18n="startHint">Turn on the original subtitles. Initial preparation takes a moment; translation continues while paused.</p><a href="privacy.html" target="_blank" data-i18n="privacy">Privacy policy</a></main><script src="i18n.js"></script><script src="popup.js"></script></html>
+<p class="muted" data-i18n="startHint">Turn on the original subtitles. Initial preparation takes a moment; translation continues while paused.</p><a href="privacy.html" target="_blank" data-i18n="privacy">Privacy policy</a></main><script src="i18n.js"></script><script src="connection-tab.js"></script><script src="popup.js"></script></html>

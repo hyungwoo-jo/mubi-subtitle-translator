@@ -14,8 +14,12 @@ document.querySelector('#diagnostic').onclick=async()=>{
     const frames=await chrome.scripting.executeScript({target:{tabId:tab.id,allFrames:true},func:()=>typeof globalThis.__hwSubsDiagnostics==='function'?globalThis.__hwSubsDiagnostics():null});
     const reports=frames.filter(f=>f.result).slice(0,12).map(f=>({frameId:f.frameId,snapshot:f.result}));
     if(!reports.length){status.textContent=t('clickStart');return;}
-    const result=await chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{action:'diagnostic',reports});
-    status.textContent=result?.ok?t('diagSaved'):t('diagFailed');
+    const record={savedAt:new Date().toISOString(),reports};
+    await chrome.storage.local.set({lastDiagnostics:record});
+    const url=URL.createObjectURL(new Blob([JSON.stringify(record,null,2)],{type:'application/json'}));
+    const link=document.createElement('a');link.href=url;link.download='mubi-subtitle-diagnostics.json';link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    status.textContent=t('diagSaved');
   }catch{status.textContent=t('diagFailed');}
 };
 document.querySelector('#enable').onclick=async()=> {
@@ -72,3 +76,5 @@ async function refreshUsage(){
 }
 chrome.storage.local.get('dataConsent').then(({dataConsent})=>{document.querySelector('#consent').checked=dataConsent===true;});
 CueI18N.ready.then(()=>{CueI18N.apply();refreshPlayback();refreshUsage();});
+
+document.querySelector('#connect').onclick=()=>CueConnection.open();

@@ -1,5 +1,5 @@
 importScripts('core.js');
-const DEFAULTS={language:'English',provider:'codex',model:'gpt-6-luna',glossary:'',showOriginal:false,fontSize:24,offset:0};
+const DEFAULTS={language:'English',provider:'chatgpt',model:'gpt-6-luna',glossary:'',showOriginal:false,fontSize:24,offset:0};
 let queue=Promise.resolve();
 async function digest(value) {
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(value)));
@@ -18,10 +18,12 @@ async function translate(message) {
   const missing=texts.map((text,index)=>({text,index})).filter(row=>!cached[keys[row.index]]);
   let response=null,translated=[];
   if(missing.length){
-    response=await chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{
-      action:'translate',provider:cfg.provider,model:cfg.model,language:cfg.language,glossary:cfg.glossary,
-      context,items:missing.map((row,id)=>({id,text:row.text}))
-    });
+    const request={provider:cfg.provider,model:cfg.model,language:cfg.language,glossary:cfg.glossary,
+      context,items:missing.map((row,id)=>({id,text:row.text}))};
+    if(cfg.provider==='chatgpt'){
+      try{response=await chrome.runtime.sendMessage({type:'chatgpt.translate',...request});}
+      catch{throw new Error('Open the ChatGPT connection tab and sign in first.');}
+    }else response=await chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{action:'translate',...request});
     if(!response?.ok)throw new Error(response?.error||'The translation helper did not respond.');
     translated=HWSubs.validateTranslations(response.items,missing);
     const updates={};
@@ -46,14 +48,14 @@ chrome.runtime.onMessage.addListener((message,sender,respond)=> {
       const hostname=new URL(sender.url).hostname;
       if(hostname!=='mubi.com'&&!hostname.endsWith('.mubi.com')) return;
     }catch{return;}
-    chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{action:'diagnostic',reports:[{frameId:sender.frameId||0,snapshot:message.snapshot}]})
-      .then(result=>respond(result),()=>respond({ok:false}));
+    const record={savedAt:new Date().toISOString(),reports:[{frameId:sender.frameId||0,snapshot:message.snapshot}]};
+    chrome.storage.local.set({lastDiagnostics:record}).then(()=>respond({ok:true}),()=>respond({ok:false}));
     return true;
   }
   if(message.type==='translate') {
     const task=queue.then(()=>translate(message));
     queue=task.catch(()=>{});
-    task.then(result=>respond({ok:true,...result}),()=>respond({ok:false,error:'Translation failed. Check the helper, selected provider, sign-in and model in Settings.'}));
+    task.then(result=>respond({ok:true,...result}),error=>respond({ok:false,error:error.message||'Translation failed. Check the selected provider and model in Settings.'}));
     return true;
   }
 });

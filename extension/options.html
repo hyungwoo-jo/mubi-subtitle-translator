@@ -1,9 +1,10 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title>CueBraid settings</title>
-<main><header class="brand"><img src="icons/logo.svg" width="42" height="42" alt=""><h1 data-i18n="settingsTitle">CueBraid settings</h1></header>
+<!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title>Subtitle Translator for MUBI settings</title>
+<main><header class="brand"><img src="icons/logo.svg" width="42" height="42" alt=""><h1 data-i18n="settingsTitle">Subtitle Translator for MUBI settings</h1></header>
+<button class="primary" type="button" id="connect">Continue with ChatGPT</button><p class="muted">Browser-only experiment: keep the connection tab open while watching. No Python or Codex CLI is needed for this mode.</p>
 <p data-i18n="sourceAuto">The source language is detected from the subtitles.</p>
 <form id="form">
 <label><span data-i18n="uiLanguage">App language</span><select id="uiLanguage"><option value="en">English</option><option value="ko">한국어</option><option value="ja">日本語</option></select></label>
-<label><span data-i18n="provider">Translation provider</span><select id="provider"><option value="codex">Codex · ChatGPT account</option><option value="ollama">Ollama · this PC</option></select></label>
+<label><span data-i18n="provider">Translation provider</span><select id="provider"><option value="chatgpt">ChatGPT · browser OAuth (experimental)</option><option value="codex">Codex · ChatGPT account</option><option value="ollama">Ollama · this PC</option></select></label>
 <p class="muted" data-i18n="providerHint">Codex uses your ChatGPT sign-in. Ollama connects to this PC at localhost:11434; install and choose a model first.</p>
 <label><span data-i18n="target">Translate into</span><input id="language" value="English" maxlength="60" required list="languages"><datalist id="languages"><option>English</option><option>한국어</option><option>日本語</option><option>Español</option><option>Français</option><option>Deutsch</option><option>中文</option><option>Português</option><option>Türkçe</option><option>العربية</option></datalist></label>
 <label><span data-i18n="model">Model</span><input id="model" value="gpt-6-luna" maxlength="120" required></label>
@@ -13,4 +14,4 @@
 <label><span data-i18n="offset">Timing offset (seconds)</span><input id="offset" type="number" min="-30" max="30" step="0.1" value="0" required></label>
 <button class="primary" type="submit" data-i18n="save">Save settings</button><button type="button" id="test" data-i18n="test">Check helper connection</button><button type="button" id="clear" data-i18n="clear">Clear translation cache</button></form>
 <p id="status" role="status"></p><p>Extension ID: <code id="extension-id"></code></p>
-<p class="muted" data-i18n="helperHint">Install the local helper before translating. Connection checks do not translate. Provider charges or account limits may apply.</p><a href="privacy.html" target="_blank" data-i18n="privacy">Privacy policy</a></main><script src="i18n.js"></script><script src="connection.js"></script><script src="options.js"></script></html>
+<p class="muted" data-i18n="helperHint">Install the local helper before translating. Connection checks do not translate. Provider charges or account limits may apply.</p><a href="privacy.html" target="_blank" data-i18n="privacy">Privacy policy</a></main><script src="i18n.js"></script><script src="connection.js"></script><script src="connection-tab.js"></script><script src="options.js"></script></html>

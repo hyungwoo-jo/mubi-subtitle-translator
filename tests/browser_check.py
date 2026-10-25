@@ -33,7 +33,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         worker = context.service_workers[0] if context.service_workers else context.wait_for_event("serviceworker")
         extension_id = worker.url.split('/')[2]
         worker.evaluate("""() => {
-            chrome.storage.local.set({uiLanguage:'ko',dataConsent:true});
+            chrome.storage.local.set({uiLanguage:'ko',dataConsent:true,settings:{provider:'codex'}});
             globalThis.translationCalls=0;
             chrome.runtime.sendNativeMessage=async (_name, message)=> {
                 globalThis.translationCalls++;
@@ -76,7 +76,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         page.wait_for_timeout(500)
         assert '번역: Hello world' in visible_text()
         assert worker.evaluate('translationCalls') == 1
-        worker.evaluate("chrome.storage.local.set({settings:{language:'日本語',model:'gpt-6-luna'}})")
+        worker.evaluate("chrome.storage.local.set({settings:{language:'日本語',model:'gpt-6-luna',provider:'codex'}})")
         page.wait_for_timeout(900)
         assert worker.evaluate('translationCalls') == 2
         # Real DOMParser verifies TTML namespaces, ticks, line breaks and timing.
@@ -91,6 +91,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         options.goto(f"chrome-extension://{extension_id}/options.html")
         assert options.locator('#model').input_value() == 'gpt-6-luna'
         assert options.locator('#extension-id').inner_text() == extension_id
+        options.locator('#provider').select_option('codex')
         options.locator('#test').click()
         options.wait_for_function("document.querySelector('#status').textContent.includes('진단:')")
         assert '진단:' in options.locator('#status').inner_text()
@@ -275,10 +276,32 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         assert worker.evaluate('requestedTexts.length')==before
         popup=context.new_page()
         popup.goto(f"chrome-extension://{extension_id}/popup.html")
-        assert popup.locator('h1').inner_text()=='CueBraid'
+        assert 'MUBI' in popup.locator('h1').inner_text()
         assert not popup.locator('details').evaluate('(e)=>e.open')
         popup.wait_for_function("document.querySelector('.brand img').naturalWidth>0")
         assert not popup.locator('#usage').is_visible()
+        # Re-injection after an extension reload replaces the old overlay and disables its renderer.
+        worker.evaluate("""async(tabId)=>{
+            await chrome.scripting.executeScript({target:{tabId},func:()=>{globalThis.__hwSubsContent=false;}});
+            await chrome.scripting.executeScript({target:{tabId},files:['content.js']});
+        }""",binary_id)
+        binary.wait_for_timeout(500)
+        assert binary.locator('[id="hw-subtitle-overlay"]').count()==1
+        # Two overlapping cues with the same dialogue must produce only one translated line.
+        binary.evaluate("""()=>{
+            const t=document.querySelector('video').addTextTrack('subtitles','Repeated source','en');
+            t.mode='showing';t.addCue(new VTTCue(0,8,'Repeated overlap'));t.addCue(new VTTCue(.1,9,'Repeated overlap'));
+        }""")
+        binary.wait_for_timeout(1000)
+        overlay=binary.locator('#hw-subtitle-overlay').locator('.translation')
+        assert overlay.inner_text()=='번역: Repeated overlap',overlay.inner_text()
+        binary.evaluate("""()=>{const native=document.createElement('div');native.className='ytp-caption-segment';native.textContent='번역: Repeated overlap';document.body.append(native);}""")
+        binary.wait_for_timeout(400)
+        assert binary.locator('#hw-subtitle-overlay').evaluate('(e)=>e.hidden')
+        binary.locator('.ytp-caption-segment').evaluate('(e)=>e.remove()')
+        binary.wait_for_timeout(300)
+        assert overlay.inner_text()=='번역: Repeated overlap' 
+        assert binary.locator('[id="hw-subtitle-overlay"]').count()==1
         options.locator('#uiLanguage').select_option('en')
         popup.wait_for_function("document.querySelector('#enable').textContent==='Start on this site'")
         options.locator('#uiLanguage').select_option('ja')

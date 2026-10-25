@@ -36,10 +36,10 @@
     "usageEmpty": "Token usage will be measured from your next translation.",
     "usage": "{calls} successful requests · Input {input} (cached {cached}) · Output {output} tokens · Last batch {batch} cues / {duration}s",
     "measured": "Measured successful requests only. Excludes failed or interrupted requests.",
-    "settingsTitle": "CueBraid settings",
+    "settingsTitle": "Subtitle Translator for MUBI settings",
     "uiLanguage": "App language",
     "provider": "Translation provider",
-    "providerHint": "Codex uses your ChatGPT sign-in. Ollama connects to this PC at localhost:11434; install and choose a model first.",
+    "providerHint": "ChatGPT OAuth runs in the browser without a helper (experimental). Codex CLI and Ollama are optional advanced providers.",
     "sourceAuto": "The source language is detected from the subtitles.",
     "target": "Translate into",
     "model": "Model",
@@ -55,7 +55,7 @@
     "helperOk": "Helper {version} is available. Account/model access is checked on the first translation.",
     "helperMissing": "The helper is running, but the selected provider is unavailable.",
     "cacheCleared": "Saved translations cleared. Reload the video page to clear its memory cache.",
-    "helperHint": "Install the local helper before translating. Connection checks do not translate. Provider charges or account limits may apply.",
+    "helperHint": "ChatGPT browser mode uses official sign-in without a local helper. Codex CLI and Ollama modes require the helper. Provider limits or charges may apply.",
     "track": "Source subtitle track",
     "visible": "Read visible subtitles",
     "hide": "Hide",
@@ -76,7 +76,8 @@
     "bridgeLaunch": "Could not launch the registered helper. Check its installation path.",
     "bridgeExited": "The helper exited before replying or communication failed.",
     "diagPrefix": "Diagnostic: ",
-    "scopeNote": "Independent subtitle translator · Tested with MUBI"
+    "scopeNote": "Independent subtitle translator · Tested with MUBI",
+    "appName": "Subtitle Translator for MUBI"
   },
   "ko": {
     "tagline": "미리 번역하고, 대사에 맞춰 보여줍니다.",
@@ -112,10 +113,10 @@
     "usageEmpty": "다음 번역부터 토큰 사용량을 측정합니다.",
     "usage": "성공 번역 {calls}회 · 입력 {input}(캐시 {cached}) · 출력 {output}토큰 · 최근 {batch}개/{duration}초",
     "measured": "계측된 성공 요청 기준입니다. 실패·중단 요청은 제외됩니다.",
-    "settingsTitle": "CueBraid 설정",
+    "settingsTitle": "MUBI 자막 번역 설정",
     "uiLanguage": "앱 표시 언어",
     "provider": "번역 제공자",
-    "providerHint": "Codex는 ChatGPT 로그인을 사용합니다. Ollama는 이 PC의 localhost:11434에 연결합니다. 사용할 모델을 먼저 설치하세요.",
+    "providerHint": "ChatGPT OAuth는 도우미 없이 브라우저에서 연결합니다(실험 중). Codex CLI와 Ollama는 선택 가능한 고급 연결입니다.",
     "sourceAuto": "원문 언어는 자막 내용에서 자동 판단합니다.",
     "target": "번역 결과 언어",
     "model": "모델",
@@ -131,7 +132,7 @@
     "helperOk": "도우미 {version}을 찾았습니다. 계정·모델 접근은 첫 번역에서 확인합니다.",
     "helperMissing": "도우미는 실행됐지만 선택한 제공자를 찾지 못했습니다.",
     "cacheCleared": "저장된 번역을 비웠습니다. 영상 페이지도 새로고침하면 메모리 캐시가 비워집니다.",
-    "helperHint": "번역 전에 로컬 도우미를 설치하세요. 연결 확인은 번역하지 않습니다. 제공자 비용·계정 한도가 적용될 수 있습니다.",
+    "helperHint": "ChatGPT 브라우저 모드는 로컬 도우미 없이 공식 로그인으로 연결합니다. Codex CLI·Ollama 모드는 도우미가 필요합니다. 제공자 한도·비용이 적용될 수 있습니다.",
     "track": "원문 자막 트랙",
     "visible": "화면에 표시된 자막 읽기",
     "hide": "숨기기",
@@ -152,7 +153,8 @@
     "bridgeLaunch": "등록된 도우미를 실행하지 못했습니다. 설치 경로를 확인하세요.",
     "bridgeExited": "응답 전에 도우미가 종료됐거나 통신에 실패했습니다.",
     "diagPrefix": "진단: ",
-    "scopeNote": "독립 자막 번역 도구 · MUBI에서 테스트"
+    "scopeNote": "독립 자막 번역 도구 · MUBI에서 테스트",
+    "appName": "MUBI 자막 번역"
   },
   "ja": {
     "tagline": "先に翻訳し、映像に合わせて表示。",
@@ -188,10 +190,10 @@
     "usageEmpty": "次の翻訳からトークン使用量を計測します。",
     "usage": "成功{calls}回 · 入力{input}（キャッシュ{cached}）· 出力{output}トークン · 前回{batch}件/{duration}秒",
     "measured": "計測できた成功リクエストのみ。失敗・中断は含みません。",
-    "settingsTitle": "CueBraid 設定",
+    "settingsTitle": "MUBI 字幕翻訳 設定",
     "uiLanguage": "アプリの表示言語",
     "provider": "翻訳プロバイダー",
-    "providerHint": "CodexはChatGPTログインを使います。OllamaはこのPCのlocalhost:11434に接続します。先にモデルをインストールしてください。",
+    "providerHint": "ChatGPT OAuthはヘルパーなしでブラウザーから接続します（実験中）。Codex CLIとOllamaは任意の高度な接続です。",
     "sourceAuto": "元の言語は字幕から自動判定します。",
     "target": "翻訳先言語",
     "model": "モデル",
@@ -207,7 +209,7 @@
     "helperOk": "ヘルパー{version}を確認しました。アカウント・モデルへのアクセスは最初の翻訳で確認します。",
     "helperMissing": "ヘルパーは動作していますが、選択したプロバイダーを確認できません。",
     "cacheCleared": "保存済み翻訳を消去しました。動画ページを再読み込みするとメモリキャッシュも消去されます。",
-    "helperHint": "翻訳前にローカルヘルパーをインストールしてください。接続確認では翻訳しません。料金・利用上限が適用される場合があります。",
+    "helperHint": "ChatGPTブラウザーモードはヘルパーなしで公式ログインを使います。Codex CLI・Ollamaモードはヘルパーが必要です。利用上限・料金が適用される場合があります。",
     "track": "元字幕トラック",
     "visible": "表示中の字幕を読み取る",
     "hide": "非表示",
@@ -228,7 +230,8 @@
     "bridgeLaunch": "登録済みヘルパーを起動できません。インストール先を確認してください。",
     "bridgeExited": "応答前にヘルパーが終了したか、通信に失敗しました。",
     "diagPrefix": "診断: ",
-    "scopeNote": "独立した字幕翻訳ツール · MUBIでテスト済み"
+    "scopeNote": "独立した字幕翻訳ツール · MUBIでテスト済み",
+    "appName": "MUBI 字幕翻訳"
   }
 };
   let language='en';
