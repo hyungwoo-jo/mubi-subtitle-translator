@@ -1,12 +1,12 @@
 # Chrome Web Store submission draft
 
-Status: NOT SUBMITTED. The owner has not registered a Chrome Web Store developer account.
+Status: NOT SUBMITTED. Publisher registration and review are still required.
 A developer account, one-time registration fee, dashboard declarations and Google review are still required.
 GitHub distribution does not require that registration. Do not describe this as an approved store extension.
 
 ## Listing
 
-Name: Subtitle Translator for MUBI — Subtitle Translator
+Name: Subtitle Translator for MUBI
 
 Summary: Translate subtitles ahead and watch in sync. Independent extension tested with MUBI.
 
@@ -16,8 +16,9 @@ Subtitle Translator for MUBI translates existing subtitles before they appear, c
 Tested with MUBI on Windows Chrome. This is an independent project, not affiliated with or endorsed by MUBI.
 Other streaming sites are experimental. English, Korean and Japanese app interfaces are included.
 
-A separate local helper and a translation provider are required. Codex CLI uses your own ChatGPT account;
-Ollama connects to a model running on your PC. The extension is free; provider fees and account limits may apply.
+The default mode connects directly through official ChatGPT OAuth, without Python or Codex CLI.
+Keep the pinned connection tab open while watching; OAuth credentials remain only in its memory.
+Optional legacy Codex CLI and Ollama modes use a separately installed local helper. The extension is free; provider fees and account limits may apply.
 Initial preparation and large seeks can take several seconds. It does not transcribe audio or download films.
 Use only where service terms and content rights permit automated access and translation.
 
@@ -29,7 +30,7 @@ Privacy URL: https://github.com/hyungwoo-jo/mubi-subtitle-translator/blob/main/d
 Support URL: https://github.com/hyungwoo-jo/mubi-subtitle-translator/issues
 
 Single purpose: translate existing video subtitles and display them in sync with playback.
-Permissions: storage for preferences/cache; scripting and activeTab for enabled pages; nativeMessaging for the local helper.
+Permissions: storage for preferences/cache; scripting and activeTab for enabled pages; nativeMessaging for optional legacy helpers, and webNavigation for the strictly filtered OAuth callback.
 Optional HTTP(S) site permission is requested only after a user action, for that site. All-site access is not granted on installation.
 Website content (subtitles and context) is processed and transferred to the selected provider after confirmation.
 Local storage and diagnostics must also be disclosed. Do not claim no user data is handled or that all translation stays on-device.
@@ -47,7 +48,7 @@ Sources checked 25 October 2026:
 - https://mubi.com/en/terms_of_service
 
 
-The 0.2.0 development branch adds experimental browser-only ChatGPT OAuth. Before any new store submission,
+The 0.2.1 preview includes browser-only ChatGPT OAuth, verified with a real account and MUBI playback. Before store submission,
 recheck the live sign-in/callback behavior, update disclosures for basic account metadata and in-memory OAuth tokens,
 and explain the webNavigation permission: its listener is filtered to the expected 127.0.0.1 OAuth callback and validates the auth tab and state.
-OpenAI host permissions are requested when the user starts sign-in. Do not advertise live OAuth success before testing it.
+OpenAI host permissions are requested when the user starts sign-in. Live sign-in and short playback were confirmed; long-session renewal and other browsers still need wider testing.

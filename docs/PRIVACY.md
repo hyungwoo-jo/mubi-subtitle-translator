@@ -5,7 +5,7 @@ Updated: 25 October 2026
 Subtitle Translator for MUBI is an independent subtitle translation extension. It is not affiliated with MUBI.
 
 On a site you enable, Subtitle Translator for MUBI reads subtitle text, timing and nearby dialogue. After your confirmation,
-subtitles and translation preferences are sent to the local helper. The Codex adapter sends them to OpenAI through your own Codex sign-in.
+browser-only ChatGPT mode sends subtitles and translation preferences directly to OpenAI. Optional legacy modes send them to the local helper. The Codex adapter sends them to OpenAI through your own Codex sign-in.
 The Ollama adapter sends them to 127.0.0.1:11434. On-device inference requires a local model;
 Ollama cloud models and your own configuration may forward data to another service.
 
@@ -21,9 +21,9 @@ Local helper diagnostic files remain on the PC until you remove them. Temporary 
 For questions, open an issue at https://github.com/hyungwoo-jo/mubi-subtitle-translator/issues.
 Do not include private dialogue, login credentials or signed media URLs in public issues.
 
-## Browser-only development prototype
+## Browser-only ChatGPT mode
 
-The experimental direct ChatGPT mode uses the official OAuth authorization flow. It requests identity and ChatGPT-plan permissions separately and validates the ID token and granted scopes.
+The direct ChatGPT mode uses the official OAuth authorization flow. It requests identity and ChatGPT-plan permissions separately and validates the ID token and granted scopes.
 Access, refresh and retained identity tokens exist only in the open extension connection tab's memory, never in browser storage or diagnostics.
 The browser stores basic account labels, the issued client ID and a nonidentifying host ID to support future sign-ins.
 Subtitle requests are sent directly to https://api.openai.com/v1/responses with the user's permission. There is no project relay server.

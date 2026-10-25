@@ -98,8 +98,8 @@ If a timeline is unavailable, Subtitle Translator for MUBI falls back to visible
 
 ## Privacy, permissions and cost
 
-Subtitles, nearby dialogue and translation preferences go to your selected provider through the local helper.
-With Codex selected, this means OpenAI; with Ollama selected, the local Ollama service processes the request.
+In browser-only ChatGPT mode, subtitles, nearby dialogue and translation preferences go directly to OpenAI using your authorized ChatGPT plan.
+Optional Codex CLI and Ollama modes use the local helper; Codex sends to OpenAI and Ollama connects to the local Ollama service.
 Translations are cached in browser local storage. Diagnostics remain on the PC and exclude dialogue text.
 No Subtitle Translator for MUBI-operated analytics, advertising or translation relay server is used.
 
