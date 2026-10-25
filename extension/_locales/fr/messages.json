@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "Traduisez à l’avance. Regardez en rythme."
+  },
+  "checking": {
+    "message": "Vérification de la vidéo…"
+  },
+  "start": {
+    "message": "Démarrer sur ce site"
+  },
+  "stop": {
+    "message": "Désactiver sur ce site"
+  },
+  "settings": {
+    "message": "Langue et traduction"
+  },
+  "controls": {
+    "message": "Ajuster les sous-titres"
+  },
+  "advanced": {
+    "message": "Utilisation et dépannage"
+  },
+  "pick": {
+    "message": "Choisir la zone des sous-titres"
+  },
+  "diagnostic": {
+    "message": "Enregistrer le diagnostic"
+  },
+  "diagnosticHint": {
+    "message": "Le diagnostic reste sur cet ordinateur et ne contient pas les dialogues."
+  },
+  "startHint": {
+    "message": "Activez les sous-titres originaux. La préparation initiale prend un instant et continue pendant la pause."
+  },
+  "consent": {
+    "message": "J’accepte d’envoyer les sous-titres et leur contexte au fournisseur de traduction sélectionné."
+  },
+  "consentNeeded": {
+    "message": "Acceptez d’abord l’avis sur le traitement des sous-titres."
+  },
+  "privacy": {
+    "message": "Politique de confidentialité"
+  },
+  "waiting": {
+    "message": "En attente des sous-titres vidéo"
+  },
+  "ready": {
+    "message": "{seconds} s traduites à l’avance"
+  },
+  "counts": {
+    "message": "{cues} sous-titres originaux chargés · {translated} traductions prêtes"
+  },
+  "window": {
+    "message": "Prépare les sous-titres nécessaires jusqu’à 5 minutes à l’avance."
+  },
+  "domMode": {
+    "message": "Traduction des sous-titres visibles"
+  },
+  "domHint": {
+    "message": "Aucune chronologie complète. Les sous-titres sont traduits après leur apparition."
+  },
+  "domDelay": {
+    "message": "Ce mode peut être retardé par le temps de réponse du modèle."
+  },
+  "clickStart": {
+    "message": "Choisissez « Démarrer sur ce site » pour commencer."
+  },
+  "websiteOnly": {
+    "message": "Ouvrez d’abord un site de vidéos."
+  },
+  "permission": {
+    "message": "Une autorisation d’accès au site est nécessaire."
+  },
+  "started": {
+    "message": "Démarré. Activez les sous-titres originaux et rechargez la page si nécessaire."
+  },
+  "startFailed": {
+    "message": "Impossible de démarrer. Vérifiez la page vidéo et les autorisations."
+  },
+  "stopped": {
+    "message": "La traduction des sous-titres est désactivée sur ce site."
+  },
+  "stopFailed": {
+    "message": "Impossible de modifier les réglages du site."
+  },
+  "diagSaved": {
+    "message": "Diagnostic enregistré sur cet ordinateur."
+  },
+  "diagFailed": {
+    "message": "Impossible d’enregistrer le diagnostic. Vérifiez les autorisations et la connexion."
+  },
+  "usageEmpty": {
+    "message": "Les jetons seront mesurés à partir de la prochaine traduction."
+  },
+  "usage": {
+    "message": "{calls} requêtes réussies · Entrée {input} (cache {cached}) · Sortie {output} jetons · Dernier lot : {batch} sous-titres / {duration} s"
+  },
+  "measured": {
+    "message": "Uniquement les requêtes réussies mesurées. Les échecs et interruptions sont exclus."
+  },
+  "settingsTitle": {
+    "message": "Réglages de Subtitle Translator for MUBI"
+  },
+  "uiLanguage": {
+    "message": "Langue de l’application"
+  },
+  "provider": {
+    "message": "Fournisseur de traduction"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuth fonctionne dans le navigateur sans assistant local. Codex CLI et Ollama sont des options avancées."
+  },
+  "sourceAuto": {
+    "message": "La langue d’origine est détectée à partir des sous-titres."
+  },
+  "target": {
+    "message": "Traduire en"
+  },
+  "model": {
+    "message": "Modèle"
+  },
+  "glossary": {
+    "message": "Terminologie et préférences de traduction"
+  },
+  "original": {
+    "message": "Afficher l’original lorsque le lecteur ne l’affiche pas"
+  },
+  "font": {
+    "message": "Taille des sous-titres"
+  },
+  "offset": {
+    "message": "Décalage temporel (secondes)"
+  },
+  "save": {
+    "message": "Enregistrer les réglages"
+  },
+  "test": {
+    "message": "Vérifier la connexion"
+  },
+  "clear": {
+    "message": "Vider le cache de traduction"
+  },
+  "saved": {
+    "message": "Réglages enregistrés."
+  },
+  "testing": {
+    "message": "Vérification de la connexion…"
+  },
+  "helperOk": {
+    "message": "Assistant {version} disponible. L’accès au compte et au modèle sera vérifié lors de la première traduction."
+  },
+  "helperMissing": {
+    "message": "L’assistant fonctionne, mais le fournisseur choisi n’est pas disponible."
+  },
+  "cacheCleared": {
+    "message": "Traductions enregistrées effacées. Rechargez la vidéo pour vider le cache en mémoire."
+  },
+  "helperHint": {
+    "message": "Le mode ChatGPT utilise la connexion officielle sans assistant local. Codex CLI et Ollama nécessitent l’assistant. Des frais ou limites peuvent s’appliquer."
+  },
+  "track": {
+    "message": "Piste des sous-titres originaux"
+  },
+  "visible": {
+    "message": "Lire les sous-titres visibles"
+  },
+  "hide": {
+    "message": "Masquer"
+  },
+  "pickHint": {
+    "message": "Cliquez sur le texte original. Échap pour annuler."
+  },
+  "pickCancel": {
+    "message": "Sélection des sous-titres annulée."
+  },
+  "pickInvalid": {
+    "message": "Aucun sous-titre trouvé ici. Cliquez directement sur le dialogue."
+  },
+  "pickFailed": {
+    "message": "Impossible d’enregistrer la zone des sous-titres."
+  },
+  "pickSaved": {
+    "message": "Zone sélectionnée. La langue d’origine est détectée automatiquement."
+  },
+  "received": {
+    "message": "Piste capturée {number} ({count} sous-titres)"
+  },
+  "nativeTrack": {
+    "message": "Piste vidéo {number}"
+  },
+  "translating": {
+    "message": "Traduction en {language}…"
+  },
+  "noHelper": {
+    "message": "Vérifiez la connexion de traduction."
+  },
+  "noTimeline": {
+    "message": "Pas de chronologie · En attente des sous-titres visibles"
+  },
+  "lagMode": {
+    "message": "Pas de chronologie · Traduction après affichage"
+  },
+  "bridgeGeneric": {
+    "message": "Impossible de se connecter à l’assistant."
+  },
+  "bridgeMissing": {
+    "message": "L’assistant n’est pas enregistré dans ce navigateur ou son chemin est incorrect."
+  },
+  "bridgeForbidden": {
+    "message": "L’identifiant de l’extension ne correspond pas à la liste autorisée de l’assistant."
+  },
+  "bridgeLaunch": {
+    "message": "Impossible de lancer l’assistant enregistré. Vérifiez son chemin d’installation."
+  },
+  "bridgeExited": {
+    "message": "L’assistant s’est arrêté avant de répondre ou la communication a échoué."
+  },
+  "diagPrefix": {
+    "message": "Diagnostic :"
+  },
+  "scopeNote": {
+    "message": "Traducteur indépendant · Testé avec MUBI"
+  },
+  "appName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionDescription": {
+    "message": "Traduit les sous-titres à l’avance et les affiche en synchronisation. Testé avec MUBI."
+  },
+  "oauthTitle": {
+    "message": "Connexion ChatGPT"
+  },
+  "oauthPreview": {
+    "message": "Connexion dans le navigateur · Aperçu"
+  },
+  "oauthIntro": {
+    "message": "Utilisez votre forfait ChatGPT sans Python, Codex CLI ni assistant local."
+  },
+  "oauthMemory": {
+    "message": "Gardez cet onglet ouvert pendant le visionnage. Les identifiants restent uniquement en mémoire. Le fermer efface la session locale ; utilisez Déconnexion pour révoquer l’accès."
+  },
+  "notConnected": {
+    "message": "Non connecté"
+  },
+  "account": {
+    "message": "Compte ChatGPT"
+  },
+  "addAccount": {
+    "message": "Ajouter un compte ChatGPT"
+  },
+  "signOut": {
+    "message": "Déconnexion"
+  },
+  "availableModel": {
+    "message": "Modèle disponible"
+  },
+  "signInModels": {
+    "message": "Connectez-vous pour charger les modèles"
+  },
+  "planTitle": {
+    "message": "Vous utilisez votre forfait ChatGPT"
+  },
+  "planHint": {
+    "message": "Les requêtes admissibles utilisent votre forfait ou vos crédits ChatGPT. Gérez le quota de l’application dans les paramètres ChatGPT."
+  },
+  "confirmPlan": {
+    "message": "Compris · Utiliser ce modèle"
+  },
+  "sampleTest": {
+    "message": "Traduire une phrase d’essai"
+  },
+  "manageUsage": {
+    "message": "Gérer l’utilisation de ChatGPT"
+  },
+  "chooseModel": {
+    "message": "Choisir un modèle"
+  },
+  "connectedAccount": {
+    "message": "Compte connecté"
+  },
+  "connectionReady": {
+    "message": "Connecté. Gardez cet onglet ouvert, activez les sous-titres MUBI et lancez la traduction."
+  },
+  "connectionValidating": {
+    "message": "Validation de la réponse de connexion…"
+  },
+  "connectionSignedIn": {
+    "message": "Connexion réussie. Choisissez un modèle et confirmez l’utilisation de votre forfait ChatGPT."
+  },
+  "connectionPrompt": {
+    "message": "Terminez la connexion officielle et autorisez le forfait dans la fenêtre de connexion."
+  },
+  "connectionClosed": {
+    "message": "La fenêtre de connexion a été fermée. Vous pouvez réessayer."
+  },
+  "sampleRunning": {
+    "message": "Traduction d’une phrase d’essai…"
+  },
+  "noSession": {
+    "message": "Aucune session active."
+  },
+  "loggedOut": {
+    "message": "Déconnecté. L’accès renouvelable a été révoqué."
+  },
+  "localLogout": {
+    "message": "Déconnexion locale effectuée. La révocation distante n’a pas été confirmée ; déconnectez l’application dans les paramètres ChatGPT si nécessaire."
+  },
+  "savedAccount": {
+    "message": "Compte ChatGPT enregistré"
+  },
+  "sampleCached": {
+    "message": "en cache"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · Connexion navigateur"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · Avancé"
+  },
+  "providerOllama": {
+    "message": "Ollama · Avancé"
+  },
+  "oauthStart": {
+    "message": "Choisissez Continue with ChatGPT pour vous connecter."
+  }
+}

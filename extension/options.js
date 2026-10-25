@@ -1,6 +1,7 @@
 const t=CueI18N.t;
 const fields=['provider','language','model','glossary','showOriginal','fontSize','offset'];
 const status=document.querySelector('#status');
+document.querySelector('#uiLanguage').replaceChildren(...CueI18N.locales.map(row=>new Option(row.label,row.id)));
 document.querySelector('#extension-id').textContent=chrome.runtime.id;
 chrome.storage.local.get(['settings','uiLanguage']).then(({settings={},uiLanguage='en'})=> {
   document.querySelector('#uiLanguage').value=uiLanguage;
@@ -25,7 +26,7 @@ document.querySelector('#test').onclick=async()=> {
     const provider=document.querySelector('#provider').value;
     if(provider==='chatgpt'){
       const result=await chrome.runtime.sendMessage({type:'chatgpt.status'}).catch(()=>null);
-      status.textContent=result?.connected?'ChatGPT connected · '+result.account:'Open Continue with ChatGPT to connect. Keep the connection tab open.';return;
+      status.textContent=result?.connected?'ChatGPT · '+result.account:t('oauthMemory');return;
     }
     const result=await chrome.runtime.sendNativeMessage('com.hw.subtitle_translator',{action:'health',provider});
     status.textContent=result.ok?t('helperOk',{version:result.version||''}):t('helperMissing');

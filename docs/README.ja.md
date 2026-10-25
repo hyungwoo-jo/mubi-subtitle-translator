@@ -1,39 +1,27 @@
 # Subtitle Translator for MUBI
 
-[English](../README.md) · [한국어](README.ko.md) · 日本語
+[English](../README.md) · [한국어](README.ko.md) · [日本語](README.ja.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português (Brasil)](README.pt-BR.md) · [Italiano](README.it.md) · [Русский](README.ru.md) · [العربية](README.ar.md) · [हिन्दी](README.hi.md) · [Türkçe](README.tr.md) · [Bahasa Indonesia](README.id.md) · [Tiếng Việt](README.vi.md)
 
-既存の字幕を先に翻訳し、元の字幕時刻に合わせて表示する独立した拡張機能です。
-**実機確認済みの対象はWindows版ChromeのMUBI**です。MUBIの公式製品・提携製品ではありません。
-ほかのサイトとEdgeは実験的な対象で、動作を保証しません。
+既存の字幕を先に翻訳し、元の台詞の時刻に合わせて表示する独立した拡張機能です。Windows ChromeのMUBIで確認しています。MUBI公式製品ではありません。Edgeにも同じフォルダーを読み込めますが、実際の再生は未検証です。
 
-## ブラウザーのみで接続（0.2.1プレビュー）
+## インストール
 
-PythonやCodex CLIをインストールせず、拡張機能から公式OAuthで接続できます。
+[ZIP / Releases](https://github.com/hyungwoo-jo/mubi-subtitle-translator/releases)
 
-1. 配布ZIPを展開し、拡張管理ページのデベロッパーモードで`extension/`を読み込みます。
-2. ポップアップと接続タブで**Continue with ChatGPT**を選び、公式ログインとプラン利用を許可します。
-3. モデルを選び、設定で翻訳先言語を指定します。
-4. MUBIの元字幕を有効にし、字幕処理への同意後にサイトで開始して動画ページを再読み込みします。
-5. **接続タブは開いたままにしてください。** トークンはタブのメモリのみに保持し、閉じると再ログインが必要です。
+1. 配布ZIPを常用するフォルダーに展開します。`chrome://extensions`（Edge: `edge://extensions`）でデベロッパーモードを有効にし、**パッケージ化されていない拡張機能を読み込む → extension/**を選びます。
 
-実アカウントのログイン・モデル一覧・試験翻訳とMUBIの再生／同期をユーザーと確認しました。
-長時間の更新、ほかのOS、Edgeの再生は追加確認が必要です。
-既定のUIは英語です。Settings → App languageで日本語・韓国語を選択できます。
+2. ポップアップと接続タブで **Continue with ChatGPT** を押します。公式ログインとプラン利用の許可を完了し、モデルを選んで確認します。
 
-## ほかのモデル
+3. 設定でアプリの言語と翻訳先の言語を選びます。MUBIの元字幕を有効にし、字幕処理に同意して、このサイトで開始します。動画ページを再読み込みします。
 
-Ollamaとモデルを同じPCに用意し、`python native/install.py EXTENSION_ID --provider ollama`で登録できます。
-設定でOllamaとインストール済みの正確なモデル名を指定します。実モデルの品質・速度は未検証です。
-Claude・Gemini APIはこのバージョンには実装していません。
+4. 視聴中は接続タブを開いたままにしてください。Python、Codex CLI、別のヘルパーは不要です。トークンはタブのメモリだけに保持されます。権限を取り消すにはサインアウトしてください。
 
-## 制限とプライバシー
+## 翻訳とプライバシー
 
-字幕ファイル全体を取得できる場合でも、翻訳は現在位置から最大5分先までの必要な範囲を準備します。
-最初は8件、以降は最大40件ずつ翻訳し、結果を再利用します。開始時や大きなシーク後には待ち時間があります。
-時間情報を取得できない場合は表示中の字幕を翻訳するため、モデルの応答時間による遅延があります。
+取得できる場合は字幕ファイル全体を読み込み、再生位置から最大5分先までをまとめて翻訳します。開始時や準備範囲外へのシークでは待ち時間が生じます。画面上の字幕検出ではさらに遅れる場合があります。
 
-拡張機能は無料です。モデルの料金や利用上限は別途適用され、字幕と文脈は選択したプロバイダーに送信されます。
-[プライバシーポリシー](PRIVACY.md)をご確認ください。MUBIの規約は自動取得・コンテンツ変更・一部のAI利用を制限しています。
-無料配布であっても問題がないとは保証できません。[MUBI規約](https://mubi.com/en/terms_of_service)をご確認ください。
+UIは英語が既定で、設定から16言語を選べます。翻訳先は別に指定します。拡張機能は無料ですが、ChatGPTのプランや利用制限は適用されます。字幕、前後の台詞、翻訳設定はOpenAIに直接送信されます。
 
-GitHubからのインストールにストア開発者登録は不要です。Chromeウェブストアにはまだ提出していません。
+GitHubからの導入にストア開発者登録は不要です。ウェブストアには未提出です。OllamaとCodex CLIは追加インストールが必要な代替モードです。
+
+[Privacy / 개인정보 / 隐私](PRIVACY.md) · [MUBI Terms](https://mubi.com/en/terms_of_service) · [MIT](../LICENSE)

@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "Traduza antes. Assista em sincronia."
+  },
+  "checking": {
+    "message": "Verificando o vídeo…"
+  },
+  "start": {
+    "message": "Iniciar neste site"
+  },
+  "stop": {
+    "message": "Desativar neste site"
+  },
+  "settings": {
+    "message": "Idioma e tradução"
+  },
+  "controls": {
+    "message": "Ajustar legendas"
+  },
+  "advanced": {
+    "message": "Uso e solução de problemas"
+  },
+  "pick": {
+    "message": "Selecionar área das legendas"
+  },
+  "diagnostic": {
+    "message": "Salvar diagnóstico"
+  },
+  "diagnosticHint": {
+    "message": "O diagnóstico fica neste computador e não inclui o texto dos diálogos."
+  },
+  "startHint": {
+    "message": "Ative as legendas originais. A preparação inicial leva um instante e continua durante a pausa."
+  },
+  "consent": {
+    "message": "Concordo em enviar as legendas e o contexto ao provedor de tradução selecionado."
+  },
+  "consentNeeded": {
+    "message": "Aceite primeiro o aviso de processamento das legendas."
+  },
+  "privacy": {
+    "message": "Política de privacidade"
+  },
+  "waiting": {
+    "message": "Aguardando legendas do vídeo"
+  },
+  "ready": {
+    "message": "{seconds} s traduzidos antecipadamente"
+  },
+  "counts": {
+    "message": "{cues} legendas originais carregadas · {translated} traduções prontas"
+  },
+  "window": {
+    "message": "Prepara as legendas necessárias até 5 minutos à frente."
+  },
+  "domMode": {
+    "message": "Traduzindo legendas visíveis"
+  },
+  "domHint": {
+    "message": "A linha do tempo completa não foi encontrada. As legendas visíveis são traduzidas após aparecerem."
+  },
+  "domDelay": {
+    "message": "Este modo pode apresentar atraso conforme o tempo de resposta do modelo."
+  },
+  "clickStart": {
+    "message": "Escolha “Iniciar neste site” para começar."
+  },
+  "websiteOnly": {
+    "message": "Abra primeiro um site de vídeos."
+  },
+  "permission": {
+    "message": "É necessária permissão de acesso ao site."
+  },
+  "started": {
+    "message": "Iniciado. Ative as legendas originais e recarregue a página se necessário."
+  },
+  "startFailed": {
+    "message": "Não foi possível iniciar. Verifique a página de vídeo e as permissões."
+  },
+  "stopped": {
+    "message": "A tradução de legendas está desativada neste site."
+  },
+  "stopFailed": {
+    "message": "Não foi possível alterar as configurações do site."
+  },
+  "diagSaved": {
+    "message": "Diagnóstico salvo neste computador."
+  },
+  "diagFailed": {
+    "message": "Não foi possível salvar o diagnóstico. Verifique as permissões e a conexão."
+  },
+  "usageEmpty": {
+    "message": "O uso de tokens será medido a partir da próxima tradução."
+  },
+  "usage": {
+    "message": "{calls} solicitações concluídas · Entrada {input} (cache {cached}) · Saída {output} tokens · Último lote {batch} legendas / {duration} s"
+  },
+  "measured": {
+    "message": "Somente solicitações concluídas e medidas. Falhas e interrupções não estão incluídas."
+  },
+  "settingsTitle": {
+    "message": "Configurações do Subtitle Translator for MUBI"
+  },
+  "uiLanguage": {
+    "message": "Idioma do aplicativo"
+  },
+  "provider": {
+    "message": "Provedor de tradução"
+  },
+  "providerHint": {
+    "message": "O ChatGPT OAuth funciona no navegador sem auxiliar local. Codex CLI e Ollama são opções avançadas."
+  },
+  "sourceAuto": {
+    "message": "O idioma original é detectado a partir das legendas."
+  },
+  "target": {
+    "message": "Traduzir para"
+  },
+  "model": {
+    "message": "Modelo"
+  },
+  "glossary": {
+    "message": "Terminologia e preferências de tradução"
+  },
+  "original": {
+    "message": "Exibir o original quando o player não o exibir"
+  },
+  "font": {
+    "message": "Tamanho das legendas"
+  },
+  "offset": {
+    "message": "Ajuste de tempo (segundos)"
+  },
+  "save": {
+    "message": "Salvar configurações"
+  },
+  "test": {
+    "message": "Verificar conexão"
+  },
+  "clear": {
+    "message": "Limpar cache de tradução"
+  },
+  "saved": {
+    "message": "Configurações salvas."
+  },
+  "testing": {
+    "message": "Verificando conexão…"
+  },
+  "helperOk": {
+    "message": "Auxiliar {version} disponível. O acesso à conta e ao modelo será verificado na primeira tradução."
+  },
+  "helperMissing": {
+    "message": "O auxiliar está em execução, mas o provedor selecionado não está disponível."
+  },
+  "cacheCleared": {
+    "message": "Traduções salvas apagadas. Recarregue o vídeo para limpar o cache da memória."
+  },
+  "helperHint": {
+    "message": "O modo ChatGPT usa o login oficial sem auxiliar local. Os modos Codex CLI e Ollama exigem o auxiliar. Limites ou cobranças do provedor podem se aplicar."
+  },
+  "track": {
+    "message": "Faixa de legendas originais"
+  },
+  "visible": {
+    "message": "Ler legendas visíveis"
+  },
+  "hide": {
+    "message": "Ocultar"
+  },
+  "pickHint": {
+    "message": "Clique no texto da legenda original. Pressione Esc para cancelar."
+  },
+  "pickCancel": {
+    "message": "Seleção de legendas cancelada."
+  },
+  "pickInvalid": {
+    "message": "Nenhum texto de legenda foi encontrado ali. Clique diretamente no diálogo."
+  },
+  "pickFailed": {
+    "message": "Não foi possível salvar a área das legendas."
+  },
+  "pickSaved": {
+    "message": "Área selecionada. O idioma original é detectado automaticamente."
+  },
+  "received": {
+    "message": "Faixa capturada {number} ({count} legendas)"
+  },
+  "nativeTrack": {
+    "message": "Faixa de vídeo {number}"
+  },
+  "translating": {
+    "message": "Traduzindo para {language}…"
+  },
+  "noHelper": {
+    "message": "Verifique a conexão de tradução."
+  },
+  "noTimeline": {
+    "message": "Sem linha do tempo · Aguardando legendas visíveis"
+  },
+  "lagMode": {
+    "message": "Sem linha do tempo · Traduzindo após aparecerem"
+  },
+  "bridgeGeneric": {
+    "message": "Não foi possível conectar ao auxiliar."
+  },
+  "bridgeMissing": {
+    "message": "O auxiliar não está registrado neste navegador ou o caminho é inválido."
+  },
+  "bridgeForbidden": {
+    "message": "O ID da extensão não corresponde à lista permitida do auxiliar."
+  },
+  "bridgeLaunch": {
+    "message": "Não foi possível iniciar o auxiliar registrado. Verifique o caminho de instalação."
+  },
+  "bridgeExited": {
+    "message": "O auxiliar foi encerrado antes de responder ou houve falha na comunicação."
+  },
+  "diagPrefix": {
+    "message": "Diagnóstico:"
+  },
+  "scopeNote": {
+    "message": "Tradutor independente · Testado com MUBI"
+  },
+  "appName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionDescription": {
+    "message": "Traduz legendas com antecedência e exibe em sincronia. Testado com MUBI."
+  },
+  "oauthTitle": {
+    "message": "Conexão com ChatGPT"
+  },
+  "oauthPreview": {
+    "message": "Conexão no navegador · Prévia"
+  },
+  "oauthIntro": {
+    "message": "Use seu plano do ChatGPT sem Python, Codex CLI ou auxiliar local."
+  },
+  "oauthMemory": {
+    "message": "Mantenha esta aba aberta ao assistir. As credenciais ficam apenas na memória dela. Fechá-la apaga a sessão local; use Sair para revogar o acesso."
+  },
+  "notConnected": {
+    "message": "Não conectado"
+  },
+  "account": {
+    "message": "Conta do ChatGPT"
+  },
+  "addAccount": {
+    "message": "Adicionar conta do ChatGPT"
+  },
+  "signOut": {
+    "message": "Sair"
+  },
+  "availableModel": {
+    "message": "Modelo disponível"
+  },
+  "signInModels": {
+    "message": "Entre para carregar os modelos"
+  },
+  "planTitle": {
+    "message": "Você está usando seu plano do ChatGPT"
+  },
+  "planHint": {
+    "message": "As solicitações elegíveis usam seu plano ou créditos do ChatGPT. Gerencie o limite deste app nas configurações do ChatGPT."
+  },
+  "confirmPlan": {
+    "message": "Entendi · Usar este modelo"
+  },
+  "sampleTest": {
+    "message": "Traduzir uma frase de teste"
+  },
+  "manageUsage": {
+    "message": "Gerenciar uso do ChatGPT"
+  },
+  "chooseModel": {
+    "message": "Escolha um modelo"
+  },
+  "connectedAccount": {
+    "message": "Conta conectada"
+  },
+  "connectionReady": {
+    "message": "Conectado. Mantenha esta aba aberta, ative as legendas do MUBI e inicie a tradução."
+  },
+  "connectionValidating": {
+    "message": "Validando a resposta de login…"
+  },
+  "connectionSignedIn": {
+    "message": "Login concluído. Escolha um modelo e confirme o uso do plano do ChatGPT."
+  },
+  "connectionPrompt": {
+    "message": "Conclua o login oficial e autorize o uso do plano na janela de login."
+  },
+  "connectionClosed": {
+    "message": "A janela de login foi fechada. Você pode tentar novamente."
+  },
+  "sampleRunning": {
+    "message": "Traduzindo uma frase de teste…"
+  },
+  "noSession": {
+    "message": "Nenhuma sessão ativa."
+  },
+  "loggedOut": {
+    "message": "Sessão encerrada. O acesso renovável foi revogado."
+  },
+  "localLogout": {
+    "message": "Sessão local encerrada. A revogação remota não foi confirmada; desconecte o app nas configurações do ChatGPT, se necessário."
+  },
+  "savedAccount": {
+    "message": "Conta do ChatGPT salva"
+  },
+  "sampleCached": {
+    "message": "em cache"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · Login no navegador"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · Avançado"
+  },
+  "providerOllama": {
+    "message": "Ollama · Avançado"
+  },
+  "oauthStart": {
+    "message": "Escolha Continue with ChatGPT para conectar."
+  }
+}

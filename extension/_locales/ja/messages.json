@@ -4,5 +4,326 @@
   },
   "extensionName": {
     "message": "MUBI 字幕翻訳"
+  },
+  "tagline": {
+    "message": "先に翻訳し、映像に合わせて表示。"
+  },
+  "checking": {
+    "message": "動画を確認中…"
+  },
+  "start": {
+    "message": "このサイトで開始"
+  },
+  "stop": {
+    "message": "このサイトで無効にする"
+  },
+  "settings": {
+    "message": "言語・翻訳設定"
+  },
+  "controls": {
+    "message": "字幕を調整"
+  },
+  "advanced": {
+    "message": "使用量・トラブル対処"
+  },
+  "pick": {
+    "message": "字幕領域を選択"
+  },
+  "diagnostic": {
+    "message": "診断を保存"
+  },
+  "diagnosticHint": {
+    "message": "診断はこのPCに保存され、台詞本文は含みません。"
+  },
+  "startHint": {
+    "message": "元の字幕を有効にしてください。最初に準備時間が必要です。一時停止中も翻訳します。"
+  },
+  "consent": {
+    "message": "選択した翻訳プロバイダーに字幕と文脈を送信することに同意します。"
+  },
+  "consentNeeded": {
+    "message": "先に字幕処理への同意を確認してください。"
+  },
+  "privacy": {
+    "message": "プライバシー"
+  },
+  "waiting": {
+    "message": "動画の字幕を待機中"
+  },
+  "ready": {
+    "message": "約{seconds}秒先まで翻訳済み"
+  },
+  "counts": {
+    "message": "元字幕{cues}件取得 · 翻訳{translated}件準備済み"
+  },
+  "window": {
+    "message": "必要な字幕を最大5分先まで準備します。"
+  },
+  "domMode": {
+    "message": "表示中の字幕を翻訳"
+  },
+  "domHint": {
+    "message": "時間情報を取得できず、表示された台詞を翻訳します。"
+  },
+  "domDelay": {
+    "message": "モデルの応答時間による遅延が生じます。"
+  },
+  "clickStart": {
+    "message": "「このサイトで開始」を選んでください。"
+  },
+  "websiteOnly": {
+    "message": "先に動画サイトを開いてください。"
+  },
+  "permission": {
+    "message": "サイトへのアクセス権限が必要です。"
+  },
+  "started": {
+    "message": "開始しました。元字幕を有効にし、必要に応じてページを再読み込みしてください。"
+  },
+  "startFailed": {
+    "message": "開始できません。動画ページとサイト権限を確認してください。"
+  },
+  "stopped": {
+    "message": "このサイトの字幕翻訳を無効にしました。"
+  },
+  "stopFailed": {
+    "message": "サイト設定を変更できませんでした。"
+  },
+  "diagSaved": {
+    "message": "このPCに診断を保存しました。"
+  },
+  "diagFailed": {
+    "message": "診断を保存できません。サイト権限と接続を確認してください。"
+  },
+  "usageEmpty": {
+    "message": "次の翻訳からトークン使用量を計測します。"
+  },
+  "usage": {
+    "message": "成功{calls}回 · 入力{input}（キャッシュ{cached}）· 出力{output}トークン · 前回{batch}件/{duration}秒"
+  },
+  "measured": {
+    "message": "計測できた成功リクエストのみ。失敗・中断は含みません。"
+  },
+  "settingsTitle": {
+    "message": "MUBI 字幕翻訳 設定"
+  },
+  "uiLanguage": {
+    "message": "アプリの表示言語"
+  },
+  "provider": {
+    "message": "翻訳プロバイダー"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuthはヘルパーなしでブラウザーから接続します（実験中）。Codex CLIとOllamaは任意の高度な接続です。"
+  },
+  "sourceAuto": {
+    "message": "元の言語は字幕から自動判定します。"
+  },
+  "target": {
+    "message": "翻訳先言語"
+  },
+  "model": {
+    "message": "モデル"
+  },
+  "glossary": {
+    "message": "用語・翻訳の指定"
+  },
+  "original": {
+    "message": "プレーヤーに元字幕がない場合に元字幕も表示"
+  },
+  "font": {
+    "message": "字幕サイズ"
+  },
+  "offset": {
+    "message": "時間調整（秒）"
+  },
+  "save": {
+    "message": "設定を保存"
+  },
+  "test": {
+    "message": "接続を確認"
+  },
+  "clear": {
+    "message": "翻訳キャッシュを消去"
+  },
+  "saved": {
+    "message": "設定を保存しました。"
+  },
+  "testing": {
+    "message": "接続を確認中…"
+  },
+  "helperOk": {
+    "message": "ヘルパー{version}を確認しました。アカウント・モデルへのアクセスは最初の翻訳で確認します。"
+  },
+  "helperMissing": {
+    "message": "ヘルパーは動作していますが、選択したプロバイダーを確認できません。"
+  },
+  "cacheCleared": {
+    "message": "保存済み翻訳を消去しました。動画ページを再読み込みするとメモリキャッシュも消去されます。"
+  },
+  "helperHint": {
+    "message": "ChatGPTブラウザーモードはヘルパーなしで公式ログインを使います。Codex CLI・Ollamaモードはヘルパーが必要です。利用上限・料金が適用される場合があります。"
+  },
+  "track": {
+    "message": "元字幕トラック"
+  },
+  "visible": {
+    "message": "表示中の字幕を読み取る"
+  },
+  "hide": {
+    "message": "非表示"
+  },
+  "pickHint": {
+    "message": "元字幕の文字をクリックしてください。Escでキャンセルします。"
+  },
+  "pickCancel": {
+    "message": "字幕選択をキャンセルしました。"
+  },
+  "pickInvalid": {
+    "message": "その位置に字幕がありません。台詞の文字を直接クリックしてください。"
+  },
+  "pickFailed": {
+    "message": "字幕領域を保存できませんでした。"
+  },
+  "pickSaved": {
+    "message": "字幕領域を選択しました。元言語は自動判定します。"
+  },
+  "received": {
+    "message": "取得字幕{number}（{count}件）"
+  },
+  "nativeTrack": {
+    "message": "動画字幕{number}"
+  },
+  "translating": {
+    "message": "{language}に翻訳中…"
+  },
+  "noHelper": {
+    "message": "翻訳ヘルパーの接続を確認してください。"
+  },
+  "noTimeline": {
+    "message": "時間情報なし · 表示字幕を待機中"
+  },
+  "lagMode": {
+    "message": "時間情報なし · 字幕表示後に翻訳"
+  },
+  "bridgeGeneric": {
+    "message": "ヘルパーに接続できません。"
+  },
+  "bridgeMissing": {
+    "message": "このブラウザーにヘルパーの登録がないか、パスが正しくありません。"
+  },
+  "bridgeForbidden": {
+    "message": "拡張IDがヘルパーの許可リストと一致しません。"
+  },
+  "bridgeLaunch": {
+    "message": "登録済みヘルパーを起動できません。インストール先を確認してください。"
+  },
+  "bridgeExited": {
+    "message": "応答前にヘルパーが終了したか、通信に失敗しました。"
+  },
+  "diagPrefix": {
+    "message": "診断: "
+  },
+  "scopeNote": {
+    "message": "独立した字幕翻訳ツール · MUBIでテスト済み"
+  },
+  "appName": {
+    "message": "MUBI 字幕翻訳"
+  },
+  "oauthTitle": {
+    "message": "ChatGPT 接続"
+  },
+  "oauthPreview": {
+    "message": "ブラウザー接続 · プレビュー"
+  },
+  "oauthIntro": {
+    "message": "Python・Codex CLI・ローカルヘルパーなしでChatGPTプランを使います。"
+  },
+  "oauthMemory": {
+    "message": "視聴中はこのタブを開いたままにしてください。認証情報はタブのメモリのみに保持します。閉じるとローカルセッションが消えます。アクセス解除にはログアウトを使ってください。"
+  },
+  "notConnected": {
+    "message": "未接続"
+  },
+  "account": {
+    "message": "ChatGPT アカウント"
+  },
+  "addAccount": {
+    "message": "ChatGPT アカウントを追加"
+  },
+  "signOut": {
+    "message": "ログアウト"
+  },
+  "availableModel": {
+    "message": "利用可能なモデル"
+  },
+  "signInModels": {
+    "message": "ログインしてモデル一覧を取得"
+  },
+  "planTitle": {
+    "message": "ChatGPT プランを使用します"
+  },
+  "planHint": {
+    "message": "対象のリクエストはChatGPTプランまたはクレジットを使用します。上限はChatGPTの設定で管理できます。"
+  },
+  "confirmPlan": {
+    "message": "確認 · このモデルを使用"
+  },
+  "sampleTest": {
+    "message": "テスト文を翻訳"
+  },
+  "manageUsage": {
+    "message": "ChatGPT 使用量を管理"
+  },
+  "chooseModel": {
+    "message": "モデルを選択"
+  },
+  "connectedAccount": {
+    "message": "接続済みアカウント"
+  },
+  "connectionReady": {
+    "message": "接続しました。このタブを開いたまま、MUBIの字幕と翻訳を有効にしてください。"
+  },
+  "connectionValidating": {
+    "message": "ログイン応答を検証中…"
+  },
+  "connectionSignedIn": {
+    "message": "ログインしました。モデルを選び、ChatGPTプランの利用を確認してください。"
+  },
+  "connectionPrompt": {
+    "message": "ログインウィンドウで公式ログインとプラン利用の許可を完了してください。"
+  },
+  "connectionClosed": {
+    "message": "ログインウィンドウが閉じられました。再試行できます。"
+  },
+  "sampleRunning": {
+    "message": "テスト文を翻訳中…"
+  },
+  "noSession": {
+    "message": "有効なセッションはありません。"
+  },
+  "loggedOut": {
+    "message": "ログアウトし、更新可能なアクセスを解除しました。"
+  },
+  "localLogout": {
+    "message": "ローカルでログアウトしました。リモートでの解除は未確認です。必要ならChatGPT設定でアプリ接続を解除してください。"
+  },
+  "savedAccount": {
+    "message": "保存済みChatGPTアカウント"
+  },
+  "sampleCached": {
+    "message": "キャッシュ使用"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · ブラウザーログイン"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · 高度な接続"
+  },
+  "providerOllama": {
+    "message": "Ollama · 高度な接続"
+  },
+  "oauthStart": {
+    "message": "Continue with ChatGPTを選んで接続してください。"
   }
 }

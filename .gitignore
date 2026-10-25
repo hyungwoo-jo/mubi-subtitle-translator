@@ -11,3 +11,7 @@ out/
 native/launch.sh
 native/launch.cmd
 native/com.hw.subtitle_translator.json
+
+# Local session notes are not part of the public project.
+HANDOFF.md
+CLAUDE_HANDOFF.md

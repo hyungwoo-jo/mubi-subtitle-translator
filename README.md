@@ -4,7 +4,7 @@
 
 **Translate ahead. Watch in sync.**
 
-[English](README.md) · [한국어](docs/README.ko.md) · [日本語](docs/README.ja.md)
+[English](README.md) · [한국어](docs/README.ko.md) · [日本語](docs/README.ja.md) · [简体中文](docs/README.zh-CN.md) · [繁體中文](docs/README.zh-TW.md) · [Español](docs/README.es.md) · [Français](docs/README.fr.md) · [Deutsch](docs/README.de.md) · [Português (Brasil)](docs/README.pt-BR.md) · [Italiano](docs/README.it.md) · [Русский](docs/README.ru.md) · [العربية](docs/README.ar.md) · [हिन्दी](docs/README.hi.md) · [Türkçe](docs/README.tr.md) · [Bahasa Indonesia](docs/README.id.md) · [Tiếng Việt](docs/README.vi.md)
 
 An independent, open-source subtitle translation extension, **tested with MUBI on Windows Chrome**.
 Subtitle Translator for MUBI reads existing subtitle timelines, translates dialogue ahead of playback, and shows each translation at its original cue time.
@@ -21,14 +21,14 @@ It is not affiliated with or endorsed by MUBI. Other players may work, but they 
 - Displays translations only during dialogue; keeps controls out of the video until you open them.
 - Prevents duplicate overlays after reinjection and deduplicates identical overlapping translations.
 - Reuses per-cue translations when seeking or reloading.
-- Offers English UI by default, with Korean and Japanese in **Settings → App language**.
-- Adds an experimental browser-only ChatGPT OAuth connection; see the development-prototype notes below.
+- Offers English UI by default and 16 interface languages in **Settings → App language**; the translation target is separate.
+- Connects directly through official ChatGPT sign-in without a local helper.
 - Supports **Codex CLI with your ChatGPT account**, or an experimental **Ollama** adapter on this PC.
 
 This is an early release for technically comfortable users. Legacy Codex CLI and Ollama modes require a separate local helper. The browser-only ChatGPT mode is a tested early preview.
 Initial translation and seeking outside the prepared window can take several seconds. Voice transcription is not included.
 
-## Browser-only setup (0.2.1 preview)
+## Browser-only setup
 
 1. Download the complete release ZIP and extract it to a permanent folder.
 2. Open `chrome://extensions` or `edge://extensions`, enable Developer mode, and **Load unpacked → extension/**.
@@ -41,11 +41,7 @@ No Python, Codex CLI, native helper or OS-specific application is required in th
 Tokens stay only in the connection tab's memory, not browser storage. Account labels, issued client IDs and an opaque host ID are saved for returning sign-ins.
 Closing the tab clears local credentials; use **Sign out** for remote session revocation.
 
-Live verification with the owner: official sign-in, account model list, a real test translation, and MUBI translation/sync succeeded on Windows Chrome.
-One saved MUBI diagnostic showed 1,265 source cues and roughly 298 seconds translated ahead. The owner also confirmed that the duplicate-overlay fix in 0.2.1 stopped the reported double display.
-The OAuth callback adaptation, long-session renewal and other browsers still need wider testing.
-
-This is a browser-only preview. The older v0.1.9 release uses the legacy helper setup below.
+The OAuth callback adaptation, long-session renewal and other browsers need wider testing.
 
 ## Optional legacy helper setup
 
@@ -112,6 +108,7 @@ Review the [MUBI terms](https://mubi.com/en/terms_of_service) before use. Subtit
 ## Develop
 
 ```sh
+npm run locales # after editing locale catalogs
 npm run lint
 npm test
 python3 tests/browser_check.py
@@ -119,7 +116,9 @@ python3 tests/browser_oauth_check.py
 npm run build
 ```
 
+Language catalogs live in `extension/_locales/`; `scripts/locale-metadata.json` lists the supported interface languages. Regenerate `extension/i18n.js` with `npm run locales` after editing a catalog.
+
 The browser suite requires Python Playwright and Chromium. Unit tests use built-in Node/Python tooling.
 The store-upload ZIP contains only the extension; the complete ZIP also includes the local helper. Store publishing requires a registered developer account and review.
 
-[MIT License](LICENSE) · [Store submission notes](docs/STORE.md)
+[MIT License](LICENSE)

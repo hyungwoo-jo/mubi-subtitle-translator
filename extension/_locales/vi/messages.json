@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "Dịch trước. Xem đồng bộ."
+  },
+  "checking": {
+    "message": "Đang kiểm tra video…"
+  },
+  "start": {
+    "message": "Bắt đầu trên trang này"
+  },
+  "stop": {
+    "message": "Tắt trên trang này"
+  },
+  "settings": {
+    "message": "Ngôn ngữ và bản dịch"
+  },
+  "controls": {
+    "message": "Điều chỉnh phụ đề"
+  },
+  "advanced": {
+    "message": "Mức sử dụng và khắc phục sự cố"
+  },
+  "pick": {
+    "message": "Chọn vùng phụ đề"
+  },
+  "diagnostic": {
+    "message": "Lưu chẩn đoán"
+  },
+  "diagnosticHint": {
+    "message": "Chẩn đoán được lưu trên máy này và không chứa nội dung lời thoại."
+  },
+  "startHint": {
+    "message": "Bật phụ đề gốc. Chuẩn bị ban đầu mất một chút thời gian và vẫn tiếp tục khi tạm dừng video."
+  },
+  "consent": {
+    "message": "Tôi đồng ý gửi phụ đề và ngữ cảnh đến nhà cung cấp dịch đã chọn."
+  },
+  "consentNeeded": {
+    "message": "Vui lòng đồng ý với thông báo xử lý phụ đề trước."
+  },
+  "privacy": {
+    "message": "Chính sách quyền riêng tư"
+  },
+  "waiting": {
+    "message": "Đang chờ phụ đề video"
+  },
+  "ready": {
+    "message": "Đã dịch trước {seconds} giây"
+  },
+  "counts": {
+    "message": "Đã tải {cues} câu gốc · {translated} bản dịch sẵn sàng"
+  },
+  "window": {
+    "message": "Chuẩn bị các phụ đề cần thiết trước tối đa 5 phút."
+  },
+  "domMode": {
+    "message": "Đang dịch phụ đề hiển thị"
+  },
+  "domHint": {
+    "message": "Không tìm thấy dòng thời gian đầy đủ. Phụ đề được dịch sau khi xuất hiện."
+  },
+  "domDelay": {
+    "message": "Chế độ này có thể trễ theo thời gian phản hồi của mô hình."
+  },
+  "clickStart": {
+    "message": "Chọn “Bắt đầu trên trang này” để bắt đầu."
+  },
+  "websiteOnly": {
+    "message": "Hãy mở trang video trước."
+  },
+  "permission": {
+    "message": "Cần cấp quyền truy cập trang web."
+  },
+  "started": {
+    "message": "Đã bắt đầu. Bật phụ đề gốc và tải lại trang nếu cần."
+  },
+  "startFailed": {
+    "message": "Không thể bắt đầu. Kiểm tra trang video và quyền truy cập."
+  },
+  "stopped": {
+    "message": "Đã tắt dịch phụ đề trên trang này."
+  },
+  "stopFailed": {
+    "message": "Không thể thay đổi cài đặt trang."
+  },
+  "diagSaved": {
+    "message": "Đã lưu chẩn đoán trên máy này."
+  },
+  "diagFailed": {
+    "message": "Không thể lưu chẩn đoán. Kiểm tra quyền và kết nối."
+  },
+  "usageEmpty": {
+    "message": "Mức sử dụng token sẽ được đo từ lần dịch tiếp theo."
+  },
+  "usage": {
+    "message": "{calls} yêu cầu thành công · Đầu vào {input} (bộ nhớ đệm {cached}) · Đầu ra {output} token · Đợt gần nhất {batch} câu / {duration} giây"
+  },
+  "measured": {
+    "message": "Chỉ tính các yêu cầu thành công đã đo. Không bao gồm yêu cầu lỗi hoặc bị gián đoạn."
+  },
+  "settingsTitle": {
+    "message": "Cài đặt Subtitle Translator for MUBI"
+  },
+  "uiLanguage": {
+    "message": "Ngôn ngữ ứng dụng"
+  },
+  "provider": {
+    "message": "Nhà cung cấp dịch"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuth chạy trong trình duyệt mà không cần trình trợ giúp cục bộ. Codex CLI và Ollama là các lựa chọn nâng cao."
+  },
+  "sourceAuto": {
+    "message": "Ngôn ngữ gốc được tự động nhận diện từ phụ đề."
+  },
+  "target": {
+    "message": "Dịch sang"
+  },
+  "model": {
+    "message": "Mô hình"
+  },
+  "glossary": {
+    "message": "Thuật ngữ và tùy chọn dịch"
+  },
+  "original": {
+    "message": "Hiển thị bản gốc khi trình phát không hiển thị"
+  },
+  "font": {
+    "message": "Cỡ phụ đề"
+  },
+  "offset": {
+    "message": "Độ lệch thời gian (giây)"
+  },
+  "save": {
+    "message": "Lưu cài đặt"
+  },
+  "test": {
+    "message": "Kiểm tra kết nối"
+  },
+  "clear": {
+    "message": "Xóa bộ nhớ đệm bản dịch"
+  },
+  "saved": {
+    "message": "Đã lưu cài đặt."
+  },
+  "testing": {
+    "message": "Đang kiểm tra kết nối…"
+  },
+  "helperOk": {
+    "message": "Trình trợ giúp {version} sẵn sàng. Quyền tài khoản và mô hình được kiểm tra khi dịch lần đầu."
+  },
+  "helperMissing": {
+    "message": "Trình trợ giúp đang chạy nhưng nhà cung cấp đã chọn không khả dụng."
+  },
+  "cacheCleared": {
+    "message": "Đã xóa bản dịch đã lưu. Tải lại video để xóa bộ nhớ đệm trong bộ nhớ."
+  },
+  "helperHint": {
+    "message": "Chế độ ChatGPT dùng đăng nhập chính thức, không cần trình trợ giúp cục bộ. Codex CLI và Ollama cần trình trợ giúp. Giới hạn hoặc phí của nhà cung cấp vẫn có thể áp dụng."
+  },
+  "track": {
+    "message": "Luồng phụ đề gốc"
+  },
+  "visible": {
+    "message": "Đọc phụ đề hiển thị"
+  },
+  "hide": {
+    "message": "Ẩn"
+  },
+  "pickHint": {
+    "message": "Nhấp vào chữ của phụ đề gốc. Nhấn Esc để hủy."
+  },
+  "pickCancel": {
+    "message": "Đã hủy chọn phụ đề."
+  },
+  "pickInvalid": {
+    "message": "Không tìm thấy phụ đề ở đó. Hãy nhấp trực tiếp vào lời thoại."
+  },
+  "pickFailed": {
+    "message": "Không thể lưu vùng phụ đề."
+  },
+  "pickSaved": {
+    "message": "Đã chọn vùng phụ đề. Ngôn ngữ gốc được tự động nhận diện."
+  },
+  "received": {
+    "message": "Luồng đã nhận {number} ({count} câu)"
+  },
+  "nativeTrack": {
+    "message": "Luồng video {number}"
+  },
+  "translating": {
+    "message": "Đang dịch sang {language}…"
+  },
+  "noHelper": {
+    "message": "Kiểm tra kết nối dịch."
+  },
+  "noTimeline": {
+    "message": "Chưa có dòng thời gian · Đang chờ phụ đề hiển thị"
+  },
+  "lagMode": {
+    "message": "Không có dòng thời gian · Dịch sau khi xuất hiện"
+  },
+  "bridgeGeneric": {
+    "message": "Không thể kết nối với trình trợ giúp."
+  },
+  "bridgeMissing": {
+    "message": "Trình trợ giúp chưa được đăng ký trong trình duyệt này hoặc đường dẫn không hợp lệ."
+  },
+  "bridgeForbidden": {
+    "message": "ID tiện ích không khớp với danh sách cho phép của trình trợ giúp."
+  },
+  "bridgeLaunch": {
+    "message": "Không thể chạy trình trợ giúp đã đăng ký. Kiểm tra đường dẫn cài đặt."
+  },
+  "bridgeExited": {
+    "message": "Trình trợ giúp đã thoát trước khi phản hồi hoặc liên lạc thất bại."
+  },
+  "diagPrefix": {
+    "message": "Chẩn đoán:"
+  },
+  "scopeNote": {
+    "message": "Trình dịch độc lập · Đã thử nghiệm trên MUBI"
+  },
+  "appName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionDescription": {
+    "message": "Dịch trước phụ đề và hiển thị đồng bộ với video. Đã thử nghiệm trên MUBI."
+  },
+  "oauthTitle": {
+    "message": "Kết nối ChatGPT"
+  },
+  "oauthPreview": {
+    "message": "Kết nối trình duyệt · Bản xem trước"
+  },
+  "oauthIntro": {
+    "message": "Dùng gói ChatGPT mà không cần Python, Codex CLI hay trình trợ giúp cục bộ."
+  },
+  "oauthMemory": {
+    "message": "Giữ tab này mở khi xem. Thông tin xác thực chỉ nằm trong bộ nhớ của tab. Đóng tab sẽ xóa phiên cục bộ; dùng Đăng xuất để thu hồi quyền truy cập."
+  },
+  "notConnected": {
+    "message": "Chưa kết nối"
+  },
+  "account": {
+    "message": "Tài khoản ChatGPT"
+  },
+  "addAccount": {
+    "message": "Thêm tài khoản ChatGPT"
+  },
+  "signOut": {
+    "message": "Đăng xuất"
+  },
+  "availableModel": {
+    "message": "Mô hình khả dụng"
+  },
+  "signInModels": {
+    "message": "Đăng nhập để tải mô hình"
+  },
+  "planTitle": {
+    "message": "Bạn đang dùng gói ChatGPT"
+  },
+  "planHint": {
+    "message": "Yêu cầu đủ điều kiện sử dụng gói hoặc tín dụng ChatGPT. Quản lý hạn mức của ứng dụng trong cài đặt ChatGPT."
+  },
+  "confirmPlan": {
+    "message": "Đã hiểu · Dùng mô hình này"
+  },
+  "sampleTest": {
+    "message": "Dịch một câu thử nghiệm"
+  },
+  "manageUsage": {
+    "message": "Quản lý mức dùng ChatGPT"
+  },
+  "chooseModel": {
+    "message": "Chọn mô hình"
+  },
+  "connectedAccount": {
+    "message": "Tài khoản đã kết nối"
+  },
+  "connectionReady": {
+    "message": "Đã kết nối. Giữ tab mở, bật phụ đề MUBI rồi bắt đầu dịch."
+  },
+  "connectionValidating": {
+    "message": "Đang xác thực phản hồi đăng nhập…"
+  },
+  "connectionSignedIn": {
+    "message": "Đã đăng nhập. Chọn mô hình và xác nhận dùng gói ChatGPT."
+  },
+  "connectionPrompt": {
+    "message": "Hoàn tất đăng nhập chính thức và cho phép dùng gói trong cửa sổ đăng nhập."
+  },
+  "connectionClosed": {
+    "message": "Cửa sổ đăng nhập đã đóng. Bạn có thể thử lại."
+  },
+  "sampleRunning": {
+    "message": "Đang dịch một câu thử nghiệm…"
+  },
+  "noSession": {
+    "message": "Không có phiên hoạt động."
+  },
+  "loggedOut": {
+    "message": "Đã đăng xuất và thu hồi quyền truy cập có thể gia hạn."
+  },
+  "localLogout": {
+    "message": "Đã đăng xuất cục bộ. Chưa xác nhận thu hồi từ xa; hãy ngắt ứng dụng trong cài đặt ChatGPT nếu cần."
+  },
+  "savedAccount": {
+    "message": "Tài khoản ChatGPT đã lưu"
+  },
+  "sampleCached": {
+    "message": "từ bộ nhớ đệm"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · Đăng nhập trình duyệt"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · Nâng cao"
+  },
+  "providerOllama": {
+    "message": "Ollama · Nâng cao"
+  },
+  "oauthStart": {
+    "message": "Chọn Continue with ChatGPT để kết nối."
+  }
+}

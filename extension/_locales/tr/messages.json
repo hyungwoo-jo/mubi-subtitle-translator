@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "Önceden çevir. Eşzamanlı izle."
+  },
+  "checking": {
+    "message": "Video kontrol ediliyor…"
+  },
+  "start": {
+    "message": "Bu sitede başlat"
+  },
+  "stop": {
+    "message": "Bu sitede devre dışı bırak"
+  },
+  "settings": {
+    "message": "Dil ve çeviri"
+  },
+  "controls": {
+    "message": "Altyazıları ayarla"
+  },
+  "advanced": {
+    "message": "Kullanım ve sorun giderme"
+  },
+  "pick": {
+    "message": "Altyazı alanını seç"
+  },
+  "diagnostic": {
+    "message": "Tanılamayı kaydet"
+  },
+  "diagnosticHint": {
+    "message": "Tanılama bu bilgisayarda kalır ve diyalog metni içermez."
+  },
+  "startHint": {
+    "message": "Özgün altyazıları açın. İlk hazırlık kısa sürer ve duraklatma sırasında da devam eder."
+  },
+  "consent": {
+    "message": "Altyazıların ve bağlamın seçtiğim çeviri sağlayıcısına gönderilmesini kabul ediyorum."
+  },
+  "consentNeeded": {
+    "message": "Önce altyazı işleme bildirimini kabul edin."
+  },
+  "privacy": {
+    "message": "Gizlilik politikası"
+  },
+  "waiting": {
+    "message": "Video altyazıları bekleniyor"
+  },
+  "ready": {
+    "message": "{seconds} saniye ilerisi çevrildi"
+  },
+  "counts": {
+    "message": "{cues} özgün altyazı yüklendi · {translated} çeviri hazır"
+  },
+  "window": {
+    "message": "Gerekli altyazıları en fazla 5 dakika önceden hazırlar."
+  },
+  "domMode": {
+    "message": "Görünen altyazılar çevriliyor"
+  },
+  "domHint": {
+    "message": "Tam zaman çizelgesi bulunamadı. Altyazılar göründükten sonra çevrilir."
+  },
+  "domDelay": {
+    "message": "Bu mod, modelin yanıt süresi kadar gecikebilir."
+  },
+  "clickStart": {
+    "message": "Başlamak için “Bu sitede başlat”ı seçin."
+  },
+  "websiteOnly": {
+    "message": "Önce bir video sitesi açın."
+  },
+  "permission": {
+    "message": "Siteye erişim izni gerekiyor."
+  },
+  "started": {
+    "message": "Başlatıldı. Özgün altyazıları açın, gerekirse sayfayı yenileyin."
+  },
+  "startFailed": {
+    "message": "Başlatılamadı. Video sayfasını ve site izinlerini kontrol edin."
+  },
+  "stopped": {
+    "message": "Bu sitede altyazı çevirisi devre dışı."
+  },
+  "stopFailed": {
+    "message": "Site ayarları değiştirilemedi."
+  },
+  "diagSaved": {
+    "message": "Tanılama bu bilgisayara kaydedildi."
+  },
+  "diagFailed": {
+    "message": "Tanılama kaydedilemedi. İzinleri ve bağlantıyı kontrol edin."
+  },
+  "usageEmpty": {
+    "message": "Token kullanımı sonraki çeviriden itibaren ölçülecek."
+  },
+  "usage": {
+    "message": "{calls} başarılı istek · Girdi {input} (önbellek {cached}) · Çıktı {output} token · Son grup {batch} altyazı / {duration} sn"
+  },
+  "measured": {
+    "message": "Yalnızca ölçülen başarılı istekler. Başarısız veya kesilen istekler dahil değildir."
+  },
+  "settingsTitle": {
+    "message": "MUBI Altyazı Çevirmeni ayarları"
+  },
+  "uiLanguage": {
+    "message": "Uygulama dili"
+  },
+  "provider": {
+    "message": "Çeviri sağlayıcısı"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuth, yerel yardımcı olmadan tarayıcıda çalışır. Codex CLI ve Ollama isteğe bağlı gelişmiş bağlantılardır."
+  },
+  "sourceAuto": {
+    "message": "Kaynak dil altyazılardan otomatik algılanır."
+  },
+  "target": {
+    "message": "Çeviri dili"
+  },
+  "model": {
+    "message": "Model"
+  },
+  "glossary": {
+    "message": "Terminoloji ve çeviri tercihleri"
+  },
+  "original": {
+    "message": "Oynatıcı göstermiyorsa özgün metni de göster"
+  },
+  "font": {
+    "message": "Altyazı boyutu"
+  },
+  "offset": {
+    "message": "Zaman kaydırma (saniye)"
+  },
+  "save": {
+    "message": "Ayarları kaydet"
+  },
+  "test": {
+    "message": "Bağlantıyı kontrol et"
+  },
+  "clear": {
+    "message": "Çeviri önbelleğini temizle"
+  },
+  "saved": {
+    "message": "Ayarlar kaydedildi."
+  },
+  "testing": {
+    "message": "Bağlantı kontrol ediliyor…"
+  },
+  "helperOk": {
+    "message": "Yardımcı {version} kullanılabilir. Hesap ve model erişimi ilk çeviride kontrol edilir."
+  },
+  "helperMissing": {
+    "message": "Yardımcı çalışıyor, ancak seçilen sağlayıcı kullanılamıyor."
+  },
+  "cacheCleared": {
+    "message": "Kayıtlı çeviriler silindi. Bellek önbelleğini temizlemek için video sayfasını yenileyin."
+  },
+  "helperHint": {
+    "message": "ChatGPT tarayıcı modu yerel yardımcı olmadan resmî oturum açmayı kullanır. Codex CLI ve Ollama yardımcı gerektirir. Sağlayıcı sınırları veya ücretleri uygulanabilir."
+  },
+  "track": {
+    "message": "Özgün altyazı parçası"
+  },
+  "visible": {
+    "message": "Görünen altyazıları oku"
+  },
+  "hide": {
+    "message": "Gizle"
+  },
+  "pickHint": {
+    "message": "Özgün altyazı metnine tıklayın. İptal etmek için Esc tuşuna basın."
+  },
+  "pickCancel": {
+    "message": "Altyazı seçimi iptal edildi."
+  },
+  "pickInvalid": {
+    "message": "Burada altyazı metni bulunamadı. Doğrudan diyaloğa tıklayın."
+  },
+  "pickFailed": {
+    "message": "Altyazı alanı kaydedilemedi."
+  },
+  "pickSaved": {
+    "message": "Altyazı alanı seçildi. Kaynak dil otomatik algılanır."
+  },
+  "received": {
+    "message": "Yakalanan parça {number} ({count} altyazı)"
+  },
+  "nativeTrack": {
+    "message": "Video parçası {number}"
+  },
+  "translating": {
+    "message": "{language} diline çevriliyor…"
+  },
+  "noHelper": {
+    "message": "Çeviri bağlantısını kontrol edin."
+  },
+  "noTimeline": {
+    "message": "Zaman çizelgesi yok · Görünen altyazılar bekleniyor"
+  },
+  "lagMode": {
+    "message": "Zaman çizelgesi yok · Göründükten sonra çevriliyor"
+  },
+  "bridgeGeneric": {
+    "message": "Yardımcıya bağlanılamadı."
+  },
+  "bridgeMissing": {
+    "message": "Yardımcı bu tarayıcıda kayıtlı değil veya yolu geçersiz."
+  },
+  "bridgeForbidden": {
+    "message": "Uzantı kimliği, yardımcının izin listesiyle eşleşmiyor."
+  },
+  "bridgeLaunch": {
+    "message": "Kayıtlı yardımcı başlatılamadı. Kurulum yolunu kontrol edin."
+  },
+  "bridgeExited": {
+    "message": "Yardımcı yanıt vermeden kapandı veya iletişim başarısız oldu."
+  },
+  "diagPrefix": {
+    "message": "Tanılama:"
+  },
+  "scopeNote": {
+    "message": "Bağımsız altyazı çevirmeni · MUBI ile test edildi"
+  },
+  "appName": {
+    "message": "MUBI Altyazı Çevirmeni"
+  },
+  "extensionName": {
+    "message": "MUBI Altyazı Çevirmeni"
+  },
+  "extensionDescription": {
+    "message": "Altyazıları önceden çevirip videoyla eşzamanlı gösterir. MUBI ile test edildi."
+  },
+  "oauthTitle": {
+    "message": "ChatGPT bağlantısı"
+  },
+  "oauthPreview": {
+    "message": "Tarayıcı bağlantısı · Önizleme"
+  },
+  "oauthIntro": {
+    "message": "Python, Codex CLI veya yerel yardımcı olmadan ChatGPT planınızı kullanın."
+  },
+  "oauthMemory": {
+    "message": "İzlerken bu sekmeyi açık tutun. Kimlik bilgileri yalnızca sekmenin belleğinde kalır. Kapatmak yerel oturumu temizler; erişimi iptal etmek için Oturumu kapat’ı kullanın."
+  },
+  "notConnected": {
+    "message": "Bağlı değil"
+  },
+  "account": {
+    "message": "ChatGPT hesabı"
+  },
+  "addAccount": {
+    "message": "ChatGPT hesabı ekle"
+  },
+  "signOut": {
+    "message": "Oturumu kapat"
+  },
+  "availableModel": {
+    "message": "Kullanılabilir model"
+  },
+  "signInModels": {
+    "message": "Modelleri yüklemek için giriş yapın"
+  },
+  "planTitle": {
+    "message": "ChatGPT planınızı kullanıyorsunuz"
+  },
+  "planHint": {
+    "message": "Uygun istekler ChatGPT planınızı veya kredilerinizi kullanır. Uygulamanın sınırını ChatGPT ayarlarından yönetin."
+  },
+  "confirmPlan": {
+    "message": "Anladım · Bu modeli kullan"
+  },
+  "sampleTest": {
+    "message": "Deneme cümlesini çevir"
+  },
+  "manageUsage": {
+    "message": "ChatGPT kullanımını yönet"
+  },
+  "chooseModel": {
+    "message": "Bir model seçin"
+  },
+  "connectedAccount": {
+    "message": "Bağlı hesap"
+  },
+  "connectionReady": {
+    "message": "Bağlandı. Bu sekmeyi açık tutun, MUBI altyazılarını açın ve çeviriyi başlatın."
+  },
+  "connectionValidating": {
+    "message": "Giriş yanıtı doğrulanıyor…"
+  },
+  "connectionSignedIn": {
+    "message": "Giriş yapıldı. Modeli seçin ve ChatGPT planının kullanımını onaylayın."
+  },
+  "connectionPrompt": {
+    "message": "Giriş penceresinde resmî girişi ve plan kullanım iznini tamamlayın."
+  },
+  "connectionClosed": {
+    "message": "Giriş penceresi kapandı. Yeniden deneyebilirsiniz."
+  },
+  "sampleRunning": {
+    "message": "Deneme cümlesi çevriliyor…"
+  },
+  "noSession": {
+    "message": "Etkin oturum yok."
+  },
+  "loggedOut": {
+    "message": "Oturum kapatıldı. Yenilenebilir erişim iptal edildi."
+  },
+  "localLogout": {
+    "message": "Yerel oturum kapatıldı. Uzaktan iptal doğrulanamadı; gerekirse ChatGPT ayarlarından uygulamanın bağlantısını kesin."
+  },
+  "savedAccount": {
+    "message": "Kayıtlı ChatGPT hesabı"
+  },
+  "sampleCached": {
+    "message": "önbellekten"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · Tarayıcı girişi"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · Gelişmiş"
+  },
+  "providerOllama": {
+    "message": "Ollama · Gelişmiş"
+  },
+  "oauthStart": {
+    "message": "Bağlanmak için Continue with ChatGPT’yi seçin."
+  }
+}

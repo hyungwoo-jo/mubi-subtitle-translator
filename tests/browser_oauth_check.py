@@ -86,6 +86,13 @@ with tempfile.TemporaryDirectory(dir=ROOT/'tmp',prefix='oauth-browser-') as work
         assert connection.locator('#models').input_value()=='test-model'
         connection.locator('#confirm').click()
         expect(connection.locator('#test')).to_be_enabled()
+        worker.evaluate("chrome.storage.local.set({uiLanguage:'ar'})")
+        expect(connection.locator('html')).to_have_attribute('dir','rtl')
+        expect(connection.locator('#test')).to_be_enabled()
+        assert connection.locator('#models').input_value()=='test-model'
+        assert worker.evaluate("async()=> (await chrome.runtime.sendMessage({type:'chatgpt.status'})).connected")
+        worker.evaluate("chrome.storage.local.set({uiLanguage:'en'})")
+        expect(connection.locator('html')).to_have_attribute('dir','ltr')
         connection.locator('#test').click()
         expect(connection.locator('#sample')).to_contain_text('모의 번역')
         saved=worker.evaluate('chrome.storage.local.get(null)')

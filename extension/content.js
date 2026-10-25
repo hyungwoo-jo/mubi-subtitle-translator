@@ -60,8 +60,8 @@
   const box=document.createElement('div');box.className='box';
   const tools=document.createElement('div');tools.className='tools';tools.hidden=true;
   const select=document.createElement('select');select.setAttribute('aria-label',t('track'));
-  const original=document.createElement('div');original.className='original';
-  const translation=document.createElement('div');translation.className='translation';
+  const original=document.createElement('div');original.dir='auto';original.className='original';
+  const translation=document.createElement('div');translation.dir='auto';translation.className='translation';
   const status=document.createElement('div');status.className='status';
   const close=document.createElement('button');close.textContent=t('hide');
   const pick=document.createElement('button');pick.textContent=t('pick');

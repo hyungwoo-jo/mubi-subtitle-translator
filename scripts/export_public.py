@@ -19,9 +19,14 @@ def main():
                 files[source.relative_to(ROOT)] = source
     for name in ('LICENSE', '.gitignore', 'package.json', 'native/host.py', 'native/install.py', 'native/setup.py',
                  'scripts/check.mjs', 'scripts/build.mjs', 'scripts/export_public.py',
-                 'docs/README.public.md', 'docs/README.ko.md', 'docs/README.ja.md', 'docs/PRIVACY.md', 'docs/STORE.md', 'docs/assets/popup-en.png', 'tests/browser_check.py', 'tests/browser_oauth_check.py', 'tests/native_test.py',
+                 'scripts/build_locales.py', 'scripts/i18n-runtime.js', 'scripts/locale-metadata.json',
+                 'docs/README.public.md', 'docs/README.ko.md', 'docs/README.ja.md', 'docs/PRIVACY.md', 'docs/assets/popup-en.png', 'tests/browser_check.py', 'tests/browser_oauth_check.py', 'tests/native_test.py',
                  'tests/core.test.mjs', 'tests/connection.test.mjs', 'tests/oauth.test.mjs'):
         files[Path(name)] = ROOT / name
+    for locale in json.loads((ROOT / 'scripts/locale-metadata.json').read_text()):
+        if locale['id'] != 'en':
+            name = Path(f"docs/README.{locale['id']}.md")
+            files[name] = ROOT / name
     with zipfile.ZipFile(destination, 'w', zipfile.ZIP_DEFLATED) as archive:
         for name, source in sorted(files.items()):
             archive.write(source, f'{prefix}/{name.as_posix()}')

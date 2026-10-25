@@ -300,12 +300,19 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         assert binary.locator('#hw-subtitle-overlay').evaluate('(e)=>e.hidden')
         binary.locator('.ytp-caption-segment').evaluate('(e)=>e.remove()')
         binary.wait_for_timeout(300)
-        assert overlay.inner_text()=='번역: Repeated overlap' 
+        assert overlay.inner_text()=='번역: Repeated overlap'
         assert binary.locator('[id="hw-subtitle-overlay"]').count()==1
-        options.locator('#uiLanguage').select_option('en')
-        popup.wait_for_function("document.querySelector('#enable').textContent==='Start on this site'")
-        options.locator('#uiLanguage').select_option('ja')
-        popup.wait_for_function("document.querySelector('#enable').textContent==='このサイトで開始'")
+        locales=json.loads((ROOT/'scripts/locale-metadata.json').read_text())
+        assert options.locator('#uiLanguage option').count()==16
+        connection=context.new_page()
+        connection.goto(f'chrome-extension://{extension_id}/connect.html')
+        for locale in locales:
+            catalog=json.loads((ROOT/'extension/_locales'/locale['folder']/'messages.json').read_text())
+            options.locator('#uiLanguage').select_option(locale['id'])
+            popup.wait_for_function("expected=>document.querySelector('#enable').textContent===expected",arg=catalog['start']['message'])
+            connection.wait_for_function("expected=>document.querySelector('#confirm').textContent===expected",arg=catalog['confirmPlan']['message'])
+            assert connection.locator('html').get_attribute('dir')==('rtl' if locale['id']=='ar' else 'ltr')
+            assert page.locator('html').get_attribute('dir')!='rtl'
         options.locator('#uiLanguage').select_option('en')
         popup.wait_for_function("document.querySelector('#enable').textContent==='Start on this site'")
         assert popup.locator('#consent').is_checked()
@@ -318,6 +325,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
             refreshPlayback();
         }""")
         popup.wait_for_function("document.querySelector('#playback').textContent.includes('84')")
+        popup.bring_to_front()
         popup.screenshot(path=str(preview/'popup-en.png'))
         context.close()
         print('Chromium: captions, timing, diagnostics, CastLabs, recovered tracks, paused prefetch and binary XHR passed.')

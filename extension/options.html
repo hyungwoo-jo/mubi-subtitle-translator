@@ -1,10 +1,10 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title>Subtitle Translator for MUBI settings</title>
 <main><header class="brand"><img src="icons/logo.svg" width="42" height="42" alt=""><h1 data-i18n="settingsTitle">Subtitle Translator for MUBI settings</h1></header>
-<button class="primary" type="button" id="connect">Continue with ChatGPT</button><p class="muted">Browser-only experiment: keep the connection tab open while watching. No Python or Codex CLI is needed for this mode.</p>
+<button class="primary" type="button" id="connect">Continue with ChatGPT</button><p class="muted" data-i18n="oauthMemory"></p>
 <p data-i18n="sourceAuto">The source language is detected from the subtitles.</p>
 <form id="form">
 <label><span data-i18n="uiLanguage">App language</span><select id="uiLanguage"><option value="en">English</option><option value="ko">한국어</option><option value="ja">日本語</option></select></label>
-<label><span data-i18n="provider">Translation provider</span><select id="provider"><option value="chatgpt">ChatGPT · browser OAuth (experimental)</option><option value="codex">Codex · ChatGPT account</option><option value="ollama">Ollama · this PC</option></select></label>
+<label><span data-i18n="provider">Translation provider</span><select id="provider"><option value="chatgpt" data-i18n="providerChatGPT">ChatGPT · browser OAuth (experimental)</option><option value="codex" data-i18n="providerCodex">Codex · ChatGPT account</option><option value="ollama" data-i18n="providerOllama">Ollama · this PC</option></select></label>
 <p class="muted" data-i18n="providerHint">Codex uses your ChatGPT sign-in. Ollama connects to this PC at localhost:11434; install and choose a model first.</p>
 <label><span data-i18n="target">Translate into</span><input id="language" value="English" maxlength="60" required list="languages"><datalist id="languages"><option>English</option><option>한국어</option><option>日本語</option><option>Español</option><option>Français</option><option>Deutsch</option><option>中文</option><option>Português</option><option>Türkçe</option><option>العربية</option></datalist></label>
 <label><span data-i18n="model">Model</span><input id="model" value="gpt-6-luna" maxlength="120" required></label>

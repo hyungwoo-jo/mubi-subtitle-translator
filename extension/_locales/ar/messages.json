@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "ترجم مسبقًا. شاهد بتزامن."
+  },
+  "checking": {
+    "message": "جارٍ التحقق من الفيديو…"
+  },
+  "start": {
+    "message": "تشغيل على هذا الموقع"
+  },
+  "stop": {
+    "message": "تعطيل على هذا الموقع"
+  },
+  "settings": {
+    "message": "اللغة والترجمة"
+  },
+  "controls": {
+    "message": "ضبط الترجمة"
+  },
+  "advanced": {
+    "message": "الاستخدام واستكشاف الأخطاء"
+  },
+  "pick": {
+    "message": "اختيار منطقة الترجمة"
+  },
+  "diagnostic": {
+    "message": "حفظ التشخيص"
+  },
+  "diagnosticHint": {
+    "message": "يبقى التشخيص على هذا الجهاز ولا يتضمن نص الحوار."
+  },
+  "startHint": {
+    "message": "فعّل الترجمة الأصلية. يستغرق التحضير الأولي قليلًا ويستمر أثناء الإيقاف المؤقت."
+  },
+  "consent": {
+    "message": "أوافق على إرسال الترجمة والسياق إلى موفّر الترجمة المحدد."
+  },
+  "consentNeeded": {
+    "message": "يرجى الموافقة أولًا على إشعار معالجة الترجمة."
+  },
+  "privacy": {
+    "message": "سياسة الخصوصية"
+  },
+  "waiting": {
+    "message": "بانتظار ترجمة الفيديو"
+  },
+  "ready": {
+    "message": "تمت ترجمة {seconds} ثانية مسبقًا"
+  },
+  "counts": {
+    "message": "تم تحميل {cues} مقطعًا أصليًا · {translated} ترجمة جاهزة"
+  },
+  "window": {
+    "message": "يجهّز المقاطع المطلوبة حتى 5 دقائق مقدمًا."
+  },
+  "domMode": {
+    "message": "جارٍ ترجمة النص الظاهر"
+  },
+  "domHint": {
+    "message": "لم يُعثر على خط زمني كامل. تُترجم النصوص بعد ظهورها."
+  },
+  "domDelay": {
+    "message": "قد يتأخر هذا الوضع بقدر وقت استجابة النموذج."
+  },
+  "clickStart": {
+    "message": "اختر «تشغيل على هذا الموقع» للبدء."
+  },
+  "websiteOnly": {
+    "message": "افتح موقع فيديو أولًا."
+  },
+  "permission": {
+    "message": "يلزم إذن الوصول إلى الموقع."
+  },
+  "started": {
+    "message": "تم التشغيل. فعّل الترجمة الأصلية وأعد تحميل الصفحة عند الحاجة."
+  },
+  "startFailed": {
+    "message": "تعذر التشغيل. تحقق من صفحة الفيديو وأذونات الموقع."
+  },
+  "stopped": {
+    "message": "تم تعطيل ترجمة النصوص على هذا الموقع."
+  },
+  "stopFailed": {
+    "message": "تعذر تغيير إعدادات الموقع."
+  },
+  "diagSaved": {
+    "message": "تم حفظ التشخيص على هذا الجهاز."
+  },
+  "diagFailed": {
+    "message": "تعذر حفظ التشخيص. تحقق من الأذونات والاتصال."
+  },
+  "usageEmpty": {
+    "message": "سيبدأ قياس الرموز المميزة من الترجمة التالية."
+  },
+  "usage": {
+    "message": "{calls} طلبات ناجحة · إدخال {input} (مخزّن {cached}) · إخراج {output} رمزًا · آخر دفعة {batch} مقطعًا / {duration} ثانية"
+  },
+  "measured": {
+    "message": "الطلبات الناجحة المقاسة فقط، دون الطلبات الفاشلة أو المتوقفة."
+  },
+  "settingsTitle": {
+    "message": "إعدادات مترجم الترجمة النصية لـ MUBI"
+  },
+  "uiLanguage": {
+    "message": "لغة التطبيق"
+  },
+  "provider": {
+    "message": "موفّر الترجمة"
+  },
+  "providerHint": {
+    "message": "يعمل ChatGPT OAuth في المتصفح دون مساعد محلي. Codex CLI وOllama خياران متقدمان اختياريان."
+  },
+  "sourceAuto": {
+    "message": "تُكتشف اللغة الأصلية من النصوص تلقائيًا."
+  },
+  "target": {
+    "message": "الترجمة إلى"
+  },
+  "model": {
+    "message": "النموذج"
+  },
+  "glossary": {
+    "message": "المصطلحات وتفضيلات الترجمة"
+  },
+  "original": {
+    "message": "عرض النص الأصلي عندما لا يعرضه المشغّل"
+  },
+  "font": {
+    "message": "حجم الترجمة"
+  },
+  "offset": {
+    "message": "إزاحة التوقيت (ثوانٍ)"
+  },
+  "save": {
+    "message": "حفظ الإعدادات"
+  },
+  "test": {
+    "message": "التحقق من الاتصال"
+  },
+  "clear": {
+    "message": "مسح ذاكرة الترجمة المؤقتة"
+  },
+  "saved": {
+    "message": "تم حفظ الإعدادات."
+  },
+  "testing": {
+    "message": "جارٍ التحقق من الاتصال…"
+  },
+  "helperOk": {
+    "message": "المساعد {version} متاح. يُفحص الوصول إلى الحساب والنموذج عند الترجمة الأولى."
+  },
+  "helperMissing": {
+    "message": "المساعد يعمل، لكن الموفّر المحدد غير متاح."
+  },
+  "cacheCleared": {
+    "message": "مُسحت الترجمات المحفوظة. أعد تحميل الفيديو لمسح الذاكرة المؤقتة."
+  },
+  "helperHint": {
+    "message": "يستخدم وضع ChatGPT تسجيل الدخول الرسمي دون مساعد محلي. يتطلب Codex CLI وOllama المساعد. قد تسري حدود أو رسوم الموفّر."
+  },
+  "track": {
+    "message": "مسار الترجمة الأصلي"
+  },
+  "visible": {
+    "message": "قراءة النصوص الظاهرة"
+  },
+  "hide": {
+    "message": "إخفاء"
+  },
+  "pickHint": {
+    "message": "انقر على نص الترجمة الأصلي. اضغط Esc للإلغاء."
+  },
+  "pickCancel": {
+    "message": "أُلغي اختيار الترجمة."
+  },
+  "pickInvalid": {
+    "message": "لم يُعثر على نص ترجمة هنا. انقر مباشرة على الحوار."
+  },
+  "pickFailed": {
+    "message": "تعذر حفظ منطقة الترجمة."
+  },
+  "pickSaved": {
+    "message": "تم تحديد المنطقة. تُكتشف اللغة الأصلية تلقائيًا."
+  },
+  "received": {
+    "message": "المسار الملتقط {number} ({count} مقطعًا)"
+  },
+  "nativeTrack": {
+    "message": "مسار الفيديو {number}"
+  },
+  "translating": {
+    "message": "جارٍ الترجمة إلى {language}…"
+  },
+  "noHelper": {
+    "message": "تحقق من اتصال الترجمة."
+  },
+  "noTimeline": {
+    "message": "لا يوجد خط زمني · بانتظار النص الظاهر"
+  },
+  "lagMode": {
+    "message": "لا يوجد خط زمني · الترجمة بعد الظهور"
+  },
+  "bridgeGeneric": {
+    "message": "تعذر الاتصال بالمساعد."
+  },
+  "bridgeMissing": {
+    "message": "المساعد غير مسجل في هذا المتصفح أو مساره غير صالح."
+  },
+  "bridgeForbidden": {
+    "message": "معرّف الإضافة لا يطابق قائمة المساعد المسموح بها."
+  },
+  "bridgeLaunch": {
+    "message": "تعذر تشغيل المساعد المسجل. تحقق من مسار التثبيت."
+  },
+  "bridgeExited": {
+    "message": "توقف المساعد قبل الرد أو فشل الاتصال."
+  },
+  "diagPrefix": {
+    "message": "التشخيص:"
+  },
+  "scopeNote": {
+    "message": "مترجم مستقل · تم الاختبار مع MUBI"
+  },
+  "appName": {
+    "message": "مترجم الترجمة النصية لـ MUBI"
+  },
+  "extensionName": {
+    "message": "مترجم الترجمة النصية لـ MUBI"
+  },
+  "extensionDescription": {
+    "message": "ترجمة مسبقة للترجمات النصية وعرضها متزامنة مع الفيديو. تم الاختبار مع MUBI."
+  },
+  "oauthTitle": {
+    "message": "اتصال ChatGPT"
+  },
+  "oauthPreview": {
+    "message": "اتصال المتصفح · معاينة"
+  },
+  "oauthIntro": {
+    "message": "استخدم خطة ChatGPT دون Python أو Codex CLI أو مساعد محلي."
+  },
+  "oauthMemory": {
+    "message": "أبقِ علامة التبويب مفتوحة أثناء المشاهدة. تبقى بيانات الاعتماد في ذاكرتها فقط. إغلاقها يمسح الجلسة المحلية؛ استخدم تسجيل الخروج لإلغاء الوصول."
+  },
+  "notConnected": {
+    "message": "غير متصل"
+  },
+  "account": {
+    "message": "حساب ChatGPT"
+  },
+  "addAccount": {
+    "message": "إضافة حساب ChatGPT"
+  },
+  "signOut": {
+    "message": "تسجيل الخروج"
+  },
+  "availableModel": {
+    "message": "النموذج المتاح"
+  },
+  "signInModels": {
+    "message": "سجّل الدخول لتحميل النماذج"
+  },
+  "planTitle": {
+    "message": "أنت تستخدم خطة ChatGPT"
+  },
+  "planHint": {
+    "message": "تستخدم الطلبات المؤهلة خطة ChatGPT أو رصيدك. يمكنك إدارة حد هذا التطبيق من إعدادات ChatGPT."
+  },
+  "confirmPlan": {
+    "message": "فهمت · استخدم هذا النموذج"
+  },
+  "sampleTest": {
+    "message": "ترجمة جملة تجريبية"
+  },
+  "manageUsage": {
+    "message": "إدارة استخدام ChatGPT"
+  },
+  "chooseModel": {
+    "message": "اختر نموذجًا"
+  },
+  "connectedAccount": {
+    "message": "حساب متصل"
+  },
+  "connectionReady": {
+    "message": "تم الاتصال. أبقِ هذه الصفحة مفتوحة، وفعّل ترجمة MUBI ثم ابدأ الترجمة."
+  },
+  "connectionValidating": {
+    "message": "جارٍ التحقق من استجابة تسجيل الدخول…"
+  },
+  "connectionSignedIn": {
+    "message": "تم تسجيل الدخول. اختر نموذجًا وأكّد استخدام خطة ChatGPT."
+  },
+  "connectionPrompt": {
+    "message": "أكمل تسجيل الدخول الرسمي واسمح باستخدام الخطة في نافذة الدخول."
+  },
+  "connectionClosed": {
+    "message": "أُغلقت نافذة الدخول. يمكنك المحاولة مجددًا."
+  },
+  "sampleRunning": {
+    "message": "جارٍ ترجمة جملة تجريبية…"
+  },
+  "noSession": {
+    "message": "لا توجد جلسة نشطة."
+  },
+  "loggedOut": {
+    "message": "تم تسجيل الخروج وإلغاء الوصول القابل للتجديد."
+  },
+  "localLogout": {
+    "message": "تم الخروج محليًا. لم يُؤكد الإلغاء عن بُعد؛ افصل التطبيق من إعدادات ChatGPT عند الحاجة."
+  },
+  "savedAccount": {
+    "message": "حساب ChatGPT محفوظ"
+  },
+  "sampleCached": {
+    "message": "من الذاكرة المؤقتة"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · دخول المتصفح"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · متقدم"
+  },
+  "providerOllama": {
+    "message": "Ollama · متقدم"
+  },
+  "oauthStart": {
+    "message": "اختر Continue with ChatGPT للاتصال."
+  }
+}

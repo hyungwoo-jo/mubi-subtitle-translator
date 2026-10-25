@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "Terjemahkan lebih awal. Tonton selaras."
+  },
+  "checking": {
+    "message": "Memeriksa video…"
+  },
+  "start": {
+    "message": "Mulai di situs ini"
+  },
+  "stop": {
+    "message": "Nonaktifkan di situs ini"
+  },
+  "settings": {
+    "message": "Bahasa dan terjemahan"
+  },
+  "controls": {
+    "message": "Atur subtitel"
+  },
+  "advanced": {
+    "message": "Penggunaan dan pemecahan masalah"
+  },
+  "pick": {
+    "message": "Pilih area subtitel"
+  },
+  "diagnostic": {
+    "message": "Simpan diagnostik"
+  },
+  "diagnosticHint": {
+    "message": "Diagnostik tetap di komputer ini dan tidak menyertakan teks dialog."
+  },
+  "startHint": {
+    "message": "Aktifkan subtitel asli. Persiapan awal memerlukan waktu singkat dan berlanjut saat video dijeda."
+  },
+  "consent": {
+    "message": "Saya setuju mengirim subtitel dan konteks ke penyedia terjemahan yang dipilih."
+  },
+  "consentNeeded": {
+    "message": "Setujui pemberitahuan pemrosesan subtitel terlebih dahulu."
+  },
+  "privacy": {
+    "message": "Kebijakan privasi"
+  },
+  "waiting": {
+    "message": "Menunggu subtitel video"
+  },
+  "ready": {
+    "message": "{seconds} detik ke depan telah diterjemahkan"
+  },
+  "counts": {
+    "message": "{cues} teks asli dimuat · {translated} terjemahan siap"
+  },
+  "window": {
+    "message": "Menyiapkan subtitel yang dibutuhkan hingga 5 menit ke depan."
+  },
+  "domMode": {
+    "message": "Menerjemahkan subtitel yang terlihat"
+  },
+  "domHint": {
+    "message": "Linimasa lengkap tidak ditemukan. Subtitel diterjemahkan setelah muncul."
+  },
+  "domDelay": {
+    "message": "Mode ini dapat terlambat sesuai waktu respons model."
+  },
+  "clickStart": {
+    "message": "Pilih “Mulai di situs ini” untuk memulai."
+  },
+  "websiteOnly": {
+    "message": "Buka situs video terlebih dahulu."
+  },
+  "permission": {
+    "message": "Izin akses situs diperlukan."
+  },
+  "started": {
+    "message": "Dimulai. Aktifkan subtitel asli dan muat ulang halaman bila perlu."
+  },
+  "startFailed": {
+    "message": "Tidak dapat memulai. Periksa halaman video dan izin situs."
+  },
+  "stopped": {
+    "message": "Terjemahan subtitel dinonaktifkan di situs ini."
+  },
+  "stopFailed": {
+    "message": "Tidak dapat mengubah pengaturan situs."
+  },
+  "diagSaved": {
+    "message": "Diagnostik disimpan di komputer ini."
+  },
+  "diagFailed": {
+    "message": "Tidak dapat menyimpan diagnostik. Periksa izin dan koneksi."
+  },
+  "usageEmpty": {
+    "message": "Penggunaan token akan diukur mulai terjemahan berikutnya."
+  },
+  "usage": {
+    "message": "{calls} permintaan berhasil · Masukan {input} (cache {cached}) · Keluaran {output} token · Kelompok terakhir {batch} subtitel / {duration} dtk"
+  },
+  "measured": {
+    "message": "Hanya permintaan berhasil yang terukur. Tidak termasuk permintaan gagal atau terputus."
+  },
+  "settingsTitle": {
+    "message": "Pengaturan Subtitle Translator for MUBI"
+  },
+  "uiLanguage": {
+    "message": "Bahasa aplikasi"
+  },
+  "provider": {
+    "message": "Penyedia terjemahan"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuth berjalan di browser tanpa pembantu lokal. Codex CLI dan Ollama adalah pilihan lanjutan."
+  },
+  "sourceAuto": {
+    "message": "Bahasa sumber dideteksi dari subtitel."
+  },
+  "target": {
+    "message": "Terjemahkan ke"
+  },
+  "model": {
+    "message": "Model"
+  },
+  "glossary": {
+    "message": "Istilah dan preferensi terjemahan"
+  },
+  "original": {
+    "message": "Tampilkan teks asli jika pemutar tidak menampilkannya"
+  },
+  "font": {
+    "message": "Ukuran subtitel"
+  },
+  "offset": {
+    "message": "Pergeseran waktu (detik)"
+  },
+  "save": {
+    "message": "Simpan pengaturan"
+  },
+  "test": {
+    "message": "Periksa koneksi"
+  },
+  "clear": {
+    "message": "Hapus cache terjemahan"
+  },
+  "saved": {
+    "message": "Pengaturan disimpan."
+  },
+  "testing": {
+    "message": "Memeriksa koneksi…"
+  },
+  "helperOk": {
+    "message": "Pembantu {version} tersedia. Akses akun dan model diperiksa pada terjemahan pertama."
+  },
+  "helperMissing": {
+    "message": "Pembantu berjalan, tetapi penyedia yang dipilih tidak tersedia."
+  },
+  "cacheCleared": {
+    "message": "Terjemahan tersimpan dihapus. Muat ulang video untuk menghapus cache memori."
+  },
+  "helperHint": {
+    "message": "Mode ChatGPT memakai login resmi tanpa pembantu lokal. Codex CLI dan Ollama memerlukan pembantu. Batas atau biaya penyedia dapat berlaku."
+  },
+  "track": {
+    "message": "Trek subtitel asli"
+  },
+  "visible": {
+    "message": "Baca subtitel yang terlihat"
+  },
+  "hide": {
+    "message": "Sembunyikan"
+  },
+  "pickHint": {
+    "message": "Klik teks subtitel asli. Tekan Esc untuk membatalkan."
+  },
+  "pickCancel": {
+    "message": "Pemilihan subtitel dibatalkan."
+  },
+  "pickInvalid": {
+    "message": "Teks subtitel tidak ditemukan di sana. Klik langsung pada dialog."
+  },
+  "pickFailed": {
+    "message": "Tidak dapat menyimpan area subtitel."
+  },
+  "pickSaved": {
+    "message": "Area dipilih. Bahasa sumber dideteksi otomatis."
+  },
+  "received": {
+    "message": "Trek tertangkap {number} ({count} subtitel)"
+  },
+  "nativeTrack": {
+    "message": "Trek video {number}"
+  },
+  "translating": {
+    "message": "Menerjemahkan ke {language}…"
+  },
+  "noHelper": {
+    "message": "Periksa koneksi terjemahan."
+  },
+  "noTimeline": {
+    "message": "Belum ada linimasa · Menunggu subtitel terlihat"
+  },
+  "lagMode": {
+    "message": "Tanpa linimasa · Terjemahan setelah muncul"
+  },
+  "bridgeGeneric": {
+    "message": "Tidak dapat terhubung ke pembantu."
+  },
+  "bridgeMissing": {
+    "message": "Pembantu belum terdaftar di browser ini atau jalurnya tidak valid."
+  },
+  "bridgeForbidden": {
+    "message": "ID ekstensi tidak cocok dengan daftar yang diizinkan pembantu."
+  },
+  "bridgeLaunch": {
+    "message": "Tidak dapat menjalankan pembantu terdaftar. Periksa jalur pemasangannya."
+  },
+  "bridgeExited": {
+    "message": "Pembantu berhenti sebelum membalas atau komunikasi gagal."
+  },
+  "diagPrefix": {
+    "message": "Diagnostik:"
+  },
+  "scopeNote": {
+    "message": "Penerjemah independen · Diuji di MUBI"
+  },
+  "appName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionName": {
+    "message": "Subtitle Translator for MUBI"
+  },
+  "extensionDescription": {
+    "message": "Terjemahkan subtitel lebih awal dan tampilkan selaras dengan video. Diuji di MUBI."
+  },
+  "oauthTitle": {
+    "message": "Koneksi ChatGPT"
+  },
+  "oauthPreview": {
+    "message": "Koneksi browser · Pratinjau"
+  },
+  "oauthIntro": {
+    "message": "Gunakan paket ChatGPT tanpa Python, Codex CLI, atau pembantu lokal."
+  },
+  "oauthMemory": {
+    "message": "Biarkan tab ini terbuka saat menonton. Kredensial hanya ada dalam memori tab. Menutupnya menghapus sesi lokal; gunakan Keluar untuk mencabut akses."
+  },
+  "notConnected": {
+    "message": "Belum terhubung"
+  },
+  "account": {
+    "message": "Akun ChatGPT"
+  },
+  "addAccount": {
+    "message": "Tambahkan akun ChatGPT"
+  },
+  "signOut": {
+    "message": "Keluar"
+  },
+  "availableModel": {
+    "message": "Model yang tersedia"
+  },
+  "signInModels": {
+    "message": "Masuk untuk memuat model"
+  },
+  "planTitle": {
+    "message": "Anda menggunakan paket ChatGPT"
+  },
+  "planHint": {
+    "message": "Permintaan yang memenuhi syarat memakai paket atau kredit ChatGPT. Kelola batas aplikasi ini di pengaturan ChatGPT."
+  },
+  "confirmPlan": {
+    "message": "Mengerti · Gunakan model ini"
+  },
+  "sampleTest": {
+    "message": "Terjemahkan kalimat uji"
+  },
+  "manageUsage": {
+    "message": "Kelola penggunaan ChatGPT"
+  },
+  "chooseModel": {
+    "message": "Pilih model"
+  },
+  "connectedAccount": {
+    "message": "Akun terhubung"
+  },
+  "connectionReady": {
+    "message": "Terhubung. Biarkan tab terbuka, aktifkan subtitel MUBI, lalu mulai terjemahan."
+  },
+  "connectionValidating": {
+    "message": "Memvalidasi respons login…"
+  },
+  "connectionSignedIn": {
+    "message": "Berhasil masuk. Pilih model dan konfirmasikan penggunaan paket ChatGPT."
+  },
+  "connectionPrompt": {
+    "message": "Selesaikan login resmi dan izin penggunaan paket di jendela login."
+  },
+  "connectionClosed": {
+    "message": "Jendela login ditutup. Anda dapat mencoba lagi."
+  },
+  "sampleRunning": {
+    "message": "Menerjemahkan satu kalimat uji…"
+  },
+  "noSession": {
+    "message": "Tidak ada sesi aktif."
+  },
+  "loggedOut": {
+    "message": "Berhasil keluar. Akses yang dapat diperbarui telah dicabut."
+  },
+  "localLogout": {
+    "message": "Keluar secara lokal. Pencabutan jarak jauh belum dikonfirmasi; putuskan aplikasi di pengaturan ChatGPT jika perlu."
+  },
+  "savedAccount": {
+    "message": "Akun ChatGPT tersimpan"
+  },
+  "sampleCached": {
+    "message": "dari cache"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · Login browser"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · Lanjutan"
+  },
+  "providerOllama": {
+    "message": "Ollama · Lanjutan"
+  },
+  "oauthStart": {
+    "message": "Pilih Continue with ChatGPT untuk terhubung."
+  }
+}

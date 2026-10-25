@@ -1,10 +1,13 @@
 (() => {
   'use strict';
   const O=globalThis.CueOAuth;
+  const t=globalThis.CueI18N.t;
   const $=id=>document.getElementById(id);
   let session=null,pending=null,registrations=[],refreshing=null,signingIn=false;
   const resource=O.RESOURCE,issuer=O.ISSUER;
-  const status=text=>{$('progress').textContent=text;};
+  let statusMessage={key:'oauthStart',values:{}};
+  const status=text=>{statusMessage=null;$('progress').textContent=text;};
+  const showStatus=(key,values={})=>{statusMessage={key,values};$('progress').textContent=t(key,values);};
   function trusted(sender){return sender.id===chrome.runtime.id&&(!sender.tab||sender.url?.startsWith(chrome.runtime.getURL('')));}
   async function json(url,options={}){
     const response=await fetch(url,{...options,credentials:'omit',cache:'no-store',redirect:'error',signal:AbortSignal.timeout(120000)});
@@ -18,8 +21,8 @@
   async function loadRegistrations(){
     const data=await chrome.storage.local.get('chatgptRegistrations');
     registrations=Array.isArray(data.chatgptRegistrations)?data.chatgptRegistrations:[];
-    $('accounts').replaceChildren(new Option('Add a ChatGPT account',''));
-    for(const row of registrations)$('accounts').append(new Option(row.email||'Saved ChatGPT account',row.clientId));
+    $('accounts').replaceChildren(new Option(t('addAccount'),''));
+    for(const row of registrations)$('accounts').append(new Option(row.email||t('savedAccount'),row.clientId));
     if(registrations.length)$('accounts').value=registrations[registrations.length-1].clientId;
   }
   async function remember(identity,clientId,welcomeSeen=false){
@@ -66,7 +69,7 @@
     if(!rows.length)throw new Error('This ChatGPT account returned no available models.');
     session.models=rows;
     const {settings={}}=await chrome.storage.local.get('settings');
-    $('models').replaceChildren(new Option('Choose a model',''));
+    $('models').replaceChildren(new Option(t('chooseModel'),''));
     for(const row of rows)$('models').append(new Option(row.display_name||row.slug,row.slug));
     if(rows.some(r=>r.slug===settings.model))$('models').value=settings.model;
   }
@@ -79,7 +82,7 @@
     const {settings={}}=await chrome.storage.local.get('settings');
     await chrome.storage.local.set({settings:{...settings,provider:'chatgpt',model}});
     $('welcome').hidden=true;$('test').disabled=false;
-    status('Connected. This tab keeps the credentials in memory. Enable subtitles in MUBI and start Subtitle Translator for MUBI.');
+    showStatus('connectionReady');
   }
   async function consumeCallback(details){
     const transaction=pending;
@@ -90,23 +93,23 @@
     try{
       const result=O.callback(details.url,transaction);
       await chrome.tabs.remove(transaction.tabId).catch(()=>{});
-      status('Validating the official sign-in response…');
+      showStatus('connectionValidating');
       const payload=await json(issuer+'/api/accounts/oauth/token',{method:'POST',body:O.codeForm(result,transaction)});
       const next=await verifyToken(payload,result.clientId,transaction.nonce,transaction.subject);
       const previous=registrations.find(row=>row.clientId===result.clientId);
       session=next;
       await remember(next.identity,next.clientId,previous?.welcomeSeen||false);
-      $('connection').textContent='ChatGPT · '+(next.identity.email||'Connected account');
+      $('connection').textContent='ChatGPT · '+(next.identity.email||t('connectedAccount'));
       await models();
       $('welcome').hidden=false;
-      status('Signed in. Choose a model, then confirm use of your ChatGPT plan.');
+      showStatus('connectionSignedIn');
       if(previous?.welcomeSeen&&$('models').value)await activate();
     }catch(error){status(error.message);}
     finally{signingIn=false;$('signin').disabled=false;}
   }
   chrome.webNavigation.onBeforeNavigate.addListener(consumeCallback,{url:[{schemes:['http'],hostEquals:'127.0.0.1',pathEquals:'/auth/callback'}]});
   chrome.tabs.onRemoved.addListener(tabId=>{
-    if(pending?.tabId===tabId){pending=null;signingIn=false;$('signin').disabled=false;status('Sign-in window closed. You can try again.');}
+    if(pending?.tabId===tabId){pending=null;signingIn=false;$('signin').disabled=false;showStatus('connectionClosed');}
   });
   $('signin').onclick=async()=>{
     if(signingIn)return;
@@ -119,7 +122,7 @@
       const window=await chrome.windows.create({url:'about:blank',type:'popup',width:540,height:760});
       pending={...attempt.pending,tabId:window.tabs[0].id};
       await chrome.tabs.update(pending.tabId,{url:attempt.url});
-      status('Complete the official ChatGPT sign-in and plan permission in the sign-in window.');
+      showStatus('connectionPrompt');
     }catch(error){signingIn=false;$('signin').disabled=false;status(error.message);}
   };
   $('confirm').onclick=()=>activate().catch(error=>status(error.message));
@@ -127,16 +130,16 @@
   $('signout').onclick=async()=>{
     const signingTab=pending?.tabId;pending=null;signingIn=false;$('signin').disabled=false;
     if(signingTab!==undefined)await chrome.tabs.remove(signingTab).catch(()=>{});
-    const previous=session;session=null;$('test').disabled=true;$('welcome').hidden=true;$('connection').textContent='Not connected';
-    if(!previous){status('No active session.');return;}
+    const previous=session;session=null;$('test').disabled=true;$('welcome').hidden=true;$('connection').textContent=t('notConnected');
+    if(!previous){showStatus('noSession');return;}
     try{
       const configuration=await json(issuer+'/.well-known/openid-configuration');
       const endpoint=new URL(configuration.revocation_endpoint);
       if(endpoint.origin!==issuer)throw new Error('Unexpected revocation endpoint.');
       const response=await fetch(endpoint,{method:'POST',credentials:'omit',redirect:'error',body:new URLSearchParams({token:previous.refreshToken,token_type_hint:'refresh_token',client_id:previous.clientId}),signal:AbortSignal.timeout(15000)});
       if(!response.ok)throw new Error('Revocation was not confirmed.');
-      status('Signed out. The renewable session was revoked.');
-    }catch{status('Signed out locally. Remote revocation was not confirmed; disconnect Subtitle Translator for MUBI in ChatGPT settings if needed.');}
+      showStatus('loggedOut');
+    }catch{showStatus('localLogout');}
   };
   async function translate(message){
     const current=await renew();
@@ -160,13 +163,20 @@
     }
   });
   $('test').onclick=async()=>{
-    $('test').disabled=true;$('sample').textContent='Translating one test sentence…';
+    $('test').disabled=true;$('sample').textContent=t('sampleRunning');
     try{
       const result=await chrome.runtime.sendMessage({type:'translate',texts:['Hello, the film is about to begin.'],context:'',scope:'cuebraid:connection-test'});
       if(!result?.ok)throw new Error(result?.error||'The test did not complete.');
-      $('sample').textContent=result.texts.join('\n')+(result.cached?' (cached)':'');
+      $('sample').textContent=result.texts.join('\n')+(result.cached?' ('+t('sampleCached')+')':'');
     }catch(error){$('sample').textContent=error.message;}
     finally{$('test').disabled=!session?.confirmed;}
   };
-  loadRegistrations().catch(()=>status('Saved account metadata could not be loaded.'));
+  CueI18N.ready.then(()=>{if(!session)$('connection').textContent=t('notConnected');showStatus('oauthStart');$('models').options[0].text=t('signInModels');return loadRegistrations();}).catch(()=>status('Saved account metadata could not be loaded.'));
+  chrome.storage.onChanged.addListener((changes,area)=>{
+    if(area!=='local'||!changes.uiLanguage)return;
+    if(statusMessage)$('progress').textContent=t(statusMessage.key,statusMessage.values);
+    if(!session)$('connection').textContent=t('notConnected');
+    $('accounts').options[0].text=t('addAccount');
+    $('models').options[0].text=t(session?'chooseModel':'signInModels');
+  });
 })();

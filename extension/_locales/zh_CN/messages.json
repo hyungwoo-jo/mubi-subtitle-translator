@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "提前翻译，同步观看。"
+  },
+  "checking": {
+    "message": "正在检查视频…"
+  },
+  "start": {
+    "message": "在此网站启动"
+  },
+  "stop": {
+    "message": "在此网站停用"
+  },
+  "settings": {
+    "message": "语言与翻译"
+  },
+  "controls": {
+    "message": "调整字幕"
+  },
+  "advanced": {
+    "message": "用量与故障排查"
+  },
+  "pick": {
+    "message": "选择字幕区域"
+  },
+  "diagnostic": {
+    "message": "保存诊断"
+  },
+  "diagnosticHint": {
+    "message": "诊断保存在本机，不包含对白正文。"
+  },
+  "startHint": {
+    "message": "请开启原文字幕。首次准备需要片刻，暂停时也会继续预译。"
+  },
+  "consent": {
+    "message": "我同意将字幕和上下文发送给所选翻译服务。"
+  },
+  "consentNeeded": {
+    "message": "请先同意字幕处理说明。"
+  },
+  "privacy": {
+    "message": "隐私政策"
+  },
+  "waiting": {
+    "message": "等待视频字幕"
+  },
+  "ready": {
+    "message": "已提前翻译约 {seconds} 秒"
+  },
+  "counts": {
+    "message": "已载入 {cues} 条原文 · 已准备 {translated} 条译文"
+  },
+  "window": {
+    "message": "按需准备当前位置之后最多 5 分钟的字幕。"
+  },
+  "domMode": {
+    "message": "正在翻译屏幕字幕"
+  },
+  "domHint": {
+    "message": "未找到完整时间轴，将在字幕出现后翻译。"
+  },
+  "domDelay": {
+    "message": "此模式可能产生模型响应时间造成的延迟。"
+  },
+  "clickStart": {
+    "message": "请选择“在此网站启动”。"
+  },
+  "websiteOnly": {
+    "message": "请先打开视频网站。"
+  },
+  "permission": {
+    "message": "需要网站访问权限。"
+  },
+  "started": {
+    "message": "已启动。请开启原文字幕，必要时刷新页面。"
+  },
+  "startFailed": {
+    "message": "无法启动，请检查视频页面和网站权限。"
+  },
+  "stopped": {
+    "message": "已在此网站停用字幕翻译。"
+  },
+  "stopFailed": {
+    "message": "无法更改网站设置。"
+  },
+  "diagSaved": {
+    "message": "诊断已保存到本机。"
+  },
+  "diagFailed": {
+    "message": "无法保存诊断，请检查网站权限和连接。"
+  },
+  "usageEmpty": {
+    "message": "将从下一次翻译开始统计令牌用量。"
+  },
+  "usage": {
+    "message": "成功请求 {calls} 次 · 输入 {input}（缓存 {cached}）· 输出 {output} 个令牌 · 上次 {batch} 条／{duration} 秒"
+  },
+  "measured": {
+    "message": "仅统计已测量的成功请求，不含失败或中断请求。"
+  },
+  "settingsTitle": {
+    "message": "MUBI 字幕翻译设置"
+  },
+  "uiLanguage": {
+    "message": "界面语言"
+  },
+  "provider": {
+    "message": "翻译服务"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuth 可在浏览器内直接登录，无需助手。Codex CLI 和 Ollama 是可选的高级连接方式。"
+  },
+  "sourceAuto": {
+    "message": "自动识别原文字幕语言。"
+  },
+  "target": {
+    "message": "翻译为"
+  },
+  "model": {
+    "message": "模型"
+  },
+  "glossary": {
+    "message": "术语与翻译偏好"
+  },
+  "original": {
+    "message": "播放器未显示原文时，同时显示原文"
+  },
+  "font": {
+    "message": "字幕字号"
+  },
+  "offset": {
+    "message": "时间偏移（秒）"
+  },
+  "save": {
+    "message": "保存设置"
+  },
+  "test": {
+    "message": "检查连接"
+  },
+  "clear": {
+    "message": "清除翻译缓存"
+  },
+  "saved": {
+    "message": "设置已保存。"
+  },
+  "testing": {
+    "message": "正在检查连接…"
+  },
+  "helperOk": {
+    "message": "助手 {version} 可用，账户及模型权限将在首次翻译时检查。"
+  },
+  "helperMissing": {
+    "message": "助手已运行，但所选服务不可用。"
+  },
+  "cacheCleared": {
+    "message": "已清除译文缓存。刷新视频页面可清除内存缓存。"
+  },
+  "helperHint": {
+    "message": "ChatGPT 浏览器模式无需本机助手。Codex CLI 和 Ollama 模式需要助手，服务费用或账户额度仍适用。"
+  },
+  "track": {
+    "message": "原文字幕轨道"
+  },
+  "visible": {
+    "message": "读取屏幕字幕"
+  },
+  "hide": {
+    "message": "隐藏"
+  },
+  "pickHint": {
+    "message": "点击原文字幕文字，按 Esc 取消。"
+  },
+  "pickCancel": {
+    "message": "已取消字幕选择。"
+  },
+  "pickInvalid": {
+    "message": "该位置没有字幕，请直接点击对白文字。"
+  },
+  "pickFailed": {
+    "message": "无法保存字幕区域。"
+  },
+  "pickSaved": {
+    "message": "已选择字幕区域，原文语言会自动识别。"
+  },
+  "received": {
+    "message": "已捕获轨道 {number}（{count} 条）"
+  },
+  "nativeTrack": {
+    "message": "视频轨道 {number}"
+  },
+  "translating": {
+    "message": "正在翻译为 {language}…"
+  },
+  "noHelper": {
+    "message": "请检查翻译连接。"
+  },
+  "noTimeline": {
+    "message": "尚无时间轴 · 等待屏幕字幕"
+  },
+  "lagMode": {
+    "message": "无时间轴 · 字幕出现后翻译"
+  },
+  "bridgeGeneric": {
+    "message": "无法连接本机助手。"
+  },
+  "bridgeMissing": {
+    "message": "此浏览器尚未注册助手，或助手路径无效。"
+  },
+  "bridgeForbidden": {
+    "message": "扩展 ID 与助手允许列表不符。"
+  },
+  "bridgeLaunch": {
+    "message": "无法启动已注册的助手，请检查安装路径。"
+  },
+  "bridgeExited": {
+    "message": "助手在回复前退出，或通信失败。"
+  },
+  "diagPrefix": {
+    "message": "诊断："
+  },
+  "scopeNote": {
+    "message": "独立字幕翻译工具 · 已在 MUBI 上测试"
+  },
+  "appName": {
+    "message": "MUBI 字幕翻译"
+  },
+  "extensionName": {
+    "message": "MUBI 字幕翻译"
+  },
+  "extensionDescription": {
+    "message": "提前翻译字幕并与视频同步显示。已在 MUBI 上测试。"
+  },
+  "oauthTitle": {
+    "message": "连接 ChatGPT"
+  },
+  "oauthPreview": {
+    "message": "浏览器连接 · 预览版"
+  },
+  "oauthIntro": {
+    "message": "使用 ChatGPT 订阅，无需 Python、Codex CLI 或本机助手。"
+  },
+  "oauthMemory": {
+    "message": "观看时请保持此标签页打开。凭据仅保存在本页内存中，关闭即清除本地会话；如需撤销访问，请使用退出登录。"
+  },
+  "notConnected": {
+    "message": "未连接"
+  },
+  "account": {
+    "message": "ChatGPT 账户"
+  },
+  "addAccount": {
+    "message": "添加 ChatGPT 账户"
+  },
+  "signOut": {
+    "message": "退出登录"
+  },
+  "availableModel": {
+    "message": "可用模型"
+  },
+  "signInModels": {
+    "message": "登录后加载模型"
+  },
+  "planTitle": {
+    "message": "正在使用 ChatGPT 订阅"
+  },
+  "planHint": {
+    "message": "符合条件的请求使用 ChatGPT 订阅或额度。可在 ChatGPT 设置中管理此应用的用量。"
+  },
+  "confirmPlan": {
+    "message": "确认 · 使用此模型"
+  },
+  "sampleTest": {
+    "message": "翻译测试句子"
+  },
+  "manageUsage": {
+    "message": "管理 ChatGPT 用量"
+  },
+  "chooseModel": {
+    "message": "选择模型"
+  },
+  "connectedAccount": {
+    "message": "已连接账户"
+  },
+  "connectionReady": {
+    "message": "连接成功。请保持此页打开，在 MUBI 开启字幕并启动翻译。"
+  },
+  "connectionValidating": {
+    "message": "正在验证登录响应…"
+  },
+  "connectionSignedIn": {
+    "message": "已登录。请选择模型并确认使用 ChatGPT 订阅。"
+  },
+  "connectionPrompt": {
+    "message": "请在登录窗口完成官方登录并允许使用订阅。"
+  },
+  "connectionClosed": {
+    "message": "登录窗口已关闭，可以重试。"
+  },
+  "sampleRunning": {
+    "message": "正在翻译测试句子…"
+  },
+  "noSession": {
+    "message": "没有活动会话。"
+  },
+  "loggedOut": {
+    "message": "已退出登录，并撤销可续期访问。"
+  },
+  "localLogout": {
+    "message": "已在本地退出，但未确认远程撤销。必要时请在 ChatGPT 设置中断开此应用。"
+  },
+  "savedAccount": {
+    "message": "已保存的 ChatGPT 账户"
+  },
+  "sampleCached": {
+    "message": "来自缓存"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · 浏览器登录"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · 高级连接"
+  },
+  "providerOllama": {
+    "message": "Ollama · 高级连接"
+  },
+  "oauthStart": {
+    "message": "选择 Continue with ChatGPT 开始连接。"
+  }
+}

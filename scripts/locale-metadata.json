@@ -1,0 +1,82 @@
+[
+  {
+    "id": "en",
+    "folder": "en",
+    "label": "English"
+  },
+  {
+    "id": "ko",
+    "folder": "ko",
+    "label": "한국어"
+  },
+  {
+    "id": "ja",
+    "folder": "ja",
+    "label": "日本語"
+  },
+  {
+    "id": "zh-CN",
+    "folder": "zh_CN",
+    "label": "简体中文"
+  },
+  {
+    "id": "zh-TW",
+    "folder": "zh_TW",
+    "label": "繁體中文"
+  },
+  {
+    "id": "es",
+    "folder": "es",
+    "label": "Español"
+  },
+  {
+    "id": "fr",
+    "folder": "fr",
+    "label": "Français"
+  },
+  {
+    "id": "de",
+    "folder": "de",
+    "label": "Deutsch"
+  },
+  {
+    "id": "pt-BR",
+    "folder": "pt_BR",
+    "label": "Português (Brasil)"
+  },
+  {
+    "id": "it",
+    "folder": "it",
+    "label": "Italiano"
+  },
+  {
+    "id": "ru",
+    "folder": "ru",
+    "label": "Русский"
+  },
+  {
+    "id": "ar",
+    "folder": "ar",
+    "label": "العربية"
+  },
+  {
+    "id": "hi",
+    "folder": "hi",
+    "label": "हिन्दी"
+  },
+  {
+    "id": "tr",
+    "folder": "tr",
+    "label": "Türkçe"
+  },
+  {
+    "id": "id",
+    "folder": "id",
+    "label": "Bahasa Indonesia"
+  },
+  {
+    "id": "vi",
+    "folder": "vi",
+    "label": "Tiếng Việt"
+  }
+]

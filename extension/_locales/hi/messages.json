@@ -1,0 +1,329 @@
+{
+  "tagline": {
+    "message": "पहले अनुवाद करें। सही समय पर देखें।"
+  },
+  "checking": {
+    "message": "वीडियो जाँचा जा रहा है…"
+  },
+  "start": {
+    "message": "इस साइट पर शुरू करें"
+  },
+  "stop": {
+    "message": "इस साइट पर बंद करें"
+  },
+  "settings": {
+    "message": "भाषा और अनुवाद"
+  },
+  "controls": {
+    "message": "उपशीर्षक समायोजित करें"
+  },
+  "advanced": {
+    "message": "उपयोग और समस्या निवारण"
+  },
+  "pick": {
+    "message": "उपशीर्षक क्षेत्र चुनें"
+  },
+  "diagnostic": {
+    "message": "निदान सहेजें"
+  },
+  "diagnosticHint": {
+    "message": "निदान इस कंप्यूटर पर रहता है और इसमें संवाद का मूल पाठ नहीं होता।"
+  },
+  "startHint": {
+    "message": "मूल उपशीर्षक चालू करें। शुरुआती तैयारी में थोड़ा समय लगता है और वीडियो रुका होने पर भी अनुवाद जारी रहता है।"
+  },
+  "consent": {
+    "message": "मैं उपशीर्षक और संदर्भ चुने गए अनुवाद प्रदाता को भेजने की सहमति देता हूँ।"
+  },
+  "consentNeeded": {
+    "message": "पहले उपशीर्षक संसाधन सूचना से सहमत हों।"
+  },
+  "privacy": {
+    "message": "गोपनीयता नीति"
+  },
+  "waiting": {
+    "message": "वीडियो उपशीर्षकों की प्रतीक्षा"
+  },
+  "ready": {
+    "message": "{seconds} सेकंड आगे तक अनुवाद तैयार"
+  },
+  "counts": {
+    "message": "{cues} मूल प्रविष्टियाँ लोड · {translated} अनुवाद तैयार"
+  },
+  "window": {
+    "message": "ज़रूरी उपशीर्षक अधिकतम 5 मिनट आगे तक तैयार करता है।"
+  },
+  "domMode": {
+    "message": "दिख रहे उपशीर्षकों का अनुवाद जारी"
+  },
+  "domHint": {
+    "message": "पूरी समयरेखा नहीं मिली। उपशीर्षकों के दिखने के बाद उनका अनुवाद होता है।"
+  },
+  "domDelay": {
+    "message": "इस मोड में मॉडल के जवाब जितनी देरी हो सकती है।"
+  },
+  "clickStart": {
+    "message": "शुरू करने के लिए «इस साइट पर शुरू करें» चुनें।"
+  },
+  "websiteOnly": {
+    "message": "पहले वीडियो वाली वेबसाइट खोलें।"
+  },
+  "permission": {
+    "message": "साइट पर पहुँच की अनुमति आवश्यक है।"
+  },
+  "started": {
+    "message": "शुरू हो गया। मूल उपशीर्षक चालू करें और ज़रूरत हो तो पेज फिर लोड करें।"
+  },
+  "startFailed": {
+    "message": "शुरू नहीं हो सका। वीडियो पेज और साइट की अनुमतियाँ जाँचें।"
+  },
+  "stopped": {
+    "message": "इस साइट पर उपशीर्षक अनुवाद बंद है।"
+  },
+  "stopFailed": {
+    "message": "साइट की सेटिंग नहीं बदली जा सकी।"
+  },
+  "diagSaved": {
+    "message": "निदान इस कंप्यूटर पर सहेजा गया।"
+  },
+  "diagFailed": {
+    "message": "निदान नहीं सहेजा जा सका। अनुमतियाँ और कनेक्शन जाँचें।"
+  },
+  "usageEmpty": {
+    "message": "अगले अनुवाद से टोकन उपयोग मापा जाएगा।"
+  },
+  "usage": {
+    "message": "{calls} सफल अनुरोध · इनपुट {input} (कैश {cached}) · आउटपुट {output} टोकन · पिछला बैच {batch} प्रविष्टियाँ / {duration} सेकंड"
+  },
+  "measured": {
+    "message": "केवल मापे गए सफल अनुरोध। असफल या बीच में रुके अनुरोध शामिल नहीं हैं।"
+  },
+  "settingsTitle": {
+    "message": "MUBI उपशीर्षक अनुवादक सेटिंग"
+  },
+  "uiLanguage": {
+    "message": "ऐप की भाषा"
+  },
+  "provider": {
+    "message": "अनुवाद प्रदाता"
+  },
+  "providerHint": {
+    "message": "ChatGPT OAuth ब्राउज़र में बिना स्थानीय सहायक के चलता है। Codex CLI और Ollama वैकल्पिक उन्नत कनेक्शन हैं।"
+  },
+  "sourceAuto": {
+    "message": "मूल भाषा उपशीर्षकों से अपने आप पहचानी जाती है।"
+  },
+  "target": {
+    "message": "इस भाषा में अनुवाद करें"
+  },
+  "model": {
+    "message": "मॉडल"
+  },
+  "glossary": {
+    "message": "शब्दावली और अनुवाद प्राथमिकताएँ"
+  },
+  "original": {
+    "message": "प्लेयर मूल पाठ न दिखाए तो उसे भी दिखाएँ"
+  },
+  "font": {
+    "message": "उपशीर्षक का आकार"
+  },
+  "offset": {
+    "message": "समय समायोजन (सेकंड)"
+  },
+  "save": {
+    "message": "सेटिंग सहेजें"
+  },
+  "test": {
+    "message": "कनेक्शन जाँचें"
+  },
+  "clear": {
+    "message": "अनुवाद कैश साफ़ करें"
+  },
+  "saved": {
+    "message": "सेटिंग सहेजी गई।"
+  },
+  "testing": {
+    "message": "कनेक्शन जाँचा जा रहा है…"
+  },
+  "helperOk": {
+    "message": "सहायक {version} उपलब्ध है। खाते और मॉडल की पहुँच पहले अनुवाद पर जाँची जाएगी।"
+  },
+  "helperMissing": {
+    "message": "सहायक चल रहा है, लेकिन चुना गया प्रदाता उपलब्ध नहीं है।"
+  },
+  "cacheCleared": {
+    "message": "सहेजे गए अनुवाद मिटा दिए गए। मेमोरी कैश साफ़ करने के लिए वीडियो पेज फिर लोड करें।"
+  },
+  "helperHint": {
+    "message": "ChatGPT ब्राउज़र मोड स्थानीय सहायक के बिना आधिकारिक लॉगिन उपयोग करता है। Codex CLI और Ollama को सहायक चाहिए। प्रदाता की सीमाएँ या शुल्क लागू हो सकते हैं।"
+  },
+  "track": {
+    "message": "मूल उपशीर्षक ट्रैक"
+  },
+  "visible": {
+    "message": "दिख रहे उपशीर्षक पढ़ें"
+  },
+  "hide": {
+    "message": "छिपाएँ"
+  },
+  "pickHint": {
+    "message": "मूल उपशीर्षक के पाठ पर क्लिक करें। रद्द करने के लिए Esc दबाएँ।"
+  },
+  "pickCancel": {
+    "message": "उपशीर्षक चयन रद्द किया गया।"
+  },
+  "pickInvalid": {
+    "message": "वहाँ उपशीर्षक पाठ नहीं मिला। सीधे संवाद पर क्लिक करें।"
+  },
+  "pickFailed": {
+    "message": "उपशीर्षक क्षेत्र नहीं सहेजा जा सका।"
+  },
+  "pickSaved": {
+    "message": "क्षेत्र चुन लिया गया। मूल भाषा अपने आप पहचानी जाएगी।"
+  },
+  "received": {
+    "message": "प्राप्त ट्रैक {number} ({count} प्रविष्टियाँ)"
+  },
+  "nativeTrack": {
+    "message": "वीडियो ट्रैक {number}"
+  },
+  "translating": {
+    "message": "{language} में अनुवाद जारी…"
+  },
+  "noHelper": {
+    "message": "अनुवाद कनेक्शन जाँचें।"
+  },
+  "noTimeline": {
+    "message": "समयरेखा नहीं · दिखने वाले उपशीर्षकों की प्रतीक्षा"
+  },
+  "lagMode": {
+    "message": "समयरेखा नहीं · दिखने के बाद अनुवाद"
+  },
+  "bridgeGeneric": {
+    "message": "सहायक से कनेक्ट नहीं हो सका।"
+  },
+  "bridgeMissing": {
+    "message": "सहायक इस ब्राउज़र में पंजीकृत नहीं है या उसका पथ गलत है।"
+  },
+  "bridgeForbidden": {
+    "message": "एक्सटेंशन ID सहायक की अनुमति सूची से मेल नहीं खाता।"
+  },
+  "bridgeLaunch": {
+    "message": "पंजीकृत सहायक शुरू नहीं हो सका। उसका स्थापना पथ जाँचें।"
+  },
+  "bridgeExited": {
+    "message": "सहायक जवाब देने से पहले बंद हो गया या संचार विफल रहा।"
+  },
+  "diagPrefix": {
+    "message": "निदान:"
+  },
+  "scopeNote": {
+    "message": "स्वतंत्र अनुवादक · MUBI पर परीक्षण किया गया"
+  },
+  "appName": {
+    "message": "MUBI उपशीर्षक अनुवादक"
+  },
+  "extensionName": {
+    "message": "MUBI उपशीर्षक अनुवादक"
+  },
+  "extensionDescription": {
+    "message": "उपशीर्षकों का पहले अनुवाद करें और वीडियो के साथ समय पर दिखाएँ। MUBI पर परीक्षण किया गया।"
+  },
+  "oauthTitle": {
+    "message": "ChatGPT कनेक्शन"
+  },
+  "oauthPreview": {
+    "message": "ब्राउज़र कनेक्शन · पूर्वावलोकन"
+  },
+  "oauthIntro": {
+    "message": "Python, Codex CLI या स्थानीय सहायक के बिना अपना ChatGPT प्लान उपयोग करें।"
+  },
+  "oauthMemory": {
+    "message": "देखते समय यह टैब खुला रखें। लॉगिन जानकारी केवल इसकी मेमोरी में रहती है। टैब बंद करने से स्थानीय सत्र मिट जाता है; पहुँच रद्द करने के लिए साइन आउट करें।"
+  },
+  "notConnected": {
+    "message": "कनेक्ट नहीं है"
+  },
+  "account": {
+    "message": "ChatGPT खाता"
+  },
+  "addAccount": {
+    "message": "ChatGPT खाता जोड़ें"
+  },
+  "signOut": {
+    "message": "साइन आउट"
+  },
+  "availableModel": {
+    "message": "उपलब्ध मॉडल"
+  },
+  "signInModels": {
+    "message": "मॉडल लोड करने के लिए साइन इन करें"
+  },
+  "planTitle": {
+    "message": "आपका ChatGPT प्लान उपयोग हो रहा है"
+  },
+  "planHint": {
+    "message": "पात्र अनुरोध आपका ChatGPT प्लान या क्रेडिट उपयोग करते हैं। ऐप की सीमा ChatGPT सेटिंग में प्रबंधित करें।"
+  },
+  "confirmPlan": {
+    "message": "समझ गया · यह मॉडल उपयोग करें"
+  },
+  "sampleTest": {
+    "message": "टेस्ट वाक्य का अनुवाद करें"
+  },
+  "manageUsage": {
+    "message": "ChatGPT उपयोग प्रबंधित करें"
+  },
+  "chooseModel": {
+    "message": "मॉडल चुनें"
+  },
+  "connectedAccount": {
+    "message": "कनेक्ट किया गया खाता"
+  },
+  "connectionReady": {
+    "message": "कनेक्ट हो गया। टैब खुला रखें, MUBI उपशीर्षक चालू करें और अनुवाद शुरू करें।"
+  },
+  "connectionValidating": {
+    "message": "साइन-इन जवाब की जाँच जारी…"
+  },
+  "connectionSignedIn": {
+    "message": "साइन इन हो गया। मॉडल चुनें और ChatGPT प्लान के उपयोग की पुष्टि करें।"
+  },
+  "connectionPrompt": {
+    "message": "साइन-इन विंडो में आधिकारिक लॉगिन और प्लान की अनुमति पूरी करें।"
+  },
+  "connectionClosed": {
+    "message": "साइन-इन विंडो बंद हो गई। आप फिर कोशिश कर सकते हैं।"
+  },
+  "sampleRunning": {
+    "message": "टेस्ट वाक्य का अनुवाद जारी…"
+  },
+  "noSession": {
+    "message": "कोई सक्रिय सत्र नहीं है।"
+  },
+  "loggedOut": {
+    "message": "साइन आउट हो गया। नवीकरण योग्य पहुँच रद्द की गई।"
+  },
+  "localLogout": {
+    "message": "स्थानीय रूप से साइन आउट हो गया। दूरस्थ रद्दीकरण की पुष्टि नहीं हुई; ज़रूरत हो तो ChatGPT सेटिंग में ऐप डिस्कनेक्ट करें।"
+  },
+  "savedAccount": {
+    "message": "सहेजा गया ChatGPT खाता"
+  },
+  "sampleCached": {
+    "message": "कैश से"
+  },
+  "providerChatGPT": {
+    "message": "ChatGPT · ब्राउज़र लॉगिन"
+  },
+  "providerCodex": {
+    "message": "Codex CLI · उन्नत"
+  },
+  "providerOllama": {
+    "message": "Ollama · उन्नत"
+  },
+  "oauthStart": {
+    "message": "कनेक्ट करने के लिए Continue with ChatGPT चुनें।"
+  }
+}
