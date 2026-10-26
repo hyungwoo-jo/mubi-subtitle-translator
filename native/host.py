@@ -15,7 +15,7 @@ import urllib.error
 from datetime import datetime, timezone
 
 MAX_MESSAGE = 600_000
-VERSION = "0.2.2"
+VERSION = "0.2.3"
 SCHEMA = {"type": "object", "properties": {"items": {"type": "array", "items": {
     "type": "object", "properties": {"id": {"type": "integer"}, "text": {"type": "string"}},
     "required": ["id", "text"], "additionalProperties": False}}},
