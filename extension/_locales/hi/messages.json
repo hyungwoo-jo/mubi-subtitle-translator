@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "कनेक्ट करने के लिए Continue with ChatGPT चुनें।"
+  },
+  "extensionId": {
+    "message": "एक्सटेंशन ID"
+  },
+  "modelInConnection": {
+    "message": "मॉडल ChatGPT कनेक्शन टैब में चुनें।"
+  },
+  "turnOff": {
+    "message": "बंद करें"
   }
 }

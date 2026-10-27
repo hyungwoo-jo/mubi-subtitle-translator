@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "اختر Continue with ChatGPT للاتصال."
+  },
+  "extensionId": {
+    "message": "معرّف الإضافة"
+  },
+  "modelInConnection": {
+    "message": "اختر النموذج في علامة تبويب اتصال ChatGPT."
+  },
+  "turnOff": {
+    "message": "إيقاف"
   }
 }

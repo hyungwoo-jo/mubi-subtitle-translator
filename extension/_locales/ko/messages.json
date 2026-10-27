@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "Continue with ChatGPT를 눌러 연결하세요."
+  },
+  "extensionId": {
+    "message": "확장 프로그램 ID"
+  },
+  "modelInConnection": {
+    "message": "모델은 ChatGPT 연결 탭에서 선택합니다."
+  },
+  "turnOff": {
+    "message": "끄기"
   }
 }

@@ -65,8 +65,10 @@
   const status=document.createElement('div');status.className='status';
   const close=document.createElement('button');close.textContent=t('hide');
   const pick=document.createElement('button');pick.textContent=t('pick');
-  close.onclick=()=>{enabled=false;host.hidden=true;epoch++;window.postMessage({source:'hw-subtitles-control',kind:'stop'},location.origin);};
-  tools.append(select,pick,close);box.append(tools,original,translation,status);shadow.append(style,box);
+  const off=document.createElement('button');off.textContent=t('turnOff');
+  close.onclick=()=>{controlsOpen=false;render();};
+  off.onclick=()=>{enabled=false;host.hidden=true;epoch++;window.postMessage({source:'hw-subtitles-control',kind:'stop'},location.origin);};
+  tools.append(select,pick,close,off);box.append(tools,original,translation,status);shadow.append(style,box);
   select.onchange=()=>{selected=select.value;manualTrack=true;retryAt=0;render();};
   function selectorFor(element){
     if(element.id) return '#'+CSS.escape(element.id);
@@ -286,7 +288,7 @@
   }
   chrome.storage.local.get(['settings','siteSelectors']).then(result=>{settings={...settings,...result.settings};pickedSelector=result.siteSelectors?.[location.hostname]||'';});
   chrome.storage.onChanged.addListener(changes=> {
-    if(changes.uiLanguage){close.textContent=t('hide');pick.textContent=t('pick');refreshChoices();}
+    if(changes.uiLanguage){close.textContent=t('hide');off.textContent=t('turnOff');pick.textContent=t('pick');refreshChoices();}
     if(changes.settings){settings={...settings,...changes.settings.newValue};translations.clear();epoch++;retryAt=0;}
   });
   chrome.runtime.onMessage.addListener((message,_sender,respond)=> {
@@ -302,7 +304,7 @@
   document.addEventListener('fullscreenchange',mount);
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&controlsOpen){controlsOpen=false;render();}});
   detectVideo();refreshChoices();
-  CueI18N.ready.then(()=>{close.textContent=t('hide');pick.textContent=t('pick');select.setAttribute('aria-label',t('track'));refreshChoices();});
+  CueI18N.ready.then(()=>{close.textContent=t('hide');off.textContent=t('turnOff');pick.textContent=t('pick');select.setAttribute('aria-label',t('track'));refreshChoices();});
   pollTimer=setInterval(()=> {
     if(!enabled) return;
     if(lastPage!==location.href){lastPage=location.href;tracks.clear();selected='';domText='';manualTrack=false;epoch++;refreshChoices();}

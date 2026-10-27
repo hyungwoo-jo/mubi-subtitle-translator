@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "Pilih Continue with ChatGPT untuk terhubung."
+  },
+  "extensionId": {
+    "message": "ID ekstensi"
+  },
+  "modelInConnection": {
+    "message": "Pilih model di tab koneksi ChatGPT."
+  },
+  "turnOff": {
+    "message": "Matikan"
   }
 }

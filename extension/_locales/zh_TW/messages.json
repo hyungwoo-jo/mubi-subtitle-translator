@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "選擇 Continue with ChatGPT 開始連線。"
+  },
+  "extensionId": {
+    "message": "擴充功能 ID"
+  },
+  "modelInConnection": {
+    "message": "請在 ChatGPT 連線分頁中選擇模型。"
+  },
+  "turnOff": {
+    "message": "關閉"
   }
 }

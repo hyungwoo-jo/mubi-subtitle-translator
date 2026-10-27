@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "选择 Continue with ChatGPT 开始连接。"
+  },
+  "extensionId": {
+    "message": "扩展程序 ID"
+  },
+  "modelInConnection": {
+    "message": "请在 ChatGPT 连接标签页中选择模型。"
+  },
+  "turnOff": {
+    "message": "关闭"
   }
 }

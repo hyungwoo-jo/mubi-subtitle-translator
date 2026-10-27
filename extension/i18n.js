@@ -112,7 +112,10 @@
     "providerChatGPT": "ChatGPT · Browser sign-in",
     "providerCodex": "Codex CLI · Advanced",
     "providerOllama": "Ollama · Advanced",
-    "oauthStart": "Choose Continue with ChatGPT to connect."
+    "oauthStart": "Choose Continue with ChatGPT to connect.",
+    "extensionId": "Extension ID",
+    "modelInConnection": "Choose the model in the ChatGPT connection tab.",
+    "turnOff": "Turn off"
   },
   "ko": {
     "extensionDescription": "자막을 미리 번역하고 영상에 맞춰 표시합니다. MUBI에서 테스트했습니다.",
@@ -223,7 +226,10 @@
     "providerChatGPT": "ChatGPT · 브라우저 로그인",
     "providerCodex": "Codex CLI · 고급 연결",
     "providerOllama": "Ollama · 고급 연결",
-    "oauthStart": "Continue with ChatGPT를 눌러 연결하세요."
+    "oauthStart": "Continue with ChatGPT를 눌러 연결하세요.",
+    "extensionId": "확장 프로그램 ID",
+    "modelInConnection": "모델은 ChatGPT 연결 탭에서 선택합니다.",
+    "turnOff": "끄기"
   },
   "ja": {
     "extensionDescription": "字幕を先に翻訳し、映像に合わせて表示。MUBIでテスト済み。",
@@ -334,7 +340,10 @@
     "providerChatGPT": "ChatGPT · ブラウザーログイン",
     "providerCodex": "Codex CLI · 高度な接続",
     "providerOllama": "Ollama · 高度な接続",
-    "oauthStart": "Continue with ChatGPTを選んで接続してください。"
+    "oauthStart": "Continue with ChatGPTを選んで接続してください。",
+    "extensionId": "拡張機能 ID",
+    "modelInConnection": "モデルは ChatGPT 接続タブで選択します。",
+    "turnOff": "オフにする"
   },
   "zh-CN": {
     "tagline": "提前翻译，同步观看。",
@@ -445,7 +454,10 @@
     "providerChatGPT": "ChatGPT · 浏览器登录",
     "providerCodex": "Codex CLI · 高级连接",
     "providerOllama": "Ollama · 高级连接",
-    "oauthStart": "选择 Continue with ChatGPT 开始连接。"
+    "oauthStart": "选择 Continue with ChatGPT 开始连接。",
+    "extensionId": "扩展程序 ID",
+    "modelInConnection": "请在 ChatGPT 连接标签页中选择模型。",
+    "turnOff": "关闭"
   },
   "zh-TW": {
     "tagline": "預先翻譯，同步觀看。",
@@ -556,7 +568,10 @@
     "providerChatGPT": "ChatGPT · 瀏覽器登入",
     "providerCodex": "Codex CLI · 進階連線",
     "providerOllama": "Ollama · 進階連線",
-    "oauthStart": "選擇 Continue with ChatGPT 開始連線。"
+    "oauthStart": "選擇 Continue with ChatGPT 開始連線。",
+    "extensionId": "擴充功能 ID",
+    "modelInConnection": "請在 ChatGPT 連線分頁中選擇模型。",
+    "turnOff": "關閉"
   },
   "es": {
     "tagline": "Traduce antes. Mira en sincronía.",
@@ -667,7 +682,10 @@
     "providerChatGPT": "ChatGPT · Acceso en el navegador",
     "providerCodex": "Codex CLI · Avanzado",
     "providerOllama": "Ollama · Avanzado",
-    "oauthStart": "Elige Continue with ChatGPT para conectar."
+    "oauthStart": "Elige Continue with ChatGPT para conectar.",
+    "extensionId": "ID de la extensión",
+    "modelInConnection": "Elige el modelo en la pestaña de conexión de ChatGPT.",
+    "turnOff": "Desactivar"
   },
   "fr": {
     "tagline": "Traduisez à l’avance. Regardez en rythme.",
@@ -778,7 +796,10 @@
     "providerChatGPT": "ChatGPT · Connexion navigateur",
     "providerCodex": "Codex CLI · Avancé",
     "providerOllama": "Ollama · Avancé",
-    "oauthStart": "Choisissez Continue with ChatGPT pour vous connecter."
+    "oauthStart": "Choisissez Continue with ChatGPT pour vous connecter.",
+    "extensionId": "ID de l’extension",
+    "modelInConnection": "Choisissez le modèle dans l’onglet de connexion ChatGPT.",
+    "turnOff": "Désactiver"
   },
   "de": {
     "tagline": "Vorausübersetzen. Synchron schauen.",
@@ -889,7 +910,10 @@
     "providerChatGPT": "ChatGPT · Browseranmeldung",
     "providerCodex": "Codex CLI · Erweitert",
     "providerOllama": "Ollama · Erweitert",
-    "oauthStart": "Zum Verbinden Continue with ChatGPT wählen."
+    "oauthStart": "Zum Verbinden Continue with ChatGPT wählen.",
+    "extensionId": "Erweiterungs-ID",
+    "modelInConnection": "Wähle das Modell im ChatGPT-Verbindungstab.",
+    "turnOff": "Ausschalten"
   },
   "pt-BR": {
     "tagline": "Traduza antes. Assista em sincronia.",
@@ -1000,7 +1024,10 @@
     "providerChatGPT": "ChatGPT · Login no navegador",
     "providerCodex": "Codex CLI · Avançado",
     "providerOllama": "Ollama · Avançado",
-    "oauthStart": "Escolha Continue with ChatGPT para conectar."
+    "oauthStart": "Escolha Continue with ChatGPT para conectar.",
+    "extensionId": "ID da extensão",
+    "modelInConnection": "Escolha o modelo na aba de conexão do ChatGPT.",
+    "turnOff": "Desativar"
   },
   "it": {
     "tagline": "Traduci prima. Guarda in sincronia.",
@@ -1111,7 +1138,10 @@
     "providerChatGPT": "ChatGPT · Accesso nel browser",
     "providerCodex": "Codex CLI · Avanzato",
     "providerOllama": "Ollama · Avanzato",
-    "oauthStart": "Scegli Continue with ChatGPT per connetterti."
+    "oauthStart": "Scegli Continue with ChatGPT per connetterti.",
+    "extensionId": "ID dell’estensione",
+    "modelInConnection": "Scegli il modello nella scheda di connessione ChatGPT.",
+    "turnOff": "Disattiva"
   },
   "ru": {
     "tagline": "Перевод заранее. Просмотр синхронно.",
@@ -1222,7 +1252,10 @@
     "providerChatGPT": "ChatGPT · Вход в браузере",
     "providerCodex": "Codex CLI · Дополнительно",
     "providerOllama": "Ollama · Дополнительно",
-    "oauthStart": "Для подключения выберите Continue with ChatGPT."
+    "oauthStart": "Для подключения выберите Continue with ChatGPT.",
+    "extensionId": "ID расширения",
+    "modelInConnection": "Модель выбирается на вкладке подключения ChatGPT.",
+    "turnOff": "Выключить"
   },
   "ar": {
     "tagline": "ترجم مسبقًا. شاهد بتزامن.",
@@ -1333,7 +1366,10 @@
     "providerChatGPT": "ChatGPT · دخول المتصفح",
     "providerCodex": "Codex CLI · متقدم",
     "providerOllama": "Ollama · متقدم",
-    "oauthStart": "اختر Continue with ChatGPT للاتصال."
+    "oauthStart": "اختر Continue with ChatGPT للاتصال.",
+    "extensionId": "معرّف الإضافة",
+    "modelInConnection": "اختر النموذج في علامة تبويب اتصال ChatGPT.",
+    "turnOff": "إيقاف"
   },
   "hi": {
     "tagline": "पहले अनुवाद करें। सही समय पर देखें।",
@@ -1444,7 +1480,10 @@
     "providerChatGPT": "ChatGPT · ब्राउज़र लॉगिन",
     "providerCodex": "Codex CLI · उन्नत",
     "providerOllama": "Ollama · उन्नत",
-    "oauthStart": "कनेक्ट करने के लिए Continue with ChatGPT चुनें।"
+    "oauthStart": "कनेक्ट करने के लिए Continue with ChatGPT चुनें।",
+    "extensionId": "एक्सटेंशन ID",
+    "modelInConnection": "मॉडल ChatGPT कनेक्शन टैब में चुनें।",
+    "turnOff": "बंद करें"
   },
   "tr": {
     "tagline": "Önceden çevir. Eşzamanlı izle.",
@@ -1555,7 +1594,10 @@
     "providerChatGPT": "ChatGPT · Tarayıcı girişi",
     "providerCodex": "Codex CLI · Gelişmiş",
     "providerOllama": "Ollama · Gelişmiş",
-    "oauthStart": "Bağlanmak için Continue with ChatGPT’yi seçin."
+    "oauthStart": "Bağlanmak için Continue with ChatGPT’yi seçin.",
+    "extensionId": "Uzantı kimliği",
+    "modelInConnection": "Modeli ChatGPT bağlantı sekmesinde seçin.",
+    "turnOff": "Kapat"
   },
   "id": {
     "tagline": "Terjemahkan lebih awal. Tonton selaras.",
@@ -1666,7 +1708,10 @@
     "providerChatGPT": "ChatGPT · Login browser",
     "providerCodex": "Codex CLI · Lanjutan",
     "providerOllama": "Ollama · Lanjutan",
-    "oauthStart": "Pilih Continue with ChatGPT untuk terhubung."
+    "oauthStart": "Pilih Continue with ChatGPT untuk terhubung.",
+    "extensionId": "ID ekstensi",
+    "modelInConnection": "Pilih model di tab koneksi ChatGPT.",
+    "turnOff": "Matikan"
   },
   "vi": {
     "tagline": "Dịch trước. Xem đồng bộ.",
@@ -1777,7 +1822,10 @@
     "providerChatGPT": "ChatGPT · Đăng nhập trình duyệt",
     "providerCodex": "Codex CLI · Nâng cao",
     "providerOllama": "Ollama · Nâng cao",
-    "oauthStart": "Chọn Continue with ChatGPT để kết nối."
+    "oauthStart": "Chọn Continue with ChatGPT để kết nối.",
+    "extensionId": "ID tiện ích",
+    "modelInConnection": "Chọn mô hình trong thẻ kết nối ChatGPT.",
+    "turnOff": "Tắt"
   }
 };
   const locales=[{"id": "en", "folder": "en", "label": "English"}, {"id": "ko", "folder": "ko", "label": "한국어"}, {"id": "ja", "folder": "ja", "label": "日本語"}, {"id": "zh-CN", "folder": "zh_CN", "label": "简体中文"}, {"id": "zh-TW", "folder": "zh_TW", "label": "繁體中文"}, {"id": "es", "folder": "es", "label": "Español"}, {"id": "fr", "folder": "fr", "label": "Français"}, {"id": "de", "folder": "de", "label": "Deutsch"}, {"id": "pt-BR", "folder": "pt_BR", "label": "Português (Brasil)"}, {"id": "it", "folder": "it", "label": "Italiano"}, {"id": "ru", "folder": "ru", "label": "Русский"}, {"id": "ar", "folder": "ar", "label": "العربية"}, {"id": "hi", "folder": "hi", "label": "हिन्दी"}, {"id": "tr", "folder": "tr", "label": "Türkçe"}, {"id": "id", "folder": "id", "label": "Bahasa Indonesia"}, {"id": "vi", "folder": "vi", "label": "Tiếng Việt"}];

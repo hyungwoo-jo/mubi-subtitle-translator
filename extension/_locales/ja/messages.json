@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "Continue with ChatGPTを選んで接続してください。"
+  },
+  "extensionId": {
+    "message": "拡張機能 ID"
+  },
+  "modelInConnection": {
+    "message": "モデルは ChatGPT 接続タブで選択します。"
+  },
+  "turnOff": {
+    "message": "オフにする"
   }
 }

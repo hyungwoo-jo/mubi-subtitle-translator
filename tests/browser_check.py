@@ -9,6 +9,11 @@ import wave
 
 from playwright.sync_api import sync_playwright
 
+def accessible_text(page):
+    """Text exposed to assistive technology, including the overlay's shadow root."""
+    return page.locator(':root').aria_snapshot()
+
+
 ROOT = Path(__file__).resolve().parents[1]
 TMP = ROOT / "tmp"
 TMP.mkdir(exist_ok=True)
@@ -65,7 +70,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         }""", {"tabId": worker.evaluate("async()=> (await chrome.tabs.query({url:'http://127.0.0.1/*'}))[0].id")})
         # Accessibility snapshots verify the text presented to the viewer.
         def visible_text():
-            return json.dumps(page.accessibility.snapshot(), ensure_ascii=False)
+            return accessible_text(page)
         page.wait_for_timeout(1200)
         assert '번역: Hello world' in visible_text(), (visible_text(),worker.evaluate('translationCalls'),worker.evaluate('chrome.storage.local.get(null)'))
         assert worker.evaluate('translationCalls') == 1
@@ -104,10 +109,21 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         options.goto(f"chrome-extension://{extension_id}/options.html")
         assert options.locator('#model').input_value() == 'gpt-6-luna'
         assert options.locator('#extension-id').inner_text() == extension_id
+        # ChatGPT picks its model in the connection tab and needs no helper extension ID.
+        options.locator('#provider').select_option('chatgpt')
+        assert options.locator('#model').is_hidden() and options.locator('#extension-id').is_hidden()
+        assert options.locator('#model-hint').is_visible()
         options.locator('#provider').select_option('codex')
+        assert options.locator('#model').is_visible() and options.locator('#model-hint').is_hidden()
         options.locator('#test').click()
         options.wait_for_function("document.querySelector('#status').textContent.includes('진단:')")
         assert '진단:' in options.locator('#status').inner_text()
+        # Hide closes the controls panel; translation keeps running.
+        worker.evaluate("""async(tabId)=>chrome.tabs.sendMessage(tabId,{type:'controls',open:true})""", tab_id)
+        page.locator('#hw-subtitle-overlay').get_by_role('button', name='숨기기').click()
+        page.wait_for_timeout(300)
+        assert page.locator('#hw-subtitle-overlay select').is_hidden()
+        assert '번역: Hello world' in visible_text()
         worker.evaluate("""async(tabId)=>chrome.tabs.sendMessage(tabId,{type:'toggle',enabled:false})""", tab_id)
         page.wait_for_timeout(300)
         assert '번역: Hello world' not in visible_text()
@@ -121,13 +137,13 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
             await fetch('/captions.vtt');
         }""")
         network.wait_for_timeout(1200)
-        assert '번역: Network caption' in json.dumps(network.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Network caption' in accessible_text(network)
         dom = context.new_page()
         dom.route('**/dom', lambda route: route.fulfill(content_type='text/html',body=video_html+'<div class="ytp-caption-segment">DOM caption</div>'))
         dom.goto('http://127.0.0.1:18947/dom')
         dom.evaluate("async()=>{const v=document.querySelector('video');v.playbackRate=0.1;await v.play();}")
         dom.wait_for_timeout(1800)
-        assert '번역: DOM caption' in json.dumps(dom.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: DOM caption' in accessible_text(dom)
         # A delayed DOM result must not replace the current source cue.
         worker.evaluate("""()=> {
             chrome.runtime.sendNativeMessage=async (_name,message)=> {
@@ -140,7 +156,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         dom.wait_for_timeout(1100)
         dom.evaluate("document.querySelector('.ytp-caption-segment').textContent='Next caption'")
         dom.wait_for_timeout(1400)
-        assert '번역: Delayed first caption' not in json.dumps(dom.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Delayed first caption' not in accessible_text(dom)
         # Captions unknown to the adapter can be selected by clicking their text.
         custom=context.new_page()
         custom.route('**/custom',lambda route:route.fulfill(content_type='text/html',body=video_html+'<div class="unknown-caption" style="position:fixed;top:20px;left:20px">Selected subtitle</div>'))
@@ -154,12 +170,12 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         custom.get_by_role('button',name='자막 위치 선택').click()
         custom.locator('.unknown-caption').click()
         custom.wait_for_timeout(2600)
-        assert '번역: Selected subtitle' in json.dumps(custom.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Selected subtitle' in accessible_text(custom)
         # A full timed track discovered after visible captions wins automatically.
         dom.route('**/full-captions.vtt',lambda route:route.fulfill(content_type='text/vtt',body='WEBVTT\n\n00:00.000 --> 00:09.000\nFull track caption'))
         dom.evaluate("fetch('/full-captions.vtt')")
         dom.wait_for_timeout(3000)
-        assert '번역: Full track caption' in json.dumps(dom.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Full track caption' in accessible_text(dom)
         dom_tab=worker.evaluate("async()=> (await chrome.tabs.query({url:'http://127.0.0.1/*'})).find(t=>t.url.endsWith('/dom')).id")
         snapshot=worker.evaluate("""async(tabId)=>{
             const [result]=await chrome.scripting.executeScript({target:{tabId},func:()=>globalThis.__hwSubsDiagnostics()});
@@ -184,7 +200,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         castlabs.goto('http://127.0.0.1:18947/castlabs')
         castlabs.evaluate("async()=>{const v=document.querySelector('video');v.playbackRate=0.1;await v.play();}")
         castlabs.wait_for_timeout(1800)
-        assert '번역: Merhaba, altyazi denemesi.' in json.dumps(castlabs.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Merhaba, altyazi denemesi.' in accessible_text(castlabs)
         assert worker.evaluate('requestedTexts')==['Merhaba, altyazi denemesi.']
         assert '127.0.0.1' not in worker.evaluate("async()=> (await chrome.storage.local.get('siteSelectors')).siteSelectors")
         castlabs.evaluate("document.querySelector('.clpp-text-container').replaceChildren()")
@@ -216,7 +232,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         recovered_snapshot=worker.evaluate("""async(tabId)=>{
             const [r]=await chrome.scripting.executeScript({target:{tabId},func:()=>globalThis.__hwSubsDiagnostics()});return r.result;
         }""",recovered_id)
-        assert '번역: Recovered whole track' in json.dumps(recovered.accessibility.snapshot(),ensure_ascii=False),(recovered.accessibility.snapshot(),recovered_snapshot,worker.evaluate('requestedTexts'))
+        assert '번역: Recovered whole track' in accessible_text(recovered),(accessible_text(recovered),recovered_snapshot,worker.evaluate('requestedTexts'))
         assert recovered_snapshot['state']['mode']=='network'
         assert recovered_snapshot['capture']['recoveryAttempts']>=1
         assert recovered.evaluate("document.querySelector('video').paused")
@@ -235,7 +251,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
             xhr.onload=()=>resolve();xhr.onerror=reject;xhr.send();
         })""")
         binary.wait_for_timeout(1200)
-        assert '번역: Binary subtitle response' in json.dumps(binary.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Binary subtitle response' in accessible_text(binary)
         # Playback JSON can point at an opaque subtitle URL without an extension.
         discovery=context.new_page()
         discovery.route('**/discovery',lambda route:route.fulfill(content_type='text/html',body=video_html))
@@ -249,7 +265,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         }""",discovery_id)
         discovery.evaluate("fetch('/playback-info')")
         discovery.wait_for_timeout(1200)
-        assert '번역: Discovered from playback JSON' in json.dumps(discovery.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Discovered from playback JSON' in accessible_text(discovery)
         # DASH sidecar BaseURLs resolve relative to their manifest and Period.
         discovery.route('**/manifest.mpd',lambda route:route.fulfill(content_type='application/dash+xml',body='<MPD><Period><BaseURL>/text/</BaseURL><AdaptationSet mimeType="text/vtt"><Representation><BaseURL>track</BaseURL></Representation></AdaptationSet></Period></MPD>'))
         discovery.route('**/text/track',lambda route:route.fulfill(content_type='text/plain',body='WEBVTT\n\n00:00.000 --> 00:09.000\nDASH sidecar caption'))
@@ -258,7 +274,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         worker.evaluate("async(id)=>chrome.tabs.sendMessage(id,{type:'controls'})",discovery_id)
         discovery.locator('select').select_option(label='수신 자막 2 (1개)')
         discovery.wait_for_timeout(900)
-        assert '번역: DASH sidecar caption' in json.dumps(discovery.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: DASH sidecar caption' in accessible_text(discovery)
         # SegmentTimeline TTML chunks share one track and keep source times.
         segment=context.new_page()
         segment.route('**/segmented',lambda route:route.fulfill(content_type='text/html',body=video_html))
@@ -277,10 +293,10 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         }""",segment_id)
         segment.evaluate("fetch('/segmented.mpd')")
         segment.wait_for_timeout(1500)
-        assert '번역: Segment 1' in json.dumps(segment.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Segment 1' in accessible_text(segment)
         segment.evaluate("document.querySelector('video').currentTime=4")
         segment.wait_for_timeout(500)
-        assert '번역: Segment 2' in json.dumps(segment.accessibility.snapshot(),ensure_ascii=False)
+        assert '번역: Segment 2' in accessible_text(segment)
         assert segment.locator('select option').count()==2
         # Identical source cues survive reload even when surrounding context changes.
         before=worker.evaluate('requestedTexts.length')

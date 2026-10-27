@@ -7,7 +7,8 @@
   const resource=O.RESOURCE,issuer=O.ISSUER;
   let statusMessage={key:'oauthStart',values:{}};
   const status=text=>{statusMessage=null;$('progress').textContent=text;};
-  const showStatus=(key,values={})=>{statusMessage={key,values};$('progress').textContent=t(key,values);};
+  const showStatus=(key,values={})=>{statusMessage={key,values};$('progress').textContent=t(key,values);syncSignOut();};
+  const syncSignOut=()=>{$('signout').disabled=!session&&!signingIn;};
   function trusted(sender){return sender.id===chrome.runtime.id&&(!sender.tab||sender.url?.startsWith(chrome.runtime.getURL('')));}
   async function json(url,options={}){
     const response=await fetch(url,{...options,credentials:'omit',cache:'no-store',redirect:'error',signal:AbortSignal.timeout(120000)});
@@ -105,7 +106,7 @@
       showStatus('connectionSignedIn');
       if(previous?.welcomeSeen&&$('models').value)await activate();
     }catch(error){status(error.message);}
-    finally{signingIn=false;$('signin').disabled=false;}
+    finally{signingIn=false;$('signin').disabled=false;syncSignOut();}
   }
   chrome.webNavigation.onBeforeNavigate.addListener(consumeCallback,{url:[{schemes:['http'],hostEquals:'127.0.0.1',pathEquals:'/auth/callback'}]});
   chrome.tabs.onRemoved.addListener(tabId=>{
@@ -116,14 +117,14 @@
     try{
       const granted=await chrome.permissions.request({origins:[issuer+'/*','https://api.openai.com/*']});
       if(!granted)throw new Error('Permission for the official OpenAI sign-in and API endpoints is required.');
-      signingIn=true;$('signin').disabled=true;
+      signingIn=true;$('signin').disabled=true;syncSignOut();
       const registration=registrations.find(row=>row.clientId===$('accounts').value)||null;
       const attempt=await O.transaction(await hostId(),registration);
       const window=await chrome.windows.create({url:'about:blank',type:'popup',width:540,height:760});
       pending={...attempt.pending,tabId:window.tabs[0].id};
       await chrome.tabs.update(pending.tabId,{url:attempt.url});
       showStatus('connectionPrompt');
-    }catch(error){signingIn=false;$('signin').disabled=false;status(error.message);}
+    }catch(error){signingIn=false;$('signin').disabled=false;syncSignOut();status(error.message);}
   };
   $('confirm').onclick=()=>activate().catch(error=>status(error.message));
   $('models').onchange=()=>{if(session?.confirmed)activate().catch(error=>status(error.message));};

@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "Bağlanmak için Continue with ChatGPT’yi seçin."
+  },
+  "extensionId": {
+    "message": "Uzantı kimliği"
+  },
+  "modelInConnection": {
+    "message": "Modeli ChatGPT bağlantı sekmesinde seçin."
+  },
+  "turnOff": {
+    "message": "Kapat"
   }
 }

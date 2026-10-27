@@ -3,12 +3,20 @@ const fields=['provider','language','model','glossary','showOriginal','fontSize'
 const status=document.querySelector('#status');
 document.querySelector('#uiLanguage').replaceChildren(...CueI18N.locales.map(row=>new Option(row.label,row.id)));
 document.querySelector('#extension-id').textContent=chrome.runtime.id;
+function syncProvider(){
+  const chatgpt=document.querySelector('#provider').value==='chatgpt';
+  document.querySelector('#model-row').hidden=chatgpt;
+  document.querySelector('#model').required=!chatgpt;
+  document.querySelector('#model-hint').hidden=!chatgpt;
+  document.querySelector('#extension-row').hidden=chatgpt;
+}
 chrome.storage.local.get(['settings','uiLanguage']).then(({settings={},uiLanguage='en'})=> {
   document.querySelector('#uiLanguage').value=uiLanguage;
   for(const field of fields) if(settings[field]!==undefined){
     const input=document.getElementById(field);
     if(input.type==='checkbox') input.checked=settings[field]; else input.value=settings[field];
   }
+  syncProvider();
 });
 document.querySelector('#form').onsubmit=async event=> {
   event.preventDefault();
@@ -45,6 +53,7 @@ document.querySelector('#provider').onchange=()=>{
   const model=document.querySelector('#model');
   if(document.querySelector('#provider').value==='ollama'&&model.value.startsWith('gpt-'))model.value='';
   else if(document.querySelector('#provider').value==='codex'&&!model.value)model.value='gpt-6-luna';
+  syncProvider();
 };
 CueI18N.ready.then(()=>CueI18N.apply());
 

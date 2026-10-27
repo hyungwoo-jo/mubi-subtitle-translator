@@ -325,5 +325,14 @@
   },
   "oauthStart": {
     "message": "Choisissez Continue with ChatGPT pour vous connecter."
+  },
+  "extensionId": {
+    "message": "ID de l’extension"
+  },
+  "modelInConnection": {
+    "message": "Choisissez le modèle dans l’onglet de connexion ChatGPT."
+  },
+  "turnOff": {
+    "message": "Désactiver"
   }
 }

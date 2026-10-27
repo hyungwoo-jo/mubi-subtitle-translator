@@ -78,3 +78,11 @@ chrome.storage.local.get('dataConsent').then(({dataConsent})=>{document.querySel
 CueI18N.ready.then(()=>{CueI18N.apply();refreshPlayback();refreshUsage();});
 
 document.querySelector('#connect').onclick=()=>CueConnection.open();
+async function refreshConnection(){
+  const button=document.querySelector('#connect');
+  const {settings={}}=await chrome.storage.local.get('settings');
+  button.hidden=(settings.provider||'chatgpt')!=='chatgpt';
+  const result=await chrome.runtime.sendMessage({type:'chatgpt.status'}).catch(()=>null);
+  button.textContent=result?.connected?'ChatGPT · '+(result.account||t('connectedAccount')):'Continue with ChatGPT';
+}
+refreshConnection();
