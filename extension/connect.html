@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="ui.css"><title data-i18n="oauthTitle">ChatGPT connection</title>
-<main><header class="brand"><img src="icons/logo.svg" width="44" height="44" alt=""><div><h1 data-i18n="oauthTitle">ChatGPT connection</h1><span class="muted" data-i18n="oauthPreview">Browser connection · Preview</span></div></header>
+<main><header class="brand"><img src="icons/logo.svg" width="22" height="22" alt=""><h1 data-i18n="oauthTitle">ChatGPT connection</h1><span class="muted" data-i18n="oauthPreview">Browser connection · Preview</span></header>
 <p data-i18n="oauthIntro"></p>
 <section class="playback-card"><strong id="connection">Not connected</strong><p id="progress" role="status">Keep this tab open while watching. Credentials stay in this page's memory and are never written to browser storage.</p></section>
 <label><span data-i18n="account">ChatGPT account</span><select id="accounts"><option value="">Add a ChatGPT account</option></select></label>
-<button class="primary" id="signin">Continue with ChatGPT</button><button id="signout" data-i18n="signOut">Sign out</button>
+<button class="primary" id="signin">Continue with ChatGPT</button><button class="quiet" id="signout" data-i18n="signOut">Sign out</button>
 <label><span data-i18n="availableModel">Available model</span><select id="models"><option value="">Sign in to load available models</option></select></label>
 <section id="welcome" hidden><h2 data-i18n="planTitle"></h2><p data-i18n="planHint"></p><button class="primary" id="confirm" data-i18n="confirmPlan">Got it · Use this model</button></section>
 <button id="test" data-i18n="sampleTest" disabled>Translate a test sentence</button><p id="sample" role="status"></p>

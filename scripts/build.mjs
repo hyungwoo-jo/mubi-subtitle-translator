@@ -16,6 +16,7 @@ for(const locale of locales.filter(row=>row.id!=='en')) await cp(`docs/README.${
 await cp('docs/PRIVACY.md',`${dest}/docs/PRIVACY.md`);
 await cp('docs/assets/popup-en.png',`${dest}/docs/assets/popup-en.png`);
 await cp('LICENSE',`${dest}/LICENSE`);
+await cp('CHANGELOG.md',`${dest}/CHANGELOG.md`);
 await writeFile(`${dest}/VERSION`,version+'\n');
 const result=spawnSync('python3',['-c',
   'import pathlib,sys,zipfile; p=pathlib.Path(sys.argv[1]); z=zipfile.ZipFile(str(p)+".zip","w",zipfile.ZIP_DEFLATED); [z.write(f,f.relative_to(p.parent)) for f in sorted(p.rglob("*")) if f.is_file()]; z.close()',dest],{stdio:'inherit'});

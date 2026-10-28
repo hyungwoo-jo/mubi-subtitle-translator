@@ -7,7 +7,7 @@ function syncProvider(){
   const chatgpt=document.querySelector('#provider').value==='chatgpt';
   document.querySelector('#model-row').hidden=chatgpt;
   document.querySelector('#model').required=!chatgpt;
-  document.querySelector('#model-hint').hidden=!chatgpt;
+  document.querySelector('#connect-row').hidden=!chatgpt;
   document.querySelector('#extension-row').hidden=chatgpt;
 }
 chrome.storage.local.get(['settings','uiLanguage']).then(({settings={},uiLanguage='en'})=> {

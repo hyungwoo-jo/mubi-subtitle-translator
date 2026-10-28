@@ -112,9 +112,9 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         # ChatGPT picks its model in the connection tab and needs no helper extension ID.
         options.locator('#provider').select_option('chatgpt')
         assert options.locator('#model').is_hidden() and options.locator('#extension-id').is_hidden()
-        assert options.locator('#model-hint').is_visible()
+        assert options.locator('#connect-row').is_visible()
         options.locator('#provider').select_option('codex')
-        assert options.locator('#model').is_visible() and options.locator('#model-hint').is_hidden()
+        assert options.locator('#model').is_visible() and options.locator('#connect-row').is_hidden()
         options.locator('#test').click()
         options.wait_for_function("document.querySelector('#status').textContent.includes('진단:')")
         assert '진단:' in options.locator('#status').inner_text()
@@ -347,7 +347,7 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         assert popup.locator('#consent').is_checked()
         preview=ROOT/'out'/'screenshots'
         preview.mkdir(parents=True,exist_ok=True)
-        popup.set_viewport_size({'width':420,'height':760})
+        popup.set_viewport_size({'width':380,'height':200})
         popup.evaluate("""()=>{
             chrome.tabs.query=async()=>[{id:1,url:'https://mubi.com/en/films/demo/player'}];
             chrome.tabs.sendMessage=async()=>({video:true,active:true,mode:'timed',bufferSeconds:84,cues:1200,translated:80});
@@ -355,6 +355,6 @@ with tempfile.TemporaryDirectory(dir=TMP, prefix="browser-") as work:
         }""")
         popup.wait_for_function("document.querySelector('#playback').textContent.includes('84')")
         popup.bring_to_front()
-        popup.screenshot(path=str(preview/'popup-en.png'))
+        popup.screenshot(path=str(preview/'popup-en.png'),full_page=True)
         context.close()
         print('Chromium: captions, timing, diagnostics, CastLabs, recovered tracks, paused prefetch and binary XHR passed.')

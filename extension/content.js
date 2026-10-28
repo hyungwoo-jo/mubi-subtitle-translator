@@ -55,7 +55,7 @@
   style.textContent=`:host{all:initial;position:fixed;z-index:2147483647;left:8%;right:8%;bottom:18%;pointer-events:none;text-align:center;font-family:Arial,sans-serif;color:white}:host([hidden]){display:none!important}
     .box{display:inline-block;max-width:100%;background:#10141cde;border-radius:8px;padding:8px 16px;line-height:1.45;white-space:pre-line;text-shadow:0 1px 3px black}
     .original{font-size:.72em;color:#d5d9e1}.translation{font-weight:600} .tools{pointer-events:auto;font-size:12px;margin-bottom:4px;opacity:.9}
-    select,button{font:inherit;background:#202a3b;color:white;border:1px solid #6b7b92;border-radius:4px;padding:3px;margin:2px;max-width:240px}
+    select,button{font:inherit;background:transparent;color:white;border:1px solid #ffffff40;border-radius:6px;padding:3px 8px;margin:2px;max-width:240px;cursor:pointer}button:hover{background:#ffffff1a}select option{color:black}
     .status{font-size:12px;color:#c6d7ee} [hidden]{display:none!important}`;
   const box=document.createElement('div');box.className='box';
   const tools=document.createElement('div');tools.className='tools';tools.hidden=true;

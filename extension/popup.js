@@ -55,15 +55,27 @@ document.querySelector('#stop').onclick=async()=> {
 for(const id of ['controls','pick'])document.querySelector('#'+id).onclick=async()=>{
   try{const {tab}=await current();await chrome.tabs.sendMessage(tab.id,{type:'controls',open:true,pick:id==='pick'});window.close();}catch{status.textContent=t('clickStart');}
 };
+// Setup steps tick off as they complete; the list folds away once all are done.
+const setup={consent:false,needsConnect:true,connected:false,started:false};
+function renderSteps(){
+  document.querySelector('#step-consent').classList.toggle('done',setup.consent);
+  document.querySelector('#step-connect').hidden=!setup.needsConnect;
+  document.querySelector('#step-connect').classList.toggle('done',setup.connected);
+  document.querySelector('#step-start').classList.toggle('done',setup.started);
+  document.querySelector('#setup').hidden=setup.consent&&(setup.connected||!setup.needsConnect)&&setup.started;
+}
+document.querySelector('#consent').onchange=event=>{setup.consent=event.target.checked;renderSteps();};
 async function refreshPlayback(){
   try{
     const {tab}=await current();
     const result=await chrome.tabs.sendMessage(tab.id,{type:'status'});
+    setup.started=!!result?.active;renderSteps();
     const ready=result?.video&&result.active;
     document.querySelector('#playback').textContent=!ready?t('waiting'):result.mode==='timed'?t('ready',{seconds:result.bufferSeconds}):t('domMode');
     document.querySelector('#timeline').textContent=!ready?t('clickStart'):result.mode==='timed'?t('counts',{cues:result.cues,translated:result.translated}):t('domHint');
     document.querySelector('#buffer-note').textContent=!ready?'':result.mode==='timed'?t('window'):t('domDelay');
   }catch{
+    setup.started=false;renderSteps();
     document.querySelector('#playback').textContent=t('waiting');
     document.querySelector('#timeline').textContent=t('clickStart');
     document.querySelector('#buffer-note').textContent='';
@@ -74,15 +86,17 @@ async function refreshUsage(){
   const {translationUsage:u}=await chrome.storage.local.get('translationUsage');
   document.querySelector('#usage').textContent=u?t('usage',{calls:u.calls,input:u.input_tokens.toLocaleString(),cached:u.cached_input_tokens.toLocaleString(),output:u.output_tokens.toLocaleString(),batch:u.lastBatch,duration:(u.lastDurationMs/1000).toFixed(1)})+'\n'+t('measured'):t('usageEmpty');
 }
-chrome.storage.local.get('dataConsent').then(({dataConsent})=>{document.querySelector('#consent').checked=dataConsent===true;});
+chrome.storage.local.get('dataConsent').then(({dataConsent})=>{document.querySelector('#consent').checked=setup.consent=dataConsent===true;renderSteps();});
 CueI18N.ready.then(()=>{CueI18N.apply();refreshPlayback();refreshUsage();});
 
 document.querySelector('#connect').onclick=()=>CueConnection.open();
 async function refreshConnection(){
   const button=document.querySelector('#connect');
   const {settings={}}=await chrome.storage.local.get('settings');
-  button.hidden=(settings.provider||'chatgpt')!=='chatgpt';
-  const result=await chrome.runtime.sendMessage({type:'chatgpt.status'}).catch(()=>null);
-  button.textContent=result?.connected?'ChatGPT · '+(result.account||t('connectedAccount')):'Continue with ChatGPT';
+  setup.needsConnect=(settings.provider||'chatgpt')==='chatgpt';
+  const result=setup.needsConnect?await chrome.runtime.sendMessage({type:'chatgpt.status'}).catch(()=>null):null;
+  setup.connected=!!result?.connected;
+  button.textContent=setup.connected?'ChatGPT · '+(result.account||t('connectedAccount')):'Continue with ChatGPT';
+  renderSteps();
 }
-refreshConnection();
+refreshConnection();setInterval(refreshConnection,2000);

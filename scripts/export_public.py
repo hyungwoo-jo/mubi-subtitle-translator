@@ -17,7 +17,7 @@ def main():
         for source in (ROOT / folder).rglob('*'):
             if source.is_file() and source.suffix in ('.js', '.json', '.html', '.css', '.svg', '.png'):
                 files[source.relative_to(ROOT)] = source
-    for name in ('LICENSE', '.gitignore', 'package.json', 'native/host.py', 'native/install.py', 'native/setup.py',
+    for name in ('LICENSE', 'CHANGELOG.md', '.gitignore', 'package.json', 'native/host.py', 'native/install.py', 'native/setup.py',
                  'scripts/check.mjs', 'scripts/build.mjs', 'scripts/export_public.py',
                  'scripts/build_locales.py', 'scripts/i18n-runtime.js', 'scripts/locale-metadata.json',
                  'docs/README.public.md', 'docs/README.ko.md', 'docs/README.ja.md', 'docs/PRIVACY.md', 'docs/assets/popup-en.png', 'tests/browser_check.py', 'tests/browser_oauth_check.py', 'tests/native_test.py',

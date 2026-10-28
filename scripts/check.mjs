@@ -20,5 +20,8 @@ const manifest=JSON.parse(await readFile('extension/manifest.json','utf8'));
 assert.equal(manifest.manifest_version,3);
 assert(!manifest.permissions.includes('tabCapture'));
 assert(!manifest.host_permissions?.length);
+const version=JSON.parse(await readFile('package.json','utf8')).version;
+assert.equal(manifest.version,version,'manifest.json version must match package.json');
+assert((await readFile('native/host.py','utf8')).includes(`VERSION = "${version}"`),'native/host.py VERSION must match package.json');
 for(const file of [manifest.background.service_worker,manifest.action.default_popup,manifest.options_ui.page,...Object.values(manifest.icons||{})]) await readFile(`extension/${file}`);
 console.log('JavaScript syntax and extension manifest checks passed.');
